@@ -13,7 +13,8 @@ public enum Register
 {
   RANGE_MEASUREMENT_BLOCK(25, 110, "L", "R"),  
   RANGO_DIFERENCIAL_CARGA_PERFIL(128, 4, "L", "R"),  
-  NUMERO_LINKER(2, 2, "L", "RW"),  NUMERO_CFE(4, 8, "S", "RW"),  
+  NUMERO_LINKER(2, 2, "L", "RW"),  
+  NUMERO_CFE(4, 8, "S", "RW"),  
   TARJETA_CONTROL_SERIALNO(12, 5, "S", "R"),  
   ELEMENTO_MEDICION_SERIALNO(17, 5, "S", "RW"),  
   VELOCIDAD_DE_TRANSMISION(22, 1, "L", "RW"),  

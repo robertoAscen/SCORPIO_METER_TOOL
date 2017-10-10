@@ -734,8 +734,8 @@ public class JFrameMain
     listComponents.put(this.jMenuItemReset, "ItemReset");
     listComponents.put(this.jMenuItemAdvancedView, "ItemAdvancedView");
     listComponents.put(this.jMenuItemSchedules, "ItemSchedules");
-    //listComponents.put(jMenuConcentrator, "MenuConcentrator");
-    //listComponents.put(jMenuItemReadingsConcentrator, "ItemReadingsConcentrator");
+    listComponents.put(jMenuConcentrator, "MenuConcentrator");
+    listComponents.put(jMenuItemReadingsConcentrator, "ItemReadingsConcentrator");
     listComponents.put(jMenuItemMeterConcentrator, "ItemMeterConcentrator");
     listComponents.put(this.jMenuUploadFirmware, "MenuUploadFirmware");
     listComponents.put(this.jMenuItemUploadFirmware, "ItemUploadFirmware");
@@ -791,11 +791,11 @@ public class JFrameMain
     Iterator itt = null;
     Set sett = getComponentFramee().entrySet();
     itt = sett.iterator();
-    while (itt.hasNext())
+    /*while (itt.hasNext())//Con esto se muestran todas las ventanas disponibles
     {
       Map.Entry entry = (Map.Entry)itt.next();
       String value = (String)entry.getValue();
-      if (value.equals("MenuLoadProfile")) 
+      /*if (value.equals("MenuLoadProfile")) 
       {
         ((Component)entry.getKey()).setVisible(false);
       }
@@ -827,6 +827,6 @@ public class JFrameMain
       {
         ((Component)entry.getKey()).setVisible(false);
       }
-    }
+    }*/
   }
 }
