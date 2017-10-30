@@ -1,0 +1,149 @@
+\hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings}{}\section{com.\+eneri.\+scorpio\+\_\+metertool.\+devices.\+Readings Class Reference}
+\label{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings}\index{com.\+eneri.\+scorpio\+\_\+metertool.\+devices.\+Readings@{com.\+eneri.\+scorpio\+\_\+metertool.\+devices.\+Readings}}
+
+
+Inheritance diagram for com.\+eneri.\+scorpio\+\_\+metertool.\+devices.\+Readings\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for com.\+eneri.\+scorpio\+\_\+metertool.\+devices.\+Readings\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+byte \mbox{[}$\,$\mbox{]} \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_a802faea37a618e66652c077455657cca}{build\+Frame} ()  throws Exception   
+\item 
+double \mbox{[}$\,$\mbox{]} \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_a5fea46ff0bf51863820045c33ad2f9d3}{read\+Bytes} (byte\mbox{[}$\,$\mbox{]} frame)
+\item 
+void \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_ab7bb31c0ddf76b17eaca3892cf8dbd71}{request\+Readings} (long delay)
+\item 
+boolean \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_a0ef82b24abab1d069277b7a39f10c95e}{get\+Status\+Readings} ()
+\item 
+void \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_ad292cb1aa7467acf3181d8d16cc41fb3}{set\+Status\+Readings} (boolean \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_a752ee032f1fb0b002a7a01bd7d4cb05e}{bolreadings})
+\item 
+double \mbox{[}$\,$\mbox{]} \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_ad9f8bf96ca274f81dac0519e6926d902}{response\+Readings} ()
+\item 
+void \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_adbb22b79abdefd3b40787cac20c82445}{Write\+X\+M\+L\+File} (Linked\+Hash\+Map$<$ String, String $>$ list)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+final int \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_a2fdaeedd566c037e37fd30df9c6b9cde}{R\+A\+N\+G\+E\+\_\+\+M\+E\+A\+S\+U\+R\+E\+M\+E\+N\+T\+\_\+\+B\+L\+O\+CK} = 220
+\item 
+final int \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_a260a70ee7820bfe6c4aa594b2f466ae2}{N\+U\+M\+B\+E\+R\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS} = 50
+\item 
+boolean \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_a752ee032f1fb0b002a7a01bd7d4cb05e}{bolreadings}
+\item 
+Set \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_a592c9ffb4730818a5003e4897f1996c7}{set} = null
+\item 
+Iterator \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_ad419d514d55b98f7b6c8618f22654994}{it} = null
+\item 
+String \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_ae20849d78dbee9e3d2bb5df3c1657bff}{serial\+Number}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Roberto 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_a802faea37a618e66652c077455657cca}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_a802faea37a618e66652c077455657cca}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings@{com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings}!build\+Frame@{build\+Frame}}
+\index{build\+Frame@{build\+Frame}!com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings@{com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings}}
+\subsubsection{\texorpdfstring{build\+Frame()}{buildFrame()}}
+{\footnotesize\ttfamily byte \mbox{[}$\,$\mbox{]} com.\+eneri.\+scorpio\+\_\+metertool.\+devices.\+Readings.\+build\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws Exception}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_a0ef82b24abab1d069277b7a39f10c95e}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_a0ef82b24abab1d069277b7a39f10c95e}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings@{com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings}!get\+Status\+Readings@{get\+Status\+Readings}}
+\index{get\+Status\+Readings@{get\+Status\+Readings}!com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings@{com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings}}
+\subsubsection{\texorpdfstring{get\+Status\+Readings()}{getStatusReadings()}}
+{\footnotesize\ttfamily boolean com.\+eneri.\+scorpio\+\_\+metertool.\+devices.\+Readings.\+get\+Status\+Readings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_a5fea46ff0bf51863820045c33ad2f9d3}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_a5fea46ff0bf51863820045c33ad2f9d3}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings@{com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings}!read\+Bytes@{read\+Bytes}}
+\index{read\+Bytes@{read\+Bytes}!com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings@{com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings}}
+\subsubsection{\texorpdfstring{read\+Bytes()}{readBytes()}}
+{\footnotesize\ttfamily double \mbox{[}$\,$\mbox{]} com.\+eneri.\+scorpio\+\_\+metertool.\+devices.\+Readings.\+read\+Bytes (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{frame }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_ab7bb31c0ddf76b17eaca3892cf8dbd71}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_ab7bb31c0ddf76b17eaca3892cf8dbd71}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings@{com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings}!request\+Readings@{request\+Readings}}
+\index{request\+Readings@{request\+Readings}!com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings@{com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings}}
+\subsubsection{\texorpdfstring{request\+Readings()}{requestReadings()}}
+{\footnotesize\ttfamily void com.\+eneri.\+scorpio\+\_\+metertool.\+devices.\+Readings.\+request\+Readings (\begin{DoxyParamCaption}\item[{long}]{delay }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_ad9f8bf96ca274f81dac0519e6926d902}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_ad9f8bf96ca274f81dac0519e6926d902}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings@{com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings}!response\+Readings@{response\+Readings}}
+\index{response\+Readings@{response\+Readings}!com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings@{com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings}}
+\subsubsection{\texorpdfstring{response\+Readings()}{responseReadings()}}
+{\footnotesize\ttfamily double \mbox{[}$\,$\mbox{]} com.\+eneri.\+scorpio\+\_\+metertool.\+devices.\+Readings.\+response\+Readings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_ad292cb1aa7467acf3181d8d16cc41fb3}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_ad292cb1aa7467acf3181d8d16cc41fb3}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings@{com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings}!set\+Status\+Readings@{set\+Status\+Readings}}
+\index{set\+Status\+Readings@{set\+Status\+Readings}!com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings@{com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings}}
+\subsubsection{\texorpdfstring{set\+Status\+Readings()}{setStatusReadings()}}
+{\footnotesize\ttfamily void com.\+eneri.\+scorpio\+\_\+metertool.\+devices.\+Readings.\+set\+Status\+Readings (\begin{DoxyParamCaption}\item[{boolean}]{bolreadings }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_adbb22b79abdefd3b40787cac20c82445}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_adbb22b79abdefd3b40787cac20c82445}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings@{com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings}!Write\+X\+M\+L\+File@{Write\+X\+M\+L\+File}}
+\index{Write\+X\+M\+L\+File@{Write\+X\+M\+L\+File}!com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings@{com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings}}
+\subsubsection{\texorpdfstring{Write\+X\+M\+L\+File()}{WriteXMLFile()}}
+{\footnotesize\ttfamily void com.\+eneri.\+scorpio\+\_\+metertool.\+devices.\+Readings.\+Write\+X\+M\+L\+File (\begin{DoxyParamCaption}\item[{Linked\+Hash\+Map$<$ String, String $>$}]{list }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_a752ee032f1fb0b002a7a01bd7d4cb05e}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_a752ee032f1fb0b002a7a01bd7d4cb05e}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings@{com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings}!bolreadings@{bolreadings}}
+\index{bolreadings@{bolreadings}!com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings@{com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings}}
+\subsubsection{\texorpdfstring{bolreadings}{bolreadings}}
+{\footnotesize\ttfamily boolean com.\+eneri.\+scorpio\+\_\+metertool.\+devices.\+Readings.\+bolreadings}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_ad419d514d55b98f7b6c8618f22654994}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_ad419d514d55b98f7b6c8618f22654994}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings@{com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings}!it@{it}}
+\index{it@{it}!com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings@{com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings}}
+\subsubsection{\texorpdfstring{it}{it}}
+{\footnotesize\ttfamily Iterator com.\+eneri.\+scorpio\+\_\+metertool.\+devices.\+Readings.\+it = null}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_a260a70ee7820bfe6c4aa594b2f466ae2}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_a260a70ee7820bfe6c4aa594b2f466ae2}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings@{com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings}!N\+U\+M\+B\+E\+R\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS@{N\+U\+M\+B\+E\+R\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS}}
+\index{N\+U\+M\+B\+E\+R\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS@{N\+U\+M\+B\+E\+R\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS}!com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings@{com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings}}
+\subsubsection{\texorpdfstring{N\+U\+M\+B\+E\+R\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS}{NUMBER\_REGISTERS}}
+{\footnotesize\ttfamily final int com.\+eneri.\+scorpio\+\_\+metertool.\+devices.\+Readings.\+N\+U\+M\+B\+E\+R\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS = 50}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_a2fdaeedd566c037e37fd30df9c6b9cde}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_a2fdaeedd566c037e37fd30df9c6b9cde}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings@{com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings}!R\+A\+N\+G\+E\+\_\+\+M\+E\+A\+S\+U\+R\+E\+M\+E\+N\+T\+\_\+\+B\+L\+O\+CK@{R\+A\+N\+G\+E\+\_\+\+M\+E\+A\+S\+U\+R\+E\+M\+E\+N\+T\+\_\+\+B\+L\+O\+CK}}
+\index{R\+A\+N\+G\+E\+\_\+\+M\+E\+A\+S\+U\+R\+E\+M\+E\+N\+T\+\_\+\+B\+L\+O\+CK@{R\+A\+N\+G\+E\+\_\+\+M\+E\+A\+S\+U\+R\+E\+M\+E\+N\+T\+\_\+\+B\+L\+O\+CK}!com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings@{com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings}}
+\subsubsection{\texorpdfstring{R\+A\+N\+G\+E\+\_\+\+M\+E\+A\+S\+U\+R\+E\+M\+E\+N\+T\+\_\+\+B\+L\+O\+CK}{RANGE\_MEASUREMENT\_BLOCK}}
+{\footnotesize\ttfamily final int com.\+eneri.\+scorpio\+\_\+metertool.\+devices.\+Readings.\+R\+A\+N\+G\+E\+\_\+\+M\+E\+A\+S\+U\+R\+E\+M\+E\+N\+T\+\_\+\+B\+L\+O\+CK = 220}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_ae20849d78dbee9e3d2bb5df3c1657bff}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_ae20849d78dbee9e3d2bb5df3c1657bff}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings@{com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings}!serial\+Number@{serial\+Number}}
+\index{serial\+Number@{serial\+Number}!com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings@{com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings}}
+\subsubsection{\texorpdfstring{serial\+Number}{serialNumber}}
+{\footnotesize\ttfamily String com.\+eneri.\+scorpio\+\_\+metertool.\+devices.\+Readings.\+serial\+Number}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_a592c9ffb4730818a5003e4897f1996c7}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_readings_a592c9ffb4730818a5003e4897f1996c7}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings@{com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings}!set@{set}}
+\index{set@{set}!com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings@{com\+::eneri\+::scorpio\+\_\+metertool\+::devices\+::\+Readings}}
+\subsubsection{\texorpdfstring{set}{set}}
+{\footnotesize\ttfamily Set com.\+eneri.\+scorpio\+\_\+metertool.\+devices.\+Readings.\+set = null}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/com/eneri/scorpio\+\_\+metertool/devices/\hyperlink{_readings_8java}{Readings.\+java}\end{DoxyCompactItemize}

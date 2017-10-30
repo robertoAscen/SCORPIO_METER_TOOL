@@ -1,0 +1,76 @@
+\hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_modbus_util}{}\section{com.\+eneri.\+scorpio\+\_\+metertool.\+hardwarelayer.\+Modbus\+Util Class Reference}
+\label{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_modbus_util}\index{com.\+eneri.\+scorpio\+\_\+metertool.\+hardwarelayer.\+Modbus\+Util@{com.\+eneri.\+scorpio\+\_\+metertool.\+hardwarelayer.\+Modbus\+Util}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+byte \mbox{[}$\,$\mbox{]} \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_modbus_util_ae6caa7cc6a332ab2b802c7f66664f910}{read\+Register} (String sn\+Meter, int start\+Addres, int words\+Number, byte action\+RW)
+\item 
+byte \mbox{[}$\,$\mbox{]} \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_modbus_util_aefabc1ccd027e7f65c6b8b046129a406}{write\+Register} (String sn\+Meter, int start\+Addres, byte\mbox{[}$\,$\mbox{]} data)
+\item 
+byte \mbox{[}$\,$\mbox{]} \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_modbus_util_a9cc4095b573fc38b8d16643d6ff32d17}{write\+Multiple\+Registers} (String sn\+Meter, int start\+Addres, int words\+Number, byte\mbox{[}$\,$\mbox{]} data, byte action\+RW)
+\item 
+boolean \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_modbus_util_a9652121a0a9836054d545eacc70226a9}{write\+Flags\+Passw} (\hyperlink{enumcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_flags_passwords}{Flags\+Passwords} values, String serial\+Number)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_modbus_util}{Modbus\+Util} \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_modbus_util_a47a7f3d517e2a2b1cb85e5ef423118b6}{get\+Instance} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+byte \mbox{[}$\,$\mbox{]} \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_modbus_util_a9f43e3672c5393d0e63abc993c98d2f6}{frame}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Roberto 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_modbus_util_a47a7f3d517e2a2b1cb85e5ef423118b6}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_modbus_util_a47a7f3d517e2a2b1cb85e5ef423118b6}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Modbus\+Util@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Modbus\+Util}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Modbus\+Util@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Modbus\+Util}}
+\subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}}
+{\footnotesize\ttfamily static \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_modbus_util}{Modbus\+Util} com.\+eneri.\+scorpio\+\_\+metertool.\+hardwarelayer.\+Modbus\+Util.\+get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_modbus_util_ae6caa7cc6a332ab2b802c7f66664f910}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_modbus_util_ae6caa7cc6a332ab2b802c7f66664f910}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Modbus\+Util@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Modbus\+Util}!read\+Register@{read\+Register}}
+\index{read\+Register@{read\+Register}!com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Modbus\+Util@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Modbus\+Util}}
+\subsubsection{\texorpdfstring{read\+Register()}{readRegister()}}
+{\footnotesize\ttfamily byte \mbox{[}$\,$\mbox{]} com.\+eneri.\+scorpio\+\_\+metertool.\+hardwarelayer.\+Modbus\+Util.\+read\+Register (\begin{DoxyParamCaption}\item[{String}]{sn\+Meter,  }\item[{int}]{start\+Addres,  }\item[{int}]{words\+Number,  }\item[{byte}]{action\+RW }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_modbus_util_a9652121a0a9836054d545eacc70226a9}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_modbus_util_a9652121a0a9836054d545eacc70226a9}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Modbus\+Util@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Modbus\+Util}!write\+Flags\+Passw@{write\+Flags\+Passw}}
+\index{write\+Flags\+Passw@{write\+Flags\+Passw}!com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Modbus\+Util@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Modbus\+Util}}
+\subsubsection{\texorpdfstring{write\+Flags\+Passw()}{writeFlagsPassw()}}
+{\footnotesize\ttfamily boolean com.\+eneri.\+scorpio\+\_\+metertool.\+hardwarelayer.\+Modbus\+Util.\+write\+Flags\+Passw (\begin{DoxyParamCaption}\item[{\hyperlink{enumcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_flags_passwords}{Flags\+Passwords}}]{values,  }\item[{String}]{serial\+Number }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_modbus_util_a9cc4095b573fc38b8d16643d6ff32d17}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_modbus_util_a9cc4095b573fc38b8d16643d6ff32d17}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Modbus\+Util@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Modbus\+Util}!write\+Multiple\+Registers@{write\+Multiple\+Registers}}
+\index{write\+Multiple\+Registers@{write\+Multiple\+Registers}!com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Modbus\+Util@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Modbus\+Util}}
+\subsubsection{\texorpdfstring{write\+Multiple\+Registers()}{writeMultipleRegisters()}}
+{\footnotesize\ttfamily byte \mbox{[}$\,$\mbox{]} com.\+eneri.\+scorpio\+\_\+metertool.\+hardwarelayer.\+Modbus\+Util.\+write\+Multiple\+Registers (\begin{DoxyParamCaption}\item[{String}]{sn\+Meter,  }\item[{int}]{start\+Addres,  }\item[{int}]{words\+Number,  }\item[{byte \mbox{[}$\,$\mbox{]}}]{data,  }\item[{byte}]{action\+RW }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_modbus_util_aefabc1ccd027e7f65c6b8b046129a406}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_modbus_util_aefabc1ccd027e7f65c6b8b046129a406}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Modbus\+Util@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Modbus\+Util}!write\+Register@{write\+Register}}
+\index{write\+Register@{write\+Register}!com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Modbus\+Util@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Modbus\+Util}}
+\subsubsection{\texorpdfstring{write\+Register()}{writeRegister()}}
+{\footnotesize\ttfamily byte \mbox{[}$\,$\mbox{]} com.\+eneri.\+scorpio\+\_\+metertool.\+hardwarelayer.\+Modbus\+Util.\+write\+Register (\begin{DoxyParamCaption}\item[{String}]{sn\+Meter,  }\item[{int}]{start\+Addres,  }\item[{byte \mbox{[}$\,$\mbox{]}}]{data }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_modbus_util_a9f43e3672c5393d0e63abc993c98d2f6}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_modbus_util_a9f43e3672c5393d0e63abc993c98d2f6}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Modbus\+Util@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Modbus\+Util}!frame@{frame}}
+\index{frame@{frame}!com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Modbus\+Util@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Modbus\+Util}}
+\subsubsection{\texorpdfstring{frame}{frame}}
+{\footnotesize\ttfamily byte \mbox{[}$\,$\mbox{]} com.\+eneri.\+scorpio\+\_\+metertool.\+hardwarelayer.\+Modbus\+Util.\+frame}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/com/eneri/scorpio\+\_\+metertool/hardwarelayer/\hyperlink{_modbus_util_8java}{Modbus\+Util.\+java}\end{DoxyCompactItemize}

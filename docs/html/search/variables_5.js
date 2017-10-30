@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['factor_5fde_5fpotencia',['FACTOR_DE_POTENCIA',['../enumcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_register.html#a9f66b6f3261ef38bcbe7ab1961222c4d',1,'com::eneri::scorpio_metertool::devices::Register']]],
+  ['factor_5fde_5fpotencia_5fa',['FACTOR_DE_POTENCIA_A',['../enumcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_register.html#a8274c81e20a37c161cb18649e6767a7e',1,'com::eneri::scorpio_metertool::devices::Register']]],
+  ['factor_5fde_5fpotencia_5fb',['FACTOR_DE_POTENCIA_B',['../enumcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_register.html#ac5f72cb0882a0eb095633ea6c58aa6a5',1,'com::eneri::scorpio_metertool::devices::Register']]],
+  ['factor_5fde_5fpotencia_5fc',['FACTOR_DE_POTENCIA_C',['../enumcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_register.html#ae27d985520a37a52c4f262e3eb7d8b74',1,'com::eneri::scorpio_metertool::devices::Register']]],
+  ['fecha',['FECHA',['../enumcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_register.html#a7f1131a709ef183a4405363941a563d3',1,'com::eneri::scorpio_metertool::devices::Register']]],
+  ['fecha_5flocal',['FECHA_LOCAL',['../enumcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_register.html#a3860786d6fc8252d4090b1d8f4766e6c',1,'com::eneri::scorpio_metertool::devices::Register']]],
+  ['filetxt',['fileTxt',['../classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records.html#a551d944f4040ef9c550eba5679e0a4e9',1,'com.eneri.scorpio_metertool.ui.CurrentReadingsRecords.fileTxt()'],['../classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_log.html#a971600e021ecca0bbd247ca65c7767ed',1,'com.eneri.scorpio_metertool.ui.Log.fileTxt()']]],
+  ['filewriter',['fileWriter',['../classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records.html#a61adfcd882616a17e0b651ad150bcd30',1,'com.eneri.scorpio_metertool.ui.CurrentReadingsRecords.fileWriter()'],['../classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_log.html#af7b1949d8a0da0ecd9700ed95640d0ed',1,'com.eneri.scorpio_metertool.ui.Log.fileWriter()']]],
+  ['fin_5fhorario_5fverano',['FIN_HORARIO_VERANO',['../enumcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_register.html#a807b61905cb9b519a2ba50397933e281',1,'com::eneri::scorpio_metertool::devices::Register']]],
+  ['firmware_5fupload',['FIRMWARE_UPLOAD',['../classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_j_frame_main.html#a48c45098f6c7d3df1e4460d906d2aa1b',1,'com::eneri::scorpio_metertool::ui::JFrameMain']]],
+  ['firmwareversion',['firmwareVersion',['../classcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_meter.html#a5f4d3074f5f28dd89655af09cc9b33e7',1,'com::eneri::scorpio_metertool::devices::Meter']]],
+  ['flag',['flag',['../enumcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_flags_passwords.html#a72922e42fbe4cd1de6169f3a4c9d6c82',1,'com::eneri::scorpio_metertool::hardwarelayer::FlagsPasswords']]],
+  ['flagreg',['flagReg',['../enumcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_flags_passwords.html#a001e565e1f5776b635d5818b8119153e',1,'com::eneri::scorpio_metertool::hardwarelayer::FlagsPasswords']]],
+  ['flags',['FLAGS',['../classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_j_frame_main.html#af9634702bba59ff74048a1a481329cb8',1,'com::eneri::scorpio_metertool::ui::JFrameMain']]],
+  ['flowcontrol_5fnone',['FLOWCONTROL_NONE',['../classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records.html#a6045158c6d6c073263331cf2dd9b59ba',1,'com::eneri::scorpio_metertool::ui::CurrentReadingsRecords']]],
+  ['flowcontrol_5frtscts_5fin',['FLOWCONTROL_RTSCTS_IN',['../classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records.html#a67152ea3a495731f95e678b9a9addf8b',1,'com::eneri::scorpio_metertool::ui::CurrentReadingsRecords']]],
+  ['flowcontrol_5frtscts_5fout',['FLOWCONTROL_RTSCTS_OUT',['../classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records.html#a7e65b216afc0231edf3f66e3c17c5650',1,'com::eneri::scorpio_metertool::ui::CurrentReadingsRecords']]],
+  ['flowcontrol_5fxonxoff_5fin',['FLOWCONTROL_XONXOFF_IN',['../classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records.html#ae6668d5980371067c488de0ceae44a05',1,'com::eneri::scorpio_metertool::ui::CurrentReadingsRecords']]],
+  ['flowcontrol_5fxonxoff_5fout',['FLOWCONTROL_XONXOFF_OUT',['../classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records.html#aa5171bc0cee0245bd2027d7b95b9df65',1,'com::eneri::scorpio_metertool::ui::CurrentReadingsRecords']]],
+  ['frame',['frame',['../classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_modbus_util.html#a9f43e3672c5393d0e63abc993c98d2f6',1,'com::eneri::scorpio_metertool::hardwarelayer::ModbusUtil']]],
+  ['frecuencia',['FRECUENCIA',['../enumcom_1_1eneri_1_1scorpio__metertool_1_1devices_1_1_register.html#a3f495c2c5a57a9fb9f593333f4e36a11',1,'com::eneri::scorpio_metertool::devices::Register']]]
+];

@@ -1,0 +1,211 @@
+\hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication}{}\section{com.\+eneri.\+scorpio\+\_\+metertool.\+hardwarelayer.\+Port\+Comunication Class Reference}
+\label{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication}\index{com.\+eneri.\+scorpio\+\_\+metertool.\+hardwarelayer.\+Port\+Comunication@{com.\+eneri.\+scorpio\+\_\+metertool.\+hardwarelayer.\+Port\+Comunication}}
+
+
+Inheritance diagram for com.\+eneri.\+scorpio\+\_\+metertool.\+hardwarelayer.\+Port\+Comunication\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for com.\+eneri.\+scorpio\+\_\+metertool.\+hardwarelayer.\+Port\+Comunication\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_aae78c1d68860840140a3ac60ba606572}{serial\+Event} (Serial\+Port\+Event event)
+\item 
+boolean \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_ab119ef0afe0bf6d704b3090d2124ed78}{get\+State\+Port} ()
+\item 
+synchronized boolean \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_a00de6412a6414f68c2e0ecddb8588780}{open\+Port} (String port\+Name, int baudR, int data\+Bit, int stop\+Bits, int parity, int flowcontrol)
+\item 
+synchronized void \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_a50e533ddf3ece083c3d1ca4b557f16f7}{close\+Port} ()
+\item 
+List$<$ String $>$ \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_a22eacf19f2f075dfb2e3391d8f7b235c}{get\+Port\+List} ()
+\item 
+synchronized void \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_a61314c4a5a6fd401a5bc446659ac66fa}{write} (byte\mbox{[}$\,$\mbox{]} data, long delay)
+\item 
+int \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_a4b4e2b3d77595de9175c48ae5d34eacd}{available} (Serial\+Port\+Event event)
+\item 
+synchronized byte \mbox{[}$\,$\mbox{]} \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_ac4b39af4892fcc9273dbd296faa8ca88}{get\+Byte\+Buffer} ()
+\item 
+void \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_ad58b5d68c4828c64b853263e4fdaa898}{clear\+Byte\+Buffer} ()
+\item 
+\hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication}{Port\+Comunication} \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_ab777a22494865eaeea35be2b2c880663}{get\+Instance} ()
+\item 
+void \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_a0b4950b26174d60f826a3ba260a7c191}{update} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_a098af3f8925a2dc6acd6b448b9356e99}{thread\+Delay} (long delay)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static long \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_ac4017468270db06b5e3a129defc738f5}{D\+E\+L\+A\+Y0} = 0L
+\item 
+static long \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_a48b9e6d73a66ca11eedd2c418a702f03}{D\+E\+L\+A\+Y100} = 100L
+\item 
+static long \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_a4fcc9598d4a178c7da2f45b9cfb33876}{D\+E\+L\+A\+Y200} = 200L
+\item 
+static long \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_ad0ec0e2ee14778e70f62aec6044ec7f0}{D\+E\+L\+A\+Y300} = 300L
+\item 
+static long \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_a7e83d8f788360f42c9fd4ee610e6066e}{D\+E\+L\+A\+Y400} = 400L
+\item 
+static long \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_ab81bee80f82e1be4d89790536f8f125d}{D\+E\+L\+A\+Y600} = 600L
+\item 
+static long \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_acc8b5901450eaf3703a02c7b7e8bc203}{D\+E\+L\+A\+Y800} = 800L
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+synchronized void \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_ae64b5c65b24d9fcea59eb825d07dc4ed}{data\+Available} (Serial\+Port\+Event event)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Roberto 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_a4b4e2b3d77595de9175c48ae5d34eacd}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_a4b4e2b3d77595de9175c48ae5d34eacd}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}!available@{available}}
+\index{available@{available}!com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}}
+\subsubsection{\texorpdfstring{available()}{available()}}
+{\footnotesize\ttfamily int com.\+eneri.\+scorpio\+\_\+metertool.\+hardwarelayer.\+Port\+Comunication.\+available (\begin{DoxyParamCaption}\item[{Serial\+Port\+Event}]{event }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_ad58b5d68c4828c64b853263e4fdaa898}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_ad58b5d68c4828c64b853263e4fdaa898}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}!clear\+Byte\+Buffer@{clear\+Byte\+Buffer}}
+\index{clear\+Byte\+Buffer@{clear\+Byte\+Buffer}!com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}}
+\subsubsection{\texorpdfstring{clear\+Byte\+Buffer()}{clearByteBuffer()}}
+{\footnotesize\ttfamily void com.\+eneri.\+scorpio\+\_\+metertool.\+hardwarelayer.\+Port\+Comunication.\+clear\+Byte\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_a50e533ddf3ece083c3d1ca4b557f16f7}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_a50e533ddf3ece083c3d1ca4b557f16f7}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}!close\+Port@{close\+Port}}
+\index{close\+Port@{close\+Port}!com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}}
+\subsubsection{\texorpdfstring{close\+Port()}{closePort()}}
+{\footnotesize\ttfamily synchronized void com.\+eneri.\+scorpio\+\_\+metertool.\+hardwarelayer.\+Port\+Comunication.\+close\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_ae64b5c65b24d9fcea59eb825d07dc4ed}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_ae64b5c65b24d9fcea59eb825d07dc4ed}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}!data\+Available@{data\+Available}}
+\index{data\+Available@{data\+Available}!com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}}
+\subsubsection{\texorpdfstring{data\+Available()}{dataAvailable()}}
+{\footnotesize\ttfamily synchronized void com.\+eneri.\+scorpio\+\_\+metertool.\+hardwarelayer.\+Port\+Comunication.\+data\+Available (\begin{DoxyParamCaption}\item[{Serial\+Port\+Event}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_ac4b39af4892fcc9273dbd296faa8ca88}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_ac4b39af4892fcc9273dbd296faa8ca88}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}!get\+Byte\+Buffer@{get\+Byte\+Buffer}}
+\index{get\+Byte\+Buffer@{get\+Byte\+Buffer}!com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}}
+\subsubsection{\texorpdfstring{get\+Byte\+Buffer()}{getByteBuffer()}}
+{\footnotesize\ttfamily synchronized byte \mbox{[}$\,$\mbox{]} com.\+eneri.\+scorpio\+\_\+metertool.\+hardwarelayer.\+Port\+Comunication.\+get\+Byte\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_ab777a22494865eaeea35be2b2c880663}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_ab777a22494865eaeea35be2b2c880663}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}}
+\subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}}
+{\footnotesize\ttfamily \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication}{Port\+Comunication} com.\+eneri.\+scorpio\+\_\+metertool.\+hardwarelayer.\+Port\+Comunication.\+get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_a22eacf19f2f075dfb2e3391d8f7b235c}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_a22eacf19f2f075dfb2e3391d8f7b235c}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}!get\+Port\+List@{get\+Port\+List}}
+\index{get\+Port\+List@{get\+Port\+List}!com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}}
+\subsubsection{\texorpdfstring{get\+Port\+List()}{getPortList()}}
+{\footnotesize\ttfamily List$<$String$>$ com.\+eneri.\+scorpio\+\_\+metertool.\+hardwarelayer.\+Port\+Comunication.\+get\+Port\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_ab119ef0afe0bf6d704b3090d2124ed78}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_ab119ef0afe0bf6d704b3090d2124ed78}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}!get\+State\+Port@{get\+State\+Port}}
+\index{get\+State\+Port@{get\+State\+Port}!com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}}
+\subsubsection{\texorpdfstring{get\+State\+Port()}{getStatePort()}}
+{\footnotesize\ttfamily boolean com.\+eneri.\+scorpio\+\_\+metertool.\+hardwarelayer.\+Port\+Comunication.\+get\+State\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_a00de6412a6414f68c2e0ecddb8588780}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_a00de6412a6414f68c2e0ecddb8588780}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}!open\+Port@{open\+Port}}
+\index{open\+Port@{open\+Port}!com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}}
+\subsubsection{\texorpdfstring{open\+Port()}{openPort()}}
+{\footnotesize\ttfamily synchronized boolean com.\+eneri.\+scorpio\+\_\+metertool.\+hardwarelayer.\+Port\+Comunication.\+open\+Port (\begin{DoxyParamCaption}\item[{String}]{port\+Name,  }\item[{int}]{baudR,  }\item[{int}]{data\+Bit,  }\item[{int}]{stop\+Bits,  }\item[{int}]{parity,  }\item[{int}]{flowcontrol }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_aae78c1d68860840140a3ac60ba606572}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_aae78c1d68860840140a3ac60ba606572}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}!serial\+Event@{serial\+Event}}
+\index{serial\+Event@{serial\+Event}!com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}}
+\subsubsection{\texorpdfstring{serial\+Event()}{serialEvent()}}
+{\footnotesize\ttfamily void com.\+eneri.\+scorpio\+\_\+metertool.\+hardwarelayer.\+Port\+Comunication.\+serial\+Event (\begin{DoxyParamCaption}\item[{Serial\+Port\+Event}]{event }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_a098af3f8925a2dc6acd6b448b9356e99}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_a098af3f8925a2dc6acd6b448b9356e99}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}!thread\+Delay@{thread\+Delay}}
+\index{thread\+Delay@{thread\+Delay}!com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}}
+\subsubsection{\texorpdfstring{thread\+Delay()}{threadDelay()}}
+{\footnotesize\ttfamily static void com.\+eneri.\+scorpio\+\_\+metertool.\+hardwarelayer.\+Port\+Comunication.\+thread\+Delay (\begin{DoxyParamCaption}\item[{long}]{delay }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_a0b4950b26174d60f826a3ba260a7c191}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_a0b4950b26174d60f826a3ba260a7c191}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}!update@{update}}
+\index{update@{update}!com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void com.\+eneri.\+scorpio\+\_\+metertool.\+hardwarelayer.\+Port\+Comunication.\+update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_a61314c4a5a6fd401a5bc446659ac66fa}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_a61314c4a5a6fd401a5bc446659ac66fa}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}!write@{write}}
+\index{write@{write}!com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}}
+\subsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily synchronized void com.\+eneri.\+scorpio\+\_\+metertool.\+hardwarelayer.\+Port\+Comunication.\+write (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{data,  }\item[{long}]{delay }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_ac4017468270db06b5e3a129defc738f5}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_ac4017468270db06b5e3a129defc738f5}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}!D\+E\+L\+A\+Y0@{D\+E\+L\+A\+Y0}}
+\index{D\+E\+L\+A\+Y0@{D\+E\+L\+A\+Y0}!com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}}
+\subsubsection{\texorpdfstring{D\+E\+L\+A\+Y0}{DELAY0}}
+{\footnotesize\ttfamily long com.\+eneri.\+scorpio\+\_\+metertool.\+hardwarelayer.\+Port\+Comunication.\+D\+E\+L\+A\+Y0 = 0L\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_a48b9e6d73a66ca11eedd2c418a702f03}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_a48b9e6d73a66ca11eedd2c418a702f03}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}!D\+E\+L\+A\+Y100@{D\+E\+L\+A\+Y100}}
+\index{D\+E\+L\+A\+Y100@{D\+E\+L\+A\+Y100}!com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}}
+\subsubsection{\texorpdfstring{D\+E\+L\+A\+Y100}{DELAY100}}
+{\footnotesize\ttfamily long com.\+eneri.\+scorpio\+\_\+metertool.\+hardwarelayer.\+Port\+Comunication.\+D\+E\+L\+A\+Y100 = 100L\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_a4fcc9598d4a178c7da2f45b9cfb33876}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_a4fcc9598d4a178c7da2f45b9cfb33876}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}!D\+E\+L\+A\+Y200@{D\+E\+L\+A\+Y200}}
+\index{D\+E\+L\+A\+Y200@{D\+E\+L\+A\+Y200}!com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}}
+\subsubsection{\texorpdfstring{D\+E\+L\+A\+Y200}{DELAY200}}
+{\footnotesize\ttfamily long com.\+eneri.\+scorpio\+\_\+metertool.\+hardwarelayer.\+Port\+Comunication.\+D\+E\+L\+A\+Y200 = 200L\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_ad0ec0e2ee14778e70f62aec6044ec7f0}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_ad0ec0e2ee14778e70f62aec6044ec7f0}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}!D\+E\+L\+A\+Y300@{D\+E\+L\+A\+Y300}}
+\index{D\+E\+L\+A\+Y300@{D\+E\+L\+A\+Y300}!com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}}
+\subsubsection{\texorpdfstring{D\+E\+L\+A\+Y300}{DELAY300}}
+{\footnotesize\ttfamily long com.\+eneri.\+scorpio\+\_\+metertool.\+hardwarelayer.\+Port\+Comunication.\+D\+E\+L\+A\+Y300 = 300L\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_a7e83d8f788360f42c9fd4ee610e6066e}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_a7e83d8f788360f42c9fd4ee610e6066e}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}!D\+E\+L\+A\+Y400@{D\+E\+L\+A\+Y400}}
+\index{D\+E\+L\+A\+Y400@{D\+E\+L\+A\+Y400}!com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}}
+\subsubsection{\texorpdfstring{D\+E\+L\+A\+Y400}{DELAY400}}
+{\footnotesize\ttfamily long com.\+eneri.\+scorpio\+\_\+metertool.\+hardwarelayer.\+Port\+Comunication.\+D\+E\+L\+A\+Y400 = 400L\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_ab81bee80f82e1be4d89790536f8f125d}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_ab81bee80f82e1be4d89790536f8f125d}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}!D\+E\+L\+A\+Y600@{D\+E\+L\+A\+Y600}}
+\index{D\+E\+L\+A\+Y600@{D\+E\+L\+A\+Y600}!com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}}
+\subsubsection{\texorpdfstring{D\+E\+L\+A\+Y600}{DELAY600}}
+{\footnotesize\ttfamily long com.\+eneri.\+scorpio\+\_\+metertool.\+hardwarelayer.\+Port\+Comunication.\+D\+E\+L\+A\+Y600 = 600L\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_acc8b5901450eaf3703a02c7b7e8bc203}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1hardwarelayer_1_1_port_comunication_acc8b5901450eaf3703a02c7b7e8bc203}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}!D\+E\+L\+A\+Y800@{D\+E\+L\+A\+Y800}}
+\index{D\+E\+L\+A\+Y800@{D\+E\+L\+A\+Y800}!com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication@{com\+::eneri\+::scorpio\+\_\+metertool\+::hardwarelayer\+::\+Port\+Comunication}}
+\subsubsection{\texorpdfstring{D\+E\+L\+A\+Y800}{DELAY800}}
+{\footnotesize\ttfamily long com.\+eneri.\+scorpio\+\_\+metertool.\+hardwarelayer.\+Port\+Comunication.\+D\+E\+L\+A\+Y800 = 800L\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/com/eneri/scorpio\+\_\+metertool/hardwarelayer/\hyperlink{_port_comunication_8java}{Port\+Comunication.\+java}\end{DoxyCompactItemize}

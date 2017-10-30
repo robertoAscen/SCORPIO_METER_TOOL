@@ -1,0 +1,370 @@
+\hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records}{}\section{com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records Class Reference}
+\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records}\index{com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records@{com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records}}
+
+
+Inheritance diagram for com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries C\+O\+L\+\_\+\+P\+H\+A\+SE}
+\item 
+enum {\bfseries R\+O\+W\+\_\+\+T\+Y\+PE}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a55868671df89636726603f01f0a3691a}{Current\+Readings\+Records} ()
+\item 
+void \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a121a699a12b86e862c37f2f701447db8}{set\+Serial\+Number\+J\+Textbox} (String value)
+\item 
+void \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a9d0651a0d83ff68cf11f20bcabdf613b}{frame\+Conf} ()
+\item 
+void \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a57cd16e88f18fc30e44a94c4fc849c79}{setting\+Serial\+Number} (String serial\+Number)
+\item 
+void \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_adc7ca6da6812a748f0a8e5fa62dc79ae}{get\+Ports} ()
+\item 
+void \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a8996510686aaa3fc8ad2d9266862e0cf}{refresh\+Ports} ()
+\item 
+void \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a93fd85ca7fe07a6067d0f6b195cb4794}{procesing\+Readings\+Table} (double\mbox{[}$\,$\mbox{]} data)
+\item 
+void \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_ad3cec83b81d2db934df10fd1373e6319}{readings\+Export} ()
+\item 
+void \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a6510d74e5b7a82262c405def62888d8e}{exportar\+Txt} ()
+\item 
+void \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a7deeff6260ce4e1e9788955a3008349f}{create\+File\+Txt} ()
+\item 
+void \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a59b8313e0fe66a17f88b767de7572563}{close\+File\+Log\+Txt} ()
+\item 
+void \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a7890454cf239621365e1c1a40365a1d8}{set\+Register\+Export\+Log} ()
+\item 
+double \mbox{[}$\,$\mbox{]} \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a560ea307a3fd7aa9679f56768836416f}{reading\+Unit} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+File \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a551d944f4040ef9c550eba5679e0a4e9}{file\+Txt}
+\item 
+Writer \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_ac019fdec9daa77312bbfce0eeee96117}{writer}
+\item 
+File\+Writer \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a61adfcd882616a17e0b651ad150bcd30}{file\+Writer}
+\item 
+int \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_ae45194405ee117b01ffcc3b735ad2fb1}{contador\+Log}
+\item 
+Linked\+Hash\+Map$<$ String, String $>$ \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a19774c496fb5c186f128ed2a16b3b43a}{list\+Readings\+Complete} = new Linked\+Hash\+Map()
+\item 
+Linked\+Hash\+Map$<$ String, String $>$ \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a13517d1ec042eeb3b9ada9b9a2f6c301}{list\+Readings} = new Linked\+Hash\+Map()
+\item 
+Linked\+Hash\+Map$<$ String, Boolean $>$ \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a86d9f6c41a46bb858fd562100fc91f1c}{list\+Selected} = new Linked\+Hash\+Map()
+\item 
+J\+Table \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_adec1d5c0692a677cec150217d8f0d491}{j\+Table\+Current\+Readings}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a1d3a30be887aa24239c5e6367b56a2b5}{time\+Readings} = 10
+\item 
+static final int \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_aa09e6205ed3df715973d12c9dbaf3591}{D\+A\+T\+A\+B\+I\+T\+S\+\_\+5} = 5
+\item 
+static final int \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a7fe0aaee4dba9598196176f1e06ba9da}{D\+A\+T\+A\+B\+I\+T\+S\+\_\+6} = 6
+\item 
+static final int \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_ab6417c74e12c8c1b95b7d64579dd45c8}{D\+A\+T\+A\+B\+I\+T\+S\+\_\+7} = 7
+\item 
+static final int \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a8bf32fd01d3285cf97ceab70e98c2bc1}{D\+A\+T\+A\+B\+I\+T\+S\+\_\+8} = 8
+\item 
+static final int \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_af9879dbcb4d686f245d205a4a6565c7c}{P\+A\+R\+I\+T\+Y\+\_\+\+N\+O\+NE} = 0
+\item 
+static final int \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_ac777f9f8ddbece6f40e6254db12f6bbf}{P\+A\+R\+I\+T\+Y\+\_\+\+O\+DD} = 1
+\item 
+static final int \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a5072b1758b1912a08e0575deb656ba68}{P\+A\+R\+I\+T\+Y\+\_\+\+E\+V\+EN} = 2
+\item 
+static final int \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_acc3c3dcabb0ebc70777f11e17554982f}{P\+A\+R\+I\+T\+Y\+\_\+\+M\+A\+RK} = 3
+\item 
+static final int \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a99f696406f4ac66e445f38ed5a34a0c7}{P\+A\+R\+I\+T\+Y\+\_\+\+S\+P\+A\+CE} = 4
+\item 
+static final int \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a469b6ae5c9cdaf3de7d84e7b84a21972}{S\+T\+O\+P\+B\+I\+T\+S\+\_\+1} = 1
+\item 
+static final int \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a54572052540d5bf3f7bae7f11734f421}{S\+T\+O\+P\+B\+I\+T\+S\+\_\+2} = 2
+\item 
+static final int \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_afaf278b563eae40768a7096641d89694}{S\+T\+O\+P\+B\+I\+T\+S\+\_\+1\+\_\+5} = 3
+\item 
+static final int \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a6045158c6d6c073263331cf2dd9b59ba}{F\+L\+O\+W\+C\+O\+N\+T\+R\+O\+L\+\_\+\+N\+O\+NE} = 0
+\item 
+static final int \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a67152ea3a495731f95e678b9a9addf8b}{F\+L\+O\+W\+C\+O\+N\+T\+R\+O\+L\+\_\+\+R\+T\+S\+C\+T\+S\+\_\+\+IN} = 1
+\item 
+static final int \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a7e65b216afc0231edf3f66e3c17c5650}{F\+L\+O\+W\+C\+O\+N\+T\+R\+O\+L\+\_\+\+R\+T\+S\+C\+T\+S\+\_\+\+O\+UT} = 2
+\item 
+static final int \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_ae6668d5980371067c488de0ceae44a05}{F\+L\+O\+W\+C\+O\+N\+T\+R\+O\+L\+\_\+\+X\+O\+N\+X\+O\+F\+F\+\_\+\+IN} = 4
+\item 
+static final int \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_aa5171bc0cee0245bd2027d7b95b9df65}{F\+L\+O\+W\+C\+O\+N\+T\+R\+O\+L\+\_\+\+X\+O\+N\+X\+O\+F\+F\+\_\+\+O\+UT} = 8
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Roberto 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a55868671df89636726603f01f0a3691a}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a55868671df89636726603f01f0a3691a}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}!Current\+Readings\+Records@{Current\+Readings\+Records}}
+\index{Current\+Readings\+Records@{Current\+Readings\+Records}!com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}}
+\subsubsection{\texorpdfstring{Current\+Readings\+Records()}{CurrentReadingsRecords()}}
+{\footnotesize\ttfamily com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records.\+Current\+Readings\+Records (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a59b8313e0fe66a17f88b767de7572563}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a59b8313e0fe66a17f88b767de7572563}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}!close\+File\+Log\+Txt@{close\+File\+Log\+Txt}}
+\index{close\+File\+Log\+Txt@{close\+File\+Log\+Txt}!com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}}
+\subsubsection{\texorpdfstring{close\+File\+Log\+Txt()}{closeFileLogTxt()}}
+{\footnotesize\ttfamily void com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records.\+close\+File\+Log\+Txt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a7deeff6260ce4e1e9788955a3008349f}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a7deeff6260ce4e1e9788955a3008349f}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}!create\+File\+Txt@{create\+File\+Txt}}
+\index{create\+File\+Txt@{create\+File\+Txt}!com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}}
+\subsubsection{\texorpdfstring{create\+File\+Txt()}{createFileTxt()}}
+{\footnotesize\ttfamily void com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records.\+create\+File\+Txt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a6510d74e5b7a82262c405def62888d8e}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a6510d74e5b7a82262c405def62888d8e}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}!exportar\+Txt@{exportar\+Txt}}
+\index{exportar\+Txt@{exportar\+Txt}!com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}}
+\subsubsection{\texorpdfstring{exportar\+Txt()}{exportarTxt()}}
+{\footnotesize\ttfamily void com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records.\+exportar\+Txt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a9d0651a0d83ff68cf11f20bcabdf613b}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a9d0651a0d83ff68cf11f20bcabdf613b}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}!frame\+Conf@{frame\+Conf}}
+\index{frame\+Conf@{frame\+Conf}!com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}}
+\subsubsection{\texorpdfstring{frame\+Conf()}{frameConf()}}
+{\footnotesize\ttfamily void com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records.\+frame\+Conf (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_adc7ca6da6812a748f0a8e5fa62dc79ae}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_adc7ca6da6812a748f0a8e5fa62dc79ae}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}!get\+Ports@{get\+Ports}}
+\index{get\+Ports@{get\+Ports}!com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}}
+\subsubsection{\texorpdfstring{get\+Ports()}{getPorts()}}
+{\footnotesize\ttfamily void com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records.\+get\+Ports (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a93fd85ca7fe07a6067d0f6b195cb4794}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a93fd85ca7fe07a6067d0f6b195cb4794}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}!procesing\+Readings\+Table@{procesing\+Readings\+Table}}
+\index{procesing\+Readings\+Table@{procesing\+Readings\+Table}!com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}}
+\subsubsection{\texorpdfstring{procesing\+Readings\+Table()}{procesingReadingsTable()}}
+{\footnotesize\ttfamily void com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records.\+procesing\+Readings\+Table (\begin{DoxyParamCaption}\item[{double \mbox{[}$\,$\mbox{]}}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_ad3cec83b81d2db934df10fd1373e6319}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_ad3cec83b81d2db934df10fd1373e6319}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}!readings\+Export@{readings\+Export}}
+\index{readings\+Export@{readings\+Export}!com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}}
+\subsubsection{\texorpdfstring{readings\+Export()}{readingsExport()}}
+{\footnotesize\ttfamily void com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records.\+readings\+Export (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a560ea307a3fd7aa9679f56768836416f}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a560ea307a3fd7aa9679f56768836416f}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}!reading\+Unit@{reading\+Unit}}
+\index{reading\+Unit@{reading\+Unit}!com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}}
+\subsubsection{\texorpdfstring{reading\+Unit()}{readingUnit()}}
+{\footnotesize\ttfamily double \mbox{[}$\,$\mbox{]} com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records.\+reading\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a8996510686aaa3fc8ad2d9266862e0cf}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a8996510686aaa3fc8ad2d9266862e0cf}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}!refresh\+Ports@{refresh\+Ports}}
+\index{refresh\+Ports@{refresh\+Ports}!com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}}
+\subsubsection{\texorpdfstring{refresh\+Ports()}{refreshPorts()}}
+{\footnotesize\ttfamily void com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records.\+refresh\+Ports (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a7890454cf239621365e1c1a40365a1d8}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a7890454cf239621365e1c1a40365a1d8}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}!set\+Register\+Export\+Log@{set\+Register\+Export\+Log}}
+\index{set\+Register\+Export\+Log@{set\+Register\+Export\+Log}!com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}}
+\subsubsection{\texorpdfstring{set\+Register\+Export\+Log()}{setRegisterExportLog()}}
+{\footnotesize\ttfamily void com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records.\+set\+Register\+Export\+Log (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a121a699a12b86e862c37f2f701447db8}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a121a699a12b86e862c37f2f701447db8}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}!set\+Serial\+Number\+J\+Textbox@{set\+Serial\+Number\+J\+Textbox}}
+\index{set\+Serial\+Number\+J\+Textbox@{set\+Serial\+Number\+J\+Textbox}!com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}}
+\subsubsection{\texorpdfstring{set\+Serial\+Number\+J\+Textbox()}{setSerialNumberJTextbox()}}
+{\footnotesize\ttfamily void com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records.\+set\+Serial\+Number\+J\+Textbox (\begin{DoxyParamCaption}\item[{String}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a57cd16e88f18fc30e44a94c4fc849c79}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a57cd16e88f18fc30e44a94c4fc849c79}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}!setting\+Serial\+Number@{setting\+Serial\+Number}}
+\index{setting\+Serial\+Number@{setting\+Serial\+Number}!com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}}
+\subsubsection{\texorpdfstring{setting\+Serial\+Number()}{settingSerialNumber()}}
+{\footnotesize\ttfamily void com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records.\+setting\+Serial\+Number (\begin{DoxyParamCaption}\item[{String}]{serial\+Number }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_ae45194405ee117b01ffcc3b735ad2fb1}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_ae45194405ee117b01ffcc3b735ad2fb1}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}!contador\+Log@{contador\+Log}}
+\index{contador\+Log@{contador\+Log}!com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}}
+\subsubsection{\texorpdfstring{contador\+Log}{contadorLog}}
+{\footnotesize\ttfamily int com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records.\+contador\+Log}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_aa09e6205ed3df715973d12c9dbaf3591}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_aa09e6205ed3df715973d12c9dbaf3591}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}!D\+A\+T\+A\+B\+I\+T\+S\+\_\+5@{D\+A\+T\+A\+B\+I\+T\+S\+\_\+5}}
+\index{D\+A\+T\+A\+B\+I\+T\+S\+\_\+5@{D\+A\+T\+A\+B\+I\+T\+S\+\_\+5}!com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}}
+\subsubsection{\texorpdfstring{D\+A\+T\+A\+B\+I\+T\+S\+\_\+5}{DATABITS\_5}}
+{\footnotesize\ttfamily final int com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records.\+D\+A\+T\+A\+B\+I\+T\+S\+\_\+5 = 5\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a7fe0aaee4dba9598196176f1e06ba9da}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a7fe0aaee4dba9598196176f1e06ba9da}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}!D\+A\+T\+A\+B\+I\+T\+S\+\_\+6@{D\+A\+T\+A\+B\+I\+T\+S\+\_\+6}}
+\index{D\+A\+T\+A\+B\+I\+T\+S\+\_\+6@{D\+A\+T\+A\+B\+I\+T\+S\+\_\+6}!com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}}
+\subsubsection{\texorpdfstring{D\+A\+T\+A\+B\+I\+T\+S\+\_\+6}{DATABITS\_6}}
+{\footnotesize\ttfamily final int com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records.\+D\+A\+T\+A\+B\+I\+T\+S\+\_\+6 = 6\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_ab6417c74e12c8c1b95b7d64579dd45c8}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_ab6417c74e12c8c1b95b7d64579dd45c8}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}!D\+A\+T\+A\+B\+I\+T\+S\+\_\+7@{D\+A\+T\+A\+B\+I\+T\+S\+\_\+7}}
+\index{D\+A\+T\+A\+B\+I\+T\+S\+\_\+7@{D\+A\+T\+A\+B\+I\+T\+S\+\_\+7}!com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}}
+\subsubsection{\texorpdfstring{D\+A\+T\+A\+B\+I\+T\+S\+\_\+7}{DATABITS\_7}}
+{\footnotesize\ttfamily final int com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records.\+D\+A\+T\+A\+B\+I\+T\+S\+\_\+7 = 7\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a8bf32fd01d3285cf97ceab70e98c2bc1}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a8bf32fd01d3285cf97ceab70e98c2bc1}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}!D\+A\+T\+A\+B\+I\+T\+S\+\_\+8@{D\+A\+T\+A\+B\+I\+T\+S\+\_\+8}}
+\index{D\+A\+T\+A\+B\+I\+T\+S\+\_\+8@{D\+A\+T\+A\+B\+I\+T\+S\+\_\+8}!com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}}
+\subsubsection{\texorpdfstring{D\+A\+T\+A\+B\+I\+T\+S\+\_\+8}{DATABITS\_8}}
+{\footnotesize\ttfamily final int com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records.\+D\+A\+T\+A\+B\+I\+T\+S\+\_\+8 = 8\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a551d944f4040ef9c550eba5679e0a4e9}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a551d944f4040ef9c550eba5679e0a4e9}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}!file\+Txt@{file\+Txt}}
+\index{file\+Txt@{file\+Txt}!com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}}
+\subsubsection{\texorpdfstring{file\+Txt}{fileTxt}}
+{\footnotesize\ttfamily File com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records.\+file\+Txt}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a61adfcd882616a17e0b651ad150bcd30}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a61adfcd882616a17e0b651ad150bcd30}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}!file\+Writer@{file\+Writer}}
+\index{file\+Writer@{file\+Writer}!com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}}
+\subsubsection{\texorpdfstring{file\+Writer}{fileWriter}}
+{\footnotesize\ttfamily File\+Writer com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records.\+file\+Writer}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a6045158c6d6c073263331cf2dd9b59ba}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a6045158c6d6c073263331cf2dd9b59ba}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}!F\+L\+O\+W\+C\+O\+N\+T\+R\+O\+L\+\_\+\+N\+O\+NE@{F\+L\+O\+W\+C\+O\+N\+T\+R\+O\+L\+\_\+\+N\+O\+NE}}
+\index{F\+L\+O\+W\+C\+O\+N\+T\+R\+O\+L\+\_\+\+N\+O\+NE@{F\+L\+O\+W\+C\+O\+N\+T\+R\+O\+L\+\_\+\+N\+O\+NE}!com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}}
+\subsubsection{\texorpdfstring{F\+L\+O\+W\+C\+O\+N\+T\+R\+O\+L\+\_\+\+N\+O\+NE}{FLOWCONTROL\_NONE}}
+{\footnotesize\ttfamily final int com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records.\+F\+L\+O\+W\+C\+O\+N\+T\+R\+O\+L\+\_\+\+N\+O\+NE = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a67152ea3a495731f95e678b9a9addf8b}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a67152ea3a495731f95e678b9a9addf8b}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}!F\+L\+O\+W\+C\+O\+N\+T\+R\+O\+L\+\_\+\+R\+T\+S\+C\+T\+S\+\_\+\+IN@{F\+L\+O\+W\+C\+O\+N\+T\+R\+O\+L\+\_\+\+R\+T\+S\+C\+T\+S\+\_\+\+IN}}
+\index{F\+L\+O\+W\+C\+O\+N\+T\+R\+O\+L\+\_\+\+R\+T\+S\+C\+T\+S\+\_\+\+IN@{F\+L\+O\+W\+C\+O\+N\+T\+R\+O\+L\+\_\+\+R\+T\+S\+C\+T\+S\+\_\+\+IN}!com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}}
+\subsubsection{\texorpdfstring{F\+L\+O\+W\+C\+O\+N\+T\+R\+O\+L\+\_\+\+R\+T\+S\+C\+T\+S\+\_\+\+IN}{FLOWCONTROL\_RTSCTS\_IN}}
+{\footnotesize\ttfamily final int com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records.\+F\+L\+O\+W\+C\+O\+N\+T\+R\+O\+L\+\_\+\+R\+T\+S\+C\+T\+S\+\_\+\+IN = 1\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a7e65b216afc0231edf3f66e3c17c5650}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a7e65b216afc0231edf3f66e3c17c5650}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}!F\+L\+O\+W\+C\+O\+N\+T\+R\+O\+L\+\_\+\+R\+T\+S\+C\+T\+S\+\_\+\+O\+UT@{F\+L\+O\+W\+C\+O\+N\+T\+R\+O\+L\+\_\+\+R\+T\+S\+C\+T\+S\+\_\+\+O\+UT}}
+\index{F\+L\+O\+W\+C\+O\+N\+T\+R\+O\+L\+\_\+\+R\+T\+S\+C\+T\+S\+\_\+\+O\+UT@{F\+L\+O\+W\+C\+O\+N\+T\+R\+O\+L\+\_\+\+R\+T\+S\+C\+T\+S\+\_\+\+O\+UT}!com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}}
+\subsubsection{\texorpdfstring{F\+L\+O\+W\+C\+O\+N\+T\+R\+O\+L\+\_\+\+R\+T\+S\+C\+T\+S\+\_\+\+O\+UT}{FLOWCONTROL\_RTSCTS\_OUT}}
+{\footnotesize\ttfamily final int com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records.\+F\+L\+O\+W\+C\+O\+N\+T\+R\+O\+L\+\_\+\+R\+T\+S\+C\+T\+S\+\_\+\+O\+UT = 2\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_ae6668d5980371067c488de0ceae44a05}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_ae6668d5980371067c488de0ceae44a05}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}!F\+L\+O\+W\+C\+O\+N\+T\+R\+O\+L\+\_\+\+X\+O\+N\+X\+O\+F\+F\+\_\+\+IN@{F\+L\+O\+W\+C\+O\+N\+T\+R\+O\+L\+\_\+\+X\+O\+N\+X\+O\+F\+F\+\_\+\+IN}}
+\index{F\+L\+O\+W\+C\+O\+N\+T\+R\+O\+L\+\_\+\+X\+O\+N\+X\+O\+F\+F\+\_\+\+IN@{F\+L\+O\+W\+C\+O\+N\+T\+R\+O\+L\+\_\+\+X\+O\+N\+X\+O\+F\+F\+\_\+\+IN}!com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}}
+\subsubsection{\texorpdfstring{F\+L\+O\+W\+C\+O\+N\+T\+R\+O\+L\+\_\+\+X\+O\+N\+X\+O\+F\+F\+\_\+\+IN}{FLOWCONTROL\_XONXOFF\_IN}}
+{\footnotesize\ttfamily final int com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records.\+F\+L\+O\+W\+C\+O\+N\+T\+R\+O\+L\+\_\+\+X\+O\+N\+X\+O\+F\+F\+\_\+\+IN = 4\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_aa5171bc0cee0245bd2027d7b95b9df65}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_aa5171bc0cee0245bd2027d7b95b9df65}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}!F\+L\+O\+W\+C\+O\+N\+T\+R\+O\+L\+\_\+\+X\+O\+N\+X\+O\+F\+F\+\_\+\+O\+UT@{F\+L\+O\+W\+C\+O\+N\+T\+R\+O\+L\+\_\+\+X\+O\+N\+X\+O\+F\+F\+\_\+\+O\+UT}}
+\index{F\+L\+O\+W\+C\+O\+N\+T\+R\+O\+L\+\_\+\+X\+O\+N\+X\+O\+F\+F\+\_\+\+O\+UT@{F\+L\+O\+W\+C\+O\+N\+T\+R\+O\+L\+\_\+\+X\+O\+N\+X\+O\+F\+F\+\_\+\+O\+UT}!com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}}
+\subsubsection{\texorpdfstring{F\+L\+O\+W\+C\+O\+N\+T\+R\+O\+L\+\_\+\+X\+O\+N\+X\+O\+F\+F\+\_\+\+O\+UT}{FLOWCONTROL\_XONXOFF\_OUT}}
+{\footnotesize\ttfamily final int com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records.\+F\+L\+O\+W\+C\+O\+N\+T\+R\+O\+L\+\_\+\+X\+O\+N\+X\+O\+F\+F\+\_\+\+O\+UT = 8\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_adec1d5c0692a677cec150217d8f0d491}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_adec1d5c0692a677cec150217d8f0d491}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}!j\+Table\+Current\+Readings@{j\+Table\+Current\+Readings}}
+\index{j\+Table\+Current\+Readings@{j\+Table\+Current\+Readings}!com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}}
+\subsubsection{\texorpdfstring{j\+Table\+Current\+Readings}{jTableCurrentReadings}}
+{\footnotesize\ttfamily J\+Table com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records.\+j\+Table\+Current\+Readings}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a13517d1ec042eeb3b9ada9b9a2f6c301}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a13517d1ec042eeb3b9ada9b9a2f6c301}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}!list\+Readings@{list\+Readings}}
+\index{list\+Readings@{list\+Readings}!com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}}
+\subsubsection{\texorpdfstring{list\+Readings}{listReadings}}
+{\footnotesize\ttfamily Linked\+Hash\+Map$<$String, String$>$ com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records.\+list\+Readings = new Linked\+Hash\+Map()}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a19774c496fb5c186f128ed2a16b3b43a}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a19774c496fb5c186f128ed2a16b3b43a}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}!list\+Readings\+Complete@{list\+Readings\+Complete}}
+\index{list\+Readings\+Complete@{list\+Readings\+Complete}!com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}}
+\subsubsection{\texorpdfstring{list\+Readings\+Complete}{listReadingsComplete}}
+{\footnotesize\ttfamily Linked\+Hash\+Map$<$String, String$>$ com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records.\+list\+Readings\+Complete = new Linked\+Hash\+Map()}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a86d9f6c41a46bb858fd562100fc91f1c}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a86d9f6c41a46bb858fd562100fc91f1c}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}!list\+Selected@{list\+Selected}}
+\index{list\+Selected@{list\+Selected}!com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}}
+\subsubsection{\texorpdfstring{list\+Selected}{listSelected}}
+{\footnotesize\ttfamily Linked\+Hash\+Map$<$String, Boolean$>$ com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records.\+list\+Selected = new Linked\+Hash\+Map()}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a5072b1758b1912a08e0575deb656ba68}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a5072b1758b1912a08e0575deb656ba68}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}!P\+A\+R\+I\+T\+Y\+\_\+\+E\+V\+EN@{P\+A\+R\+I\+T\+Y\+\_\+\+E\+V\+EN}}
+\index{P\+A\+R\+I\+T\+Y\+\_\+\+E\+V\+EN@{P\+A\+R\+I\+T\+Y\+\_\+\+E\+V\+EN}!com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}}
+\subsubsection{\texorpdfstring{P\+A\+R\+I\+T\+Y\+\_\+\+E\+V\+EN}{PARITY\_EVEN}}
+{\footnotesize\ttfamily final int com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records.\+P\+A\+R\+I\+T\+Y\+\_\+\+E\+V\+EN = 2\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_acc3c3dcabb0ebc70777f11e17554982f}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_acc3c3dcabb0ebc70777f11e17554982f}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}!P\+A\+R\+I\+T\+Y\+\_\+\+M\+A\+RK@{P\+A\+R\+I\+T\+Y\+\_\+\+M\+A\+RK}}
+\index{P\+A\+R\+I\+T\+Y\+\_\+\+M\+A\+RK@{P\+A\+R\+I\+T\+Y\+\_\+\+M\+A\+RK}!com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}}
+\subsubsection{\texorpdfstring{P\+A\+R\+I\+T\+Y\+\_\+\+M\+A\+RK}{PARITY\_MARK}}
+{\footnotesize\ttfamily final int com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records.\+P\+A\+R\+I\+T\+Y\+\_\+\+M\+A\+RK = 3\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_af9879dbcb4d686f245d205a4a6565c7c}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_af9879dbcb4d686f245d205a4a6565c7c}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}!P\+A\+R\+I\+T\+Y\+\_\+\+N\+O\+NE@{P\+A\+R\+I\+T\+Y\+\_\+\+N\+O\+NE}}
+\index{P\+A\+R\+I\+T\+Y\+\_\+\+N\+O\+NE@{P\+A\+R\+I\+T\+Y\+\_\+\+N\+O\+NE}!com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}}
+\subsubsection{\texorpdfstring{P\+A\+R\+I\+T\+Y\+\_\+\+N\+O\+NE}{PARITY\_NONE}}
+{\footnotesize\ttfamily final int com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records.\+P\+A\+R\+I\+T\+Y\+\_\+\+N\+O\+NE = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_ac777f9f8ddbece6f40e6254db12f6bbf}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_ac777f9f8ddbece6f40e6254db12f6bbf}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}!P\+A\+R\+I\+T\+Y\+\_\+\+O\+DD@{P\+A\+R\+I\+T\+Y\+\_\+\+O\+DD}}
+\index{P\+A\+R\+I\+T\+Y\+\_\+\+O\+DD@{P\+A\+R\+I\+T\+Y\+\_\+\+O\+DD}!com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}}
+\subsubsection{\texorpdfstring{P\+A\+R\+I\+T\+Y\+\_\+\+O\+DD}{PARITY\_ODD}}
+{\footnotesize\ttfamily final int com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records.\+P\+A\+R\+I\+T\+Y\+\_\+\+O\+DD = 1\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a99f696406f4ac66e445f38ed5a34a0c7}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a99f696406f4ac66e445f38ed5a34a0c7}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}!P\+A\+R\+I\+T\+Y\+\_\+\+S\+P\+A\+CE@{P\+A\+R\+I\+T\+Y\+\_\+\+S\+P\+A\+CE}}
+\index{P\+A\+R\+I\+T\+Y\+\_\+\+S\+P\+A\+CE@{P\+A\+R\+I\+T\+Y\+\_\+\+S\+P\+A\+CE}!com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}}
+\subsubsection{\texorpdfstring{P\+A\+R\+I\+T\+Y\+\_\+\+S\+P\+A\+CE}{PARITY\_SPACE}}
+{\footnotesize\ttfamily final int com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records.\+P\+A\+R\+I\+T\+Y\+\_\+\+S\+P\+A\+CE = 4\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a469b6ae5c9cdaf3de7d84e7b84a21972}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a469b6ae5c9cdaf3de7d84e7b84a21972}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}!S\+T\+O\+P\+B\+I\+T\+S\+\_\+1@{S\+T\+O\+P\+B\+I\+T\+S\+\_\+1}}
+\index{S\+T\+O\+P\+B\+I\+T\+S\+\_\+1@{S\+T\+O\+P\+B\+I\+T\+S\+\_\+1}!com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}}
+\subsubsection{\texorpdfstring{S\+T\+O\+P\+B\+I\+T\+S\+\_\+1}{STOPBITS\_1}}
+{\footnotesize\ttfamily final int com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records.\+S\+T\+O\+P\+B\+I\+T\+S\+\_\+1 = 1\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_afaf278b563eae40768a7096641d89694}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_afaf278b563eae40768a7096641d89694}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}!S\+T\+O\+P\+B\+I\+T\+S\+\_\+1\+\_\+5@{S\+T\+O\+P\+B\+I\+T\+S\+\_\+1\+\_\+5}}
+\index{S\+T\+O\+P\+B\+I\+T\+S\+\_\+1\+\_\+5@{S\+T\+O\+P\+B\+I\+T\+S\+\_\+1\+\_\+5}!com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}}
+\subsubsection{\texorpdfstring{S\+T\+O\+P\+B\+I\+T\+S\+\_\+1\+\_\+5}{STOPBITS\_1\_5}}
+{\footnotesize\ttfamily final int com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records.\+S\+T\+O\+P\+B\+I\+T\+S\+\_\+1\+\_\+5 = 3\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a54572052540d5bf3f7bae7f11734f421}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a54572052540d5bf3f7bae7f11734f421}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}!S\+T\+O\+P\+B\+I\+T\+S\+\_\+2@{S\+T\+O\+P\+B\+I\+T\+S\+\_\+2}}
+\index{S\+T\+O\+P\+B\+I\+T\+S\+\_\+2@{S\+T\+O\+P\+B\+I\+T\+S\+\_\+2}!com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}}
+\subsubsection{\texorpdfstring{S\+T\+O\+P\+B\+I\+T\+S\+\_\+2}{STOPBITS\_2}}
+{\footnotesize\ttfamily final int com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records.\+S\+T\+O\+P\+B\+I\+T\+S\+\_\+2 = 2\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a1d3a30be887aa24239c5e6367b56a2b5}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_a1d3a30be887aa24239c5e6367b56a2b5}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}!time\+Readings@{time\+Readings}}
+\index{time\+Readings@{time\+Readings}!com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}}
+\subsubsection{\texorpdfstring{time\+Readings}{timeReadings}}
+{\footnotesize\ttfamily int com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records.\+time\+Readings = 10\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_ac019fdec9daa77312bbfce0eeee96117}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1ui_1_1_current_readings_records_ac019fdec9daa77312bbfce0eeee96117}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}!writer@{writer}}
+\index{writer@{writer}!com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records@{com\+::eneri\+::scorpio\+\_\+metertool\+::ui\+::\+Current\+Readings\+Records}}
+\subsubsection{\texorpdfstring{writer}{writer}}
+{\footnotesize\ttfamily Writer com.\+eneri.\+scorpio\+\_\+metertool.\+ui.\+Current\+Readings\+Records.\+writer}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/com/eneri/scorpio\+\_\+metertool/ui/\hyperlink{_current_readings_records_8java}{Current\+Readings\+Records.\+java}\end{DoxyCompactItemize}

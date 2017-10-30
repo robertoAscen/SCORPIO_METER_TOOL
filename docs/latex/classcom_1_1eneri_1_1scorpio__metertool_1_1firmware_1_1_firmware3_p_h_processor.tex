@@ -1,0 +1,134 @@
+\hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1firmware_1_1_firmware3_p_h_processor}{}\section{com.\+eneri.\+scorpio\+\_\+metertool.\+firmware.\+Firmware3\+P\+H\+Processor Class Reference}
+\label{classcom_1_1eneri_1_1scorpio__metertool_1_1firmware_1_1_firmware3_p_h_processor}\index{com.\+eneri.\+scorpio\+\_\+metertool.\+firmware.\+Firmware3\+P\+H\+Processor@{com.\+eneri.\+scorpio\+\_\+metertool.\+firmware.\+Firmware3\+P\+H\+Processor}}
+
+
+Inheritance diagram for com.\+eneri.\+scorpio\+\_\+metertool.\+firmware.\+Firmware3\+P\+H\+Processor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=263pt]{classcom_1_1eneri_1_1scorpio__metertool_1_1firmware_1_1_firmware3_p_h_processor__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for com.\+eneri.\+scorpio\+\_\+metertool.\+firmware.\+Firmware3\+P\+H\+Processor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcom_1_1eneri_1_1scorpio__metertool_1_1firmware_1_1_firmware3_p_h_processor__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1firmware_1_1_firmware3_p_h_processor_a4b5059b379bcbaadce94780f9f3162a8}{Firmware3\+P\+H\+Processor} ()
+\item 
+synchronized int \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1firmware_1_1_firmware3_p_h_processor_afff9fde9c6ba8e6db1888b10ea042d47}{get\+Tx\+Total} ()
+\item 
+int \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1firmware_1_1_firmware3_p_h_processor_a5d652294a2074f434facfa3f932e3b9c}{get\+Tx\+Count} ()
+\item 
+int \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1firmware_1_1_firmware3_p_h_processor_a3ce58512c714d310a88f33a068fc95d5}{process\+H\+E\+X\+File} (File hex\+File)  throws I\+O\+Exception   
+\item 
+void \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1firmware_1_1_firmware3_p_h_processor_a21b4b12b178b732f54996229895988ce}{start\+Upload} (int delay, boolean broadcast)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1firmware_1_1_firmware3_p_h_processor}{Firmware3\+P\+H\+Processor} \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1firmware_1_1_firmware3_p_h_processor_af3c6dd9f2d5b60bc48021da1ea7f0f6f}{get\+Instance} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Linked\+List$<$ \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1firmware_1_1_modbus_r_t_u_frame}{Modbus\+R\+T\+U\+Frame} $>$ \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1firmware_1_1_firmware3_p_h_processor_a191f47a4072968c0ed06cfee6d4041b3}{list\+Modbus\+Frames}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final int \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1firmware_1_1_firmware3_p_h_processor_ad02b68c1c4e01b306cc3769bc265ddc5}{R\+T\+U\+\_\+\+P\+A\+Y\+L\+O\+A\+D\+\_\+\+S\+I\+ZE} = 58
+\item 
+static final int \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1firmware_1_1_firmware3_p_h_processor_a2ae7c0154c2dc91af903eec1ac3e8e72}{R\+T\+U\+\_\+\+S\+I\+G\+N\+A\+T\+U\+R\+E\+\_\+\+S\+I\+ZE} = 32
+\item 
+static org.\+slf4j.\+Logger \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1firmware_1_1_firmware3_p_h_processor_a62e18400a428abdcf7104d37ec4d4869}{log} = Logger\+Factory.\+get\+Logger(Firmware3\+P\+H\+Processor.\+class)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Roberto 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1firmware_1_1_firmware3_p_h_processor_a4b5059b379bcbaadce94780f9f3162a8}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1firmware_1_1_firmware3_p_h_processor_a4b5059b379bcbaadce94780f9f3162a8}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor@{com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor}!Firmware3\+P\+H\+Processor@{Firmware3\+P\+H\+Processor}}
+\index{Firmware3\+P\+H\+Processor@{Firmware3\+P\+H\+Processor}!com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor@{com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor}}
+\subsubsection{\texorpdfstring{Firmware3\+P\+H\+Processor()}{Firmware3PHProcessor()}}
+{\footnotesize\ttfamily com.\+eneri.\+scorpio\+\_\+metertool.\+firmware.\+Firmware3\+P\+H\+Processor.\+Firmware3\+P\+H\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1firmware_1_1_firmware3_p_h_processor_af3c6dd9f2d5b60bc48021da1ea7f0f6f}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1firmware_1_1_firmware3_p_h_processor_af3c6dd9f2d5b60bc48021da1ea7f0f6f}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor@{com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor@{com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor}}
+\subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}}
+{\footnotesize\ttfamily static \hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1firmware_1_1_firmware3_p_h_processor}{Firmware3\+P\+H\+Processor} com.\+eneri.\+scorpio\+\_\+metertool.\+firmware.\+Firmware3\+P\+H\+Processor.\+get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1firmware_1_1_firmware3_p_h_processor_a5d652294a2074f434facfa3f932e3b9c}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1firmware_1_1_firmware3_p_h_processor_a5d652294a2074f434facfa3f932e3b9c}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor@{com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor}!get\+Tx\+Count@{get\+Tx\+Count}}
+\index{get\+Tx\+Count@{get\+Tx\+Count}!com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor@{com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor}}
+\subsubsection{\texorpdfstring{get\+Tx\+Count()}{getTxCount()}}
+{\footnotesize\ttfamily int com.\+eneri.\+scorpio\+\_\+metertool.\+firmware.\+Firmware3\+P\+H\+Processor.\+get\+Tx\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1firmware_1_1_firmware3_p_h_processor_afff9fde9c6ba8e6db1888b10ea042d47}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1firmware_1_1_firmware3_p_h_processor_afff9fde9c6ba8e6db1888b10ea042d47}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor@{com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor}!get\+Tx\+Total@{get\+Tx\+Total}}
+\index{get\+Tx\+Total@{get\+Tx\+Total}!com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor@{com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor}}
+\subsubsection{\texorpdfstring{get\+Tx\+Total()}{getTxTotal()}}
+{\footnotesize\ttfamily synchronized int com.\+eneri.\+scorpio\+\_\+metertool.\+firmware.\+Firmware3\+P\+H\+Processor.\+get\+Tx\+Total (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1firmware_1_1_firmware3_p_h_processor_a3ce58512c714d310a88f33a068fc95d5}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1firmware_1_1_firmware3_p_h_processor_a3ce58512c714d310a88f33a068fc95d5}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor@{com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor}!process\+H\+E\+X\+File@{process\+H\+E\+X\+File}}
+\index{process\+H\+E\+X\+File@{process\+H\+E\+X\+File}!com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor@{com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor}}
+\subsubsection{\texorpdfstring{process\+H\+E\+X\+File()}{processHEXFile()}}
+{\footnotesize\ttfamily int com.\+eneri.\+scorpio\+\_\+metertool.\+firmware.\+Firmware3\+P\+H\+Processor.\+process\+H\+E\+X\+File (\begin{DoxyParamCaption}\item[{File}]{hex\+File }\end{DoxyParamCaption}) throws I\+O\+Exception}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1firmware_1_1_firmware3_p_h_processor_a21b4b12b178b732f54996229895988ce}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1firmware_1_1_firmware3_p_h_processor_a21b4b12b178b732f54996229895988ce}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor@{com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor}!start\+Upload@{start\+Upload}}
+\index{start\+Upload@{start\+Upload}!com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor@{com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor}}
+\subsubsection{\texorpdfstring{start\+Upload()}{startUpload()}}
+{\footnotesize\ttfamily void com.\+eneri.\+scorpio\+\_\+metertool.\+firmware.\+Firmware3\+P\+H\+Processor.\+start\+Upload (\begin{DoxyParamCaption}\item[{int}]{delay,  }\item[{boolean}]{broadcast }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1firmware_1_1_firmware3_p_h_processor_a191f47a4072968c0ed06cfee6d4041b3}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1firmware_1_1_firmware3_p_h_processor_a191f47a4072968c0ed06cfee6d4041b3}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor@{com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor}!list\+Modbus\+Frames@{list\+Modbus\+Frames}}
+\index{list\+Modbus\+Frames@{list\+Modbus\+Frames}!com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor@{com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor}}
+\subsubsection{\texorpdfstring{list\+Modbus\+Frames}{listModbusFrames}}
+{\footnotesize\ttfamily Linked\+List$<$\hyperlink{classcom_1_1eneri_1_1scorpio__metertool_1_1firmware_1_1_modbus_r_t_u_frame}{Modbus\+R\+T\+U\+Frame}$>$ com.\+eneri.\+scorpio\+\_\+metertool.\+firmware.\+Firmware3\+P\+H\+Processor.\+list\+Modbus\+Frames}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1firmware_1_1_firmware3_p_h_processor_a62e18400a428abdcf7104d37ec4d4869}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1firmware_1_1_firmware3_p_h_processor_a62e18400a428abdcf7104d37ec4d4869}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor@{com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor}!log@{log}}
+\index{log@{log}!com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor@{com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor}}
+\subsubsection{\texorpdfstring{log}{log}}
+{\footnotesize\ttfamily org.\+slf4j.\+Logger com.\+eneri.\+scorpio\+\_\+metertool.\+firmware.\+Firmware3\+P\+H\+Processor.\+log = Logger\+Factory.\+get\+Logger(Firmware3\+P\+H\+Processor.\+class)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1firmware_1_1_firmware3_p_h_processor_ad02b68c1c4e01b306cc3769bc265ddc5}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1firmware_1_1_firmware3_p_h_processor_ad02b68c1c4e01b306cc3769bc265ddc5}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor@{com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor}!R\+T\+U\+\_\+\+P\+A\+Y\+L\+O\+A\+D\+\_\+\+S\+I\+ZE@{R\+T\+U\+\_\+\+P\+A\+Y\+L\+O\+A\+D\+\_\+\+S\+I\+ZE}}
+\index{R\+T\+U\+\_\+\+P\+A\+Y\+L\+O\+A\+D\+\_\+\+S\+I\+ZE@{R\+T\+U\+\_\+\+P\+A\+Y\+L\+O\+A\+D\+\_\+\+S\+I\+ZE}!com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor@{com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor}}
+\subsubsection{\texorpdfstring{R\+T\+U\+\_\+\+P\+A\+Y\+L\+O\+A\+D\+\_\+\+S\+I\+ZE}{RTU\_PAYLOAD\_SIZE}}
+{\footnotesize\ttfamily final int com.\+eneri.\+scorpio\+\_\+metertool.\+firmware.\+Firmware3\+P\+H\+Processor.\+R\+T\+U\+\_\+\+P\+A\+Y\+L\+O\+A\+D\+\_\+\+S\+I\+ZE = 58\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1eneri_1_1scorpio__metertool_1_1firmware_1_1_firmware3_p_h_processor_a2ae7c0154c2dc91af903eec1ac3e8e72}\label{classcom_1_1eneri_1_1scorpio__metertool_1_1firmware_1_1_firmware3_p_h_processor_a2ae7c0154c2dc91af903eec1ac3e8e72}} 
+\index{com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor@{com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor}!R\+T\+U\+\_\+\+S\+I\+G\+N\+A\+T\+U\+R\+E\+\_\+\+S\+I\+ZE@{R\+T\+U\+\_\+\+S\+I\+G\+N\+A\+T\+U\+R\+E\+\_\+\+S\+I\+ZE}}
+\index{R\+T\+U\+\_\+\+S\+I\+G\+N\+A\+T\+U\+R\+E\+\_\+\+S\+I\+ZE@{R\+T\+U\+\_\+\+S\+I\+G\+N\+A\+T\+U\+R\+E\+\_\+\+S\+I\+ZE}!com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor@{com\+::eneri\+::scorpio\+\_\+metertool\+::firmware\+::\+Firmware3\+P\+H\+Processor}}
+\subsubsection{\texorpdfstring{R\+T\+U\+\_\+\+S\+I\+G\+N\+A\+T\+U\+R\+E\+\_\+\+S\+I\+ZE}{RTU\_SIGNATURE\_SIZE}}
+{\footnotesize\ttfamily final int com.\+eneri.\+scorpio\+\_\+metertool.\+firmware.\+Firmware3\+P\+H\+Processor.\+R\+T\+U\+\_\+\+S\+I\+G\+N\+A\+T\+U\+R\+E\+\_\+\+S\+I\+ZE = 32\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/com/eneri/scorpio\+\_\+metertool/firmware/\hyperlink{_firmware3_p_h_processor_8java}{Firmware3\+P\+H\+Processor.\+java}\end{DoxyCompactItemize}
