@@ -107,9 +107,11 @@ public class CurrentReadingsRecords
   File fileData = new File("");
   boolean cerrarArchivo = false;
   boolean startRecord = false;
+  
   public LinkedHashMap<String, String> listReadingsComplete = new LinkedHashMap();
   public LinkedHashMap<String, String> listReadings = new LinkedHashMap();
   public LinkedHashMap<String, Boolean> listSelected = new LinkedHashMap();
+  
   String ROW_KH2 = "";
   String ROW_Firmware1 = "";
   String ROW_KWH2 = "";
@@ -161,6 +163,7 @@ public class CurrentReadingsRecords
   String ROW_PotenciaAparente2 = "";
   String ROW_PotenciaAparente3 = "";
   String ROW_SYS_TIMESTAMP2 = "";
+  
   JFrameMain f = (JFrameMain)SwingUtilities.getAncestorOfClass(JFrameMain.class, this);
   DefaultComboBoxModel model = new DefaultComboBoxModel();
   
@@ -169,9 +172,9 @@ public class CurrentReadingsRecords
     initComponents();
     
     getPorts();
-    this.jButtonExportCurrentReadingsToTxt.setEnabled(false);
-    this.jButtonExportCurrentReadingsToXML.setEnabled(false);
-    this.jButtonLogConfiguration.setEnabled(false);
+    jButtonExportCurrentReadingsToTxt.setEnabled(false);
+    jButtonExportCurrentReadingsToXML.setEnabled(false);
+    jButtonLogConfiguration.setEnabled(false);
   }
   
   private void threadDelay(long delay)
@@ -185,130 +188,150 @@ public class CurrentReadingsRecords
   
   public void setSerialNumberJTextbox(String value)
   {
-    this.jTextFieldSerialNumber.setText(value);
+    jTextFieldSerialNumber.setText(value);
   }
   
   private void initComponents()
   {
-    this.jCheckBox1 = new JCheckBox();
-    this.jLabelCurrentReadingsTitle = new JLabel();
-    this.jLabelPort = new JLabel();
-    this.jTextFieldMeterSerialNumber = new JTextField();
-    this.jButtonOpenPort = new JButton();
-    this.jScrollPane1 = new JScrollPane();
-    this.jTableCurrentReadings = new JTable();
-    this.jButtonStartStop = new JButton();
-    this.jButtonExportCurrentReadingsToTxt = new JButton();
-    this.jCheckBoxLogMode = new JCheckBox();
-    this.jButtonLogConfiguration = new JButton();
-    this.jButtonExportCurrentReadingsToXML = new JButton();
-    this.jLabelPortConfigurations = new JLabel();
-    this.jComboBoxPort = new JComboBox();
-    this.jButtonSerialNumber = new JButton();
-    this.jTextFieldSerialNumber = new JTextField();
-    this.jCheckBoxSelected = new JCheckBox();
-    this.jSeparator1 = new JSeparator();
-    this.jButtonUnitReading = new JButton();
-    this.jLabelPortSelected = new JLabel();
+    jCheckBox1 = new JCheckBox();
+    jLabelCurrentReadingsTitle = new JLabel();
+    jLabelPort = new JLabel();
+    jTextFieldMeterSerialNumber = new JTextField();
+    jButtonOpenPort = new JButton();
+    jScrollPane1 = new JScrollPane();
+    jTableCurrentReadings = new JTable();
+    jButtonStartStop = new JButton();
+    jButtonExportCurrentReadingsToTxt = new JButton();
+    jCheckBoxLogMode = new JCheckBox();
+    jButtonLogConfiguration = new JButton();
+    jButtonExportCurrentReadingsToXML = new JButton();
+    jLabelPortConfigurations = new JLabel();
+    jComboBoxPort = new JComboBox();
+    jButtonSerialNumber = new JButton();
+    jTextFieldSerialNumber = new JTextField();
+    jCheckBoxSelected = new JCheckBox();
+    jSeparator1 = new JSeparator();
+    jButtonUnitReading = new JButton();
+    jLabelPortSelected = new JLabel();
     
-    this.jCheckBox1.setText("jCheckBox1");
+    jCheckBox1.setText("jCheckBox1");
+    
+    jComboBoxPort.setToolTipText("Selecciona el puerto a utilizar");
     
     setMaximumSize(new Dimension(806, 572));
-    setMinimumSize(new Dimension(806, 572));
+    //setMinimumSize(new Dimension(806, 572));
     
-    this.jLabelCurrentReadingsTitle.setFont(new Font("Ubuntu", 1, 18));
-    //this.jLabelCurrentReadingsTitle.setText("Lecturas de registros actuales");
-    this.jLabelCurrentReadingsTitle.setText("Current readings registers");
+    jLabelCurrentReadingsTitle.setFont(new Font("Ubuntu", 1, 18));
+    jLabelCurrentReadingsTitle.setText("Lecturas de registros actuales");
+    //jLabelCurrentReadingsTitle.setText("Current readings registers");
     
-    this.jLabelPort.setText("Port:");
-    this.jLabelPort.setName("jLabelPort");
+    //jLabelPort.setText("Port:");
+    jLabelPort.setText("Puerto:");
+    jLabelPort.setName("jLabelPort");
     
-    //this.jButtonOpenPort.setText("Abrir puerto");
-    this.jButtonOpenPort.setText("Open Port");
-    this.jButtonOpenPort.addActionListener(new ActionListener()
+    jButtonOpenPort.setText("Abrir puerto");
+    jButtonOpenPort.setToolTipText("Oprime el botón para abrir puerto");
+    //jButtonOpenPort.setText("Open Port");
+    jButtonOpenPort.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         CurrentReadingsRecords.this.jButtonOpenPortActionPerformed(evt);
       }
     });
-    this.jTableCurrentReadings.setFont(new Font("Arial", 1, 12));
-    this.jTableCurrentReadings.setModel(this.meterTable);
-    this.jTableCurrentReadings.setRowHeight(23);
-    this.jScrollPane1.setViewportView(this.jTableCurrentReadings);
+    jTableCurrentReadings.setFont(new Font("Arial", 1, 12));
+    jTableCurrentReadings.setModel(meterTable);
+    jTableCurrentReadings.setRowHeight(23);
+    jScrollPane1.setViewportView(jTableCurrentReadings);
     
-    this.jButtonStartStop.setFont(new Font("Tahoma", 1, 18));
-    //this.jButtonStartStop.setText("Iniciar Lecturas");
-    this.jButtonStartStop.setText("Start reading");
-    this.jButtonStartStop.addActionListener(new ActionListener()
+    jButtonStartStop.setFont(new Font("Tahoma", 1, 18));
+    jButtonStartStop.setText("Iniciar Lecturas");
+    jButtonStartStop.setEnabled(false);
+    jButtonStartStop.setToolTipText("Oprime el botón para iniciar las lecturas del medidor");
+    //jButtonStartStop.setText("Start reading");
+    jButtonStartStop.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         CurrentReadingsRecords.this.jButtonStartStopActionPerformed(evt);
       }
     });
-    //this.jButtonExportCurrentReadingsToTxt.setText("Exportar datos de lectura a TXT");
-    this.jButtonExportCurrentReadingsToTxt.setText("Export data reading to TXT");
-    this.jButtonExportCurrentReadingsToTxt.addActionListener(new ActionListener()
+    jButtonExportCurrentReadingsToTxt.setText("Exportar datos de lectura a TXT");
+    //jButtonExportCurrentReadingsToTxt.setText("Export data reading to TXT");
+    jButtonExportCurrentReadingsToTxt.setToolTipText("Oprime el botón para exportar a archivo .txt");
+    jButtonExportCurrentReadingsToTxt.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         CurrentReadingsRecords.this.jButtonExportCurrentReadingsToTxtActionPerformed(evt);
       }
     });
-    //this.jCheckBoxLogMode.setText("Modo log TXT");
-    this.jCheckBoxLogMode.setText("Mode log TXT");
-    this.jCheckBoxLogMode.addActionListener(new ActionListener()
+    jCheckBoxLogMode.setText("Modo log TXT");
+    jCheckBoxLogMode.setEnabled(false);
+    //jCheckBoxLogMode.setText("Mode log TXT");
+    jCheckBoxLogMode.setToolTipText("Habilita el modo .txt del log");
+    jCheckBoxLogMode.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         CurrentReadingsRecords.this.jCheckBoxLogModeActionPerformed(evt);
       }
     });
-    //this.jButtonLogConfiguration.setText("Configuracion de Log");
-    this.jButtonLogConfiguration.setText("Configuration de Log");
-    this.jButtonLogConfiguration.setName("ButtonLogConfiguration");
-    this.jButtonLogConfiguration.addActionListener(new ActionListener()
+    jButtonLogConfiguration.setText("Configuración de Log");
+    //jButtonLogConfiguration.setText("Configuration de Log");
+    jButtonLogConfiguration.setName("ButtonLogConfiguration");
+    jButtonLogConfiguration.setToolTipText("Oprime el botón para configurar las opciones del log");
+    jButtonLogConfiguration.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         CurrentReadingsRecords.this.jButtonLogConfigurationActionPerformed(evt);
       }
     });
-    //this.jButtonExportCurrentReadingsToXML.setText("Exportar datos de lectura a XML");
-    this.jButtonExportCurrentReadingsToXML.setText("Export data reading to XML");
-    this.jButtonExportCurrentReadingsToXML.addActionListener(new ActionListener()
+    jButtonExportCurrentReadingsToXML.setText("Exportar datos de lectura a XML");
+    //jButtonExportCurrentReadingsToXML.setText("Export data reading to XML");
+    jButtonExportCurrentReadingsToXML.setToolTipText("Oprime el botón para exportar a .xml");
+    jButtonExportCurrentReadingsToXML.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         CurrentReadingsRecords.this.jButtonExportCurrentReadingsToXMLActionPerformed(evt);
       }
     });
-    this.jLabelPortConfigurations.setFont(new Font("Tahoma", 1, 18));
-    //this.jLabelPortConfigurations.setText("CONFIGURACIONES DE PUERTO");
-    this.jLabelPortConfigurations.setText("PORT CONFIGURATIONS");
+    jLabelPortConfigurations.setFont(new Font("Tahoma", 1, 18));
+    jLabelPortConfigurations.setText("CONFIGURACIONES DE PUERTO");
+   // jLabelPortConfigurations.setText("PORT CONFIGURATIONS");
     
-    //this.jButtonSerialNumber.setText("Aplicar Numero Serie");
-    this.jButtonSerialNumber.setText("Apply Serial Number");
-    this.jButtonSerialNumber.addActionListener(new ActionListener()
+    jButtonSerialNumber.setText("Aplicar Número Serie");
+    jButtonSerialNumber.setEnabled(false);
+    jButtonSerialNumber.setToolTipText("Oprime el botón para establecer el número de serie del medidor a interrogar");
+    //jButtonSerialNumber.setText("Apply Serial Number");
+    jButtonSerialNumber.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         CurrentReadingsRecords.this.jButtonSerialNumberActionPerformed(evt);
       }
     });
-    this.jTextFieldSerialNumber.setEditable(false);
-    //this.jTextFieldSerialNumber.setText("Número de Serie del Medidor");
-    this.jTextFieldSerialNumber.setText("Serial Number Meter");
     
-    //this.jCheckBoxSelected.setText("Modo Seleccionado");
-    this.jCheckBoxSelected.setText("Selected Mode");
+    jTextFieldMeterSerialNumber.setEnabled(false);
+    jTextFieldMeterSerialNumber.setToolTipText("Ingresa el número de serie del medidor a interrogar");
     
-    this.jSeparator1.setOrientation(1);
+    jTextFieldSerialNumber.setEditable(false);
+    jTextFieldSerialNumber.setText("Número de Serie del Medidor");
+    //jTextFieldSerialNumber.setText("Serial Number Meter");
     
-    //this.jButtonUnitReading.setText("Lecuras Unitarias");
-    this.jButtonUnitReading.setText("Individual Readings");
-    this.jButtonUnitReading.addActionListener(new ActionListener()
+    jCheckBoxSelected.setText("Modo Seleccionado");
+    jCheckBoxSelected.setEnabled(false);
+    //jCheckBoxSelected.setText("Selected Mode");
+    
+    jSeparator1.setOrientation(1);
+    
+    jButtonUnitReading.setText("Lecuras Unitarias");
+    jButtonUnitReading.setEnabled(false);
+    //jButtonUnitReading.setText("Individual Readings");
+    jButtonUnitReading.setToolTipText("Oprime el botón para solicitar lecturas unitarias al medidor");
+    jButtonUnitReading.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
@@ -331,19 +354,20 @@ public class CurrentReadingsRecords
   
   public void frameConf()
   {
-    //final JFrame framConfAv = new JFrame("Configurar Exportacion de Lecturas");
-    final JFrame framConfAv = new JFrame("Set Export Readings");
+    final JFrame framConfAv = new JFrame("Configurar Exportación de Lecturas");
+    //final JFrame framConfAv = new JFrame("Set Export Readings");
     JMenuBar menuBar = new JMenuBar();
-    JMenu menu = new JMenu("Menu");
+    JMenu menu = new JMenu("Menú");
     JPanel panel1 = new JPanel();
     final JCheckBox[] checkboxes = new JCheckBox[51];
     JButton but = new JButton();
     JCheckBox cb = new JCheckBox();
-    //but.setText("Guardar");
-    but.setText("Save");
+    but.setText("Guardar");
+    //but.setText("Save");
     menuBar.add(menu);
     
-    JMenuItem item = new JMenuItem("Exit");
+    JMenuItem item = new JMenuItem("Salir");
+    //JMenuItem item = new JMenuItem("Exit");
     
     item.addActionListener(new ActionListener()
     {
@@ -400,69 +424,83 @@ public class CurrentReadingsRecords
   
   private void jButtonOpenPortActionPerformed(ActionEvent evt)
   {
-    if (this.jComboBoxPort.getSelectedItem() == null)
+    if (jComboBoxPort.getSelectedItem() == null)
     {
-      //JOptionPane.showMessageDialog(null, "Error, no hay puertos seleccionados");
-      JOptionPane.showMessageDialog(null, "Error, no selected port","Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(null, "Error, no hay puertos seleccionados", "Error", JOptionPane.ERROR_MESSAGE);
+      //JOptionPane.showMessageDialog(null, "Error, no selected port","Error",JOptionPane.ERROR_MESSAGE);
       return;
     }
-    if (!this.port.getStatePort())
+    if (!port.getStatePort())
     {
-      this.port.openPort(this.jComboBoxPort.getSelectedItem().toString(), 19200, 8, 1, 2, 0);
-      if (this.port.getStatePort() == true)
+      port.openPort(jComboBoxPort.getSelectedItem().toString(), 19200, 8, 1, 2, 0);
+      if (port.getStatePort() == true)
       {
-        //this.jButtonOpenPort.setText("Cerrar Puerto");
-        JOptionPane.showMessageDialog(null, "Opened Port","Information",JOptionPane.INFORMATION_MESSAGE); //Este fue puesto por Roberto
-        this.jButtonOpenPort.setText("Closed port");
-        this.jLabelPortSelected.setText(this.jComboBoxPort.getSelectedItem().toString());
+        //jButtonOpenPort.setText("Cerrar Puerto");
+        JOptionPane.showMessageDialog(null, "Puerto Abierto","Información",JOptionPane.INFORMATION_MESSAGE); //Este fue puesto por Roberto
+        jButtonOpenPort.setText("Cerrar Puerto");
+        jLabelPortSelected.setText(jComboBoxPort.getSelectedItem().toString());
+        
+        jTextFieldMeterSerialNumber.setEnabled(true);
+        
+        jButtonSerialNumber.setEnabled(true);
+        jCheckBoxLogMode.setEnabled(true);
+        jCheckBoxSelected.setEnabled(true);
       }
     }
-    else if (this.port.getStatePort() == true)
+    else if (port.getStatePort() == true)
     {
-      this.port.closePort();
-      if (!this.port.getStatePort())
+      port.closePort();
+      if (!port.getStatePort())
       {
-        this.timePoll.stop();
-        //this.jButtonStartStop.setText("Iniciar Lecturas");
-        this.jButtonStartStop.setText("Start Readings");
-        //this.jButtonOpenPort.setText("Abrir Puerto");
-        JOptionPane.showMessageDialog(null, "Closed Port","Information",JOptionPane.INFORMATION_MESSAGE);//Este fue puesto por Roberto
-        this.jButtonOpenPort.setText("Open Port");
+        timePoll.stop();
+        jButtonStartStop.setText("Iniciar Lecturas");
+        //jButtonStartStop.setText("Start Readings");
+        JOptionPane.showMessageDialog(null, "Puerto Cerrado","Información",JOptionPane.INFORMATION_MESSAGE);//Este fue puesto por Roberto
+        jButtonOpenPort.setText("Abrir Puerto");
         
-        this.read.bolreadings = false;
+        read.bolreadings = false;
       }
+      jButtonSerialNumber.setEnabled(false);
+      jCheckBoxLogMode.setEnabled(false);
+      jCheckBoxSelected.setEnabled(false);
+      jTextFieldMeterSerialNumber.setEnabled(false);
+      jButtonStartStop.setEnabled(false);
+      jButtonUnitReading.setEnabled(false);
+      jButtonExportCurrentReadingsToTxt.setEnabled(false);
+      jButtonExportCurrentReadingsToXML.setEnabled(false);
+      jButtonLogConfiguration.setEnabled(false);
     }
   }
   
   private void jButtonStartStopActionPerformed(ActionEvent evt)
   {
-    boolean statusRead = this.read.getStatusReadings();
+    boolean statusRead = read.getStatusReadings();
     if (statusRead == true)
     {
-      this.read.setStatusReadings(false);
-      this.timePoll.stop();
-      //this.jButtonStartStop.setText("Iniciar Lecturas");
-      this.jButtonStartStop.setText("Start Readings");
+      read.setStatusReadings(false);
+      timePoll.stop();
+      jButtonStartStop.setText("Iniciar Lecturas");
+      //jButtonStartStop.setText("Start Readings");
     }
     else if ((!statusRead) && (this.port.getStatePort() == true))
     {
-      this.read.setStatusReadings(true);
-      this.timePoll.start();
-      //this.jButtonStartStop.setText("Parar Lecturas");
-      this.jButtonStartStop.setText("Stop Reading");
+      read.setStatusReadings(true);
+      timePoll.start();
+      jButtonStartStop.setText("Parar Lecturas");
+      //jButtonStartStop.setText("Stop Reading");
     }
     else
     {
-      //JOptionPane.showMessageDialog(null, "Error Revisa que el puerto este abierto");
-      //this.jButtonStartStop.setText("Iniciar Lecturas");
-      JOptionPane.showMessageDialog(null, "Error Check that the port is open","Error",JOptionPane.ERROR_MESSAGE);
-      this.jButtonStartStop.setText("Start Readings");
+      JOptionPane.showMessageDialog(null, "Error, Revisa que el puerto este abierto", "Error", JOptionPane.ERROR_MESSAGE);
+      jButtonStartStop.setText("Iniciar Lecturas");
+      //JOptionPane.showMessageDialog(null, "Error Check that the port is open","Error",JOptionPane.ERROR_MESSAGE);
+      //jButtonStartStop.setText("Start Readings");
     }
   }
   
   private void jButtonSerialNumberActionPerformed(ActionEvent evt)
   {
-    settingSerialNumber(this.jTextFieldMeterSerialNumber.getText());
+    settingSerialNumber(jTextFieldMeterSerialNumber.getText());
   }
   
   public void settingSerialNumber(String serialNumber)
@@ -470,23 +508,26 @@ public class CurrentReadingsRecords
     if (serialNumber != null) {
       if (serialNumber.equals(""))
       {
-        //JOptionPane.showMessageDialog(null, "Error Inserta Numero de Serie");
-        JOptionPane.showMessageDialog(null, "Error Enter Serial Number","Error",JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Error, Ingresa Número de Serie", "Error", JOptionPane.ERROR_MESSAGE );
+        //JOptionPane.showMessageDialog(null, "Error, Enter Serial Number","Error",JOptionPane.ERROR_MESSAGE);
       }
       else if (serialNumber.length() > 16)
       {
-        //JOptionPane.showMessageDialog(null, "Error Numero de Serie mayor a 16");
-        JOptionPane.showMessageDialog(null, "Error Serial Number greater than 16","Error",JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Error, Número de Serie mayor a 16 dígitos", "Error",JOptionPane.ERROR_MESSAGE);
+        //JOptionPane.showMessageDialog(null, "Error Serial Number greater than 16","Error",JOptionPane.ERROR_MESSAGE);
       }
       else
       {
         Meter.setSerialNumber(serialNumber);
-        this.SNMedidorr = Meter.getSerialNumberCompl();
-        this.jTextFieldSerialNumber.setText(serialNumber);
-        //JOptionPane.showMessageDialog(null, "Numero de Serie listo");
-        JOptionPane.showMessageDialog(null, "Serial Number ready","Information",JOptionPane.INFORMATION_MESSAGE);
-        //this.jButtonSerialNumber.setText("Cambiar Numero de Serie");
-        this.jButtonSerialNumber.setText("Change Serial Number");
+        SNMedidorr = Meter.getSerialNumberCompl();
+        jTextFieldSerialNumber.setText(serialNumber);
+        JOptionPane.showMessageDialog(null, "Número de Serie listo", "Información", JOptionPane.INFORMATION_MESSAGE);
+        //JOptionPane.showMessageDialog(null, "Serial Number ready","Information",JOptionPane.INFORMATION_MESSAGE);
+        jButtonSerialNumber.setText("Cambiar Número de Serie");
+        //jButtonSerialNumber.setText("Change Serial Number");
+        
+        jButtonStartStop.setEnabled(true);
+        jButtonUnitReading.setEnabled(true);
         
         JPanel currentPanel = null;
         Set set = null;
@@ -503,14 +544,14 @@ public class CurrentReadingsRecords
           }
         }
         Resets rest = (Resets)currentPanel;
-        rest.setActualSN(this.SNMedidorr);
+        rest.setActualSN(SNMedidorr);
       }
     }
   }
   
   private void jButtonExportCurrentReadingsToTxtActionPerformed(ActionEvent evt)
   {
-    if (this.jCheckBoxLogMode.isSelected()) {
+    if (jCheckBoxLogMode.isSelected()) {
       createFileTxt();
     } else {
       exportarTxt();
@@ -519,61 +560,61 @@ public class CurrentReadingsRecords
   
   private void jButtonExportCurrentReadingsToXMLActionPerformed(ActionEvent evt)
   {
-    this.timeToXML.start();
+    timeToXML.start();
   }
   
   private void jButtonUnitReadingActionPerformed(ActionEvent evt)
   {
-    if (this.port.getStatePort() == true)
+    if (port.getStatePort() == true)
     {
-      this.read.setStatusReadings(true);
+      read.setStatusReadings(true);
       
       datos = readingUnit();
       if (datos == null)
       {
-        //JOptionPane.showMessageDialog(null, "No hay respuesta del medidor, revisa numero de serie o que este conectado");
-        JOptionPane.showMessageDialog(null, "Meter not response, check serial number or that is connected","Error",JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, "No hay respuesta del medidor, revisa número de serie, o, que este conectado", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        //JOptionPane.showMessageDialog(null, "Meter not response, check serial number or that is connected","Error",JOptionPane.ERROR_MESSAGE);
       }
       else
       {
         procesingReadingsTable(datos);
-        this.jButtonExportCurrentReadingsToTxt.setEnabled(true);
-        this.jButtonExportCurrentReadingsToXML.setEnabled(true);
-        this.jButtonLogConfiguration.setEnabled(true);
-        this.read.setStatusReadings(false);
+        jButtonExportCurrentReadingsToTxt.setEnabled(true);
+        jButtonExportCurrentReadingsToXML.setEnabled(true);
+        jButtonLogConfiguration.setEnabled(true);
+        read.setStatusReadings(false);
       }
     }
   }
   
   public void getPorts()
   {
-    this.model = ((DefaultComboBoxModel)this.jComboBoxPort.getModel());
-    this.model.removeAllElements();
-    for (int i = 0; i < this.port.getPortList().size(); i++) {
-      this.model.addElement(this.port.getPortList().get(i));
+    model = ((DefaultComboBoxModel)jComboBoxPort.getModel());
+    model.removeAllElements();
+    for (int i = 0; i < port.getPortList().size(); i++) {
+      model.addElement(port.getPortList().get(i));
     }
-    this.jComboBoxPort.setModel(this.model);
-    this.jComboBoxPort.updateUI();
-    this.jComboBoxPort.revalidate();
-    this.jComboBoxPort.repaint();
+    jComboBoxPort.setModel(model);
+    jComboBoxPort.updateUI();
+    jComboBoxPort.revalidate();
+    jComboBoxPort.repaint();
   }
   
   public void refreshPorts()
   {
-    this.model = ((DefaultComboBoxModel)this.jComboBoxPort.getModel());
-    this.model.removeAllElements();
-    for (int i = 0; i < this.port.getPortList().size(); i++) {
-      this.model.addElement(this.port.getPortList().get(i));
+    model = ((DefaultComboBoxModel)jComboBoxPort.getModel());
+    model.removeAllElements();
+    for (int i = 0; i < port.getPortList().size(); i++) {
+      model.addElement(port.getPortList().get(i));
     }
-    this.jComboBoxPort.updateUI();
-    this.jComboBoxPort.revalidate();
-    this.jComboBoxPort.repaint();
+    jComboBoxPort.updateUI();
+    jComboBoxPort.revalidate();
+    jComboBoxPort.repaint();
   }
   
   public void procesingReadingsTable(double[] data)
   {
-    this.timeStampCorto = new SimpleDateFormat("dd-MM-yyyy").format(Calendar.getInstance().getTime());
-    this.timeStampComplete = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(Calendar.getInstance().getTime());
+    timeStampCorto = new SimpleDateFormat("dd-MM-yyyy").format(Calendar.getInstance().getTime());
+    timeStampComplete = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(Calendar.getInstance().getTime());
     this.timeStampHora = new SimpleDateFormat("HH-mm-ss").format(Calendar.getInstance().getTime());
     
     StringBuilder sb = new StringBuilder();
@@ -1215,10 +1256,10 @@ public class CurrentReadingsRecords
     valueList.add(this.ROW_PotenciaAparente3);
     valueList.add(this.ROW_SYS_APPARENT_POWER2);
     for (int i = 0; i < 51; i++) {
-      this.listReadingsComplete.put(keyList.get(i), valueList.get(i));
+      listReadingsComplete.put(keyList.get(i), valueList.get(i));
     }
     String timeStampComplete = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss.SSS").format(Calendar.getInstance().getTime());
-    if (this.jCheckBoxSelected.isSelected())
+    if (jCheckBoxSelected.isSelected())
     {
       Iterator it = null;
       Set set = this.listSelected.entrySet();
@@ -1230,7 +1271,7 @@ public class CurrentReadingsRecords
         String key = entry.getKey().toString();
         for (int i = 0; i < 51; i++) {
           if ((keyList.get(i) == key) && (value == "true")) {
-            this.listReadings.put(keyList.get(i), valueList.get(i));
+            listReadings.put(keyList.get(i), valueList.get(i));
           }
         }
       }
@@ -1238,23 +1279,23 @@ public class CurrentReadingsRecords
     else
     {
       for (int i = 0; i < 51; i++) {
-        this.listReadings.put(keyList.get(i), valueList.get(i));
+        listReadings.put(keyList.get(i), valueList.get(i));
       }
     }
   }
   
   public void exportarTxt()
   {
-    File defaultname = new File("C:/LecturasMedidor/" + this.timeStampCorto + "/");
+    File defaultname = new File("C:/LecturasMedidor/" + timeStampCorto + "/");
     JFileChooser f = new JFileChooser();
     f.setFileSelectionMode(1);
     f.showSaveDialog(null);
-    this.fileData = f.getSelectedFile();
-    if (this.fileData == null) {
+    fileData = f.getSelectedFile();
+    if (fileData == null) {
       return;
     }
-    this.fileData = new File(f.getSelectedFile() + "/" + this.timeStampCorto + "/");
-    if (this.fileData.mkdirs()) {
+    fileData = new File(f.getSelectedFile() + "/" + timeStampCorto + "/");
+    if (fileData.mkdirs()) {
       System.out.println("Multiple directories are created!");
     } else {
       System.out.println("Failed to create multiple directories!");
@@ -1262,117 +1303,117 @@ public class CurrentReadingsRecords
     try
     {
       Path path = Paths.get(this.fileData + "/", new String[0]);
-      this.fileTxt = new File(this.fileData + "/" + this.timeStampHora + ".txt");
+      fileTxt = new File(this.fileData + "/" + timeStampHora + ".txt");
       if (Files.exists(path, new LinkOption[0])) {}
-      this.writer = new BufferedWriter(new FileWriter(this.fileTxt));
-      this.listReadings.clear();
+      writer = new BufferedWriter(new FileWriter(this.fileTxt));
+      listReadings.clear();
       readingsExport();
       Iterator it = null;
-      Set set = this.listReadings.entrySet();
+      Set set = listReadings.entrySet();
       it = set.iterator();
       while (it.hasNext())
       {
         Map.Entry entry = (Map.Entry)it.next();
         String value = entry.getValue().toString();
         String key = entry.getKey().toString();
-        this.writer.write("\r\n");
-        this.writer.write(key + value);
-        this.writer.write("\r\n");
+        writer.write("\r\n");
+        writer.write(key + value);
+        writer.write("\r\n");
       }
       return;
     }
     catch (FileNotFoundException e)
     {
       e.printStackTrace();
-      //JOptionPane.showMessageDialog(null, "No se encontro el archivo");
-      JOptionPane.showMessageDialog(null, "File not found","Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(null, "No se encontro el archivo", "Error", JOptionPane.ERROR_MESSAGE);
+      //JOptionPane.showMessageDialog(null, "File not found","Error",JOptionPane.ERROR_MESSAGE);
     }
     catch (IOException e)
     {
       e.printStackTrace();
-      //JOptionPane.showMessageDialog(null, "No se guardo el archivo");
-      JOptionPane.showMessageDialog(null, "File not save","Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(null, "No se guardo el archivo", "Error", JOptionPane.ERROR_MESSAGE);
+      //JOptionPane.showMessageDialog(null, "File not save","Error",JOptionPane.ERROR_MESSAGE);
     }
     finally
     {
       try
       {
-        if (this.writer != null)
+        if (writer != null)
         {
-          this.writer.flush();
-          this.writer.close();
-          //JOptionPane.showMessageDialog(null, "Archivo guardado correctamente");
-          JOptionPane.showMessageDialog(null, "File saved succesfully","Information",JOptionPane.INFORMATION_MESSAGE);
+          writer.flush();
+          writer.close();
+          JOptionPane.showMessageDialog(null, "Archivo guardado correctamente!!!", "Información", JOptionPane.INFORMATION_MESSAGE);
+          //JOptionPane.showMessageDialog(null, "File saved succesfully","Information",JOptionPane.INFORMATION_MESSAGE);
         }
       }
       catch (IOException e)
       {
         e.printStackTrace();
-        //JOptionPane.showMessageDialog(null, "No se guardo el archivo");
-        JOptionPane.showMessageDialog(null, "File not save","Error",JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, "No se guardo el archivo", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        //JOptionPane.showMessageDialog(null, "File not save","Error",JOptionPane.ERROR_MESSAGE);
       }
     }
   }
   
   public void createFileTxt()
   {
-    File defaultname = new File("C:/LecturasMedidor/" + this.timeStampCorto + "/");
+    File defaultname = new File("C:/LecturasMedidor/" + timeStampCorto + "/");
     JFileChooser f = new JFileChooser();
     f.setFileSelectionMode(1);
     f.showSaveDialog(null);
     
-    this.fileData = f.getSelectedFile();
-    if ((this.fileData.getName().equals("")) || (this.fileData.getName() == null)) {
-      this.fileData = defaultname;
+    fileData = f.getSelectedFile();
+    if ((fileData.getName().equals("")) || (this.fileData.getName() == null)) {
+      fileData = defaultname;
     } else {
-      this.fileData = new File(f.getSelectedFile() + "/" + this.timeStampCorto + "/");
+      fileData = new File(f.getSelectedFile() + "/" + timeStampCorto + "/");
     }
-    if (this.fileData.mkdirs()) {
+    if (fileData.mkdirs()) {
       System.out.println("Multiple directories are created!");
     } else {
       System.out.println("Failed to create multiple directories!");
     }
-    Path path = Paths.get(this.fileData + "/", new String[0]);
-    this.fileTxt = new File(this.fileData + "/" + this.timeStampHora + ".txt");
-    this.contadorLog = 0;
+    Path path = Paths.get(fileData + "/", new String[0]);
+    fileTxt = new File(fileData + "/" + timeStampHora + ".txt");
+    contadorLog = 0;
     try
     {
-      this.writer = new BufferedWriter(new FileWriter(this.fileTxt));
-      this.startRecord = true;
+      writer = new BufferedWriter(new FileWriter(fileTxt));
+      startRecord = true;
     }
     catch (FileNotFoundException e)
     {
       e.printStackTrace();
-      //JOptionPane.showMessageDialog(null, "No se encontro el archivo");
-      JOptionPane.showMessageDialog(null, "File not found","Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(null, "No se encontro el archivo", "Error", JOptionPane.ERROR_MESSAGE);
+      //JOptionPane.showMessageDialog(null, "File not found","Error",JOptionPane.ERROR_MESSAGE);
     }
     catch (IOException e)
     {
       e.printStackTrace();
-      //JOptionPane.showMessageDialog(null, "No se guardo el archivo");
-      JOptionPane.showMessageDialog(null, "File not save","Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(null, "No se guardo el archivo", "Error", JOptionPane.ERROR_MESSAGE);
+      //JOptionPane.showMessageDialog(null, "File not save","Error",JOptionPane.ERROR_MESSAGE);
     }
   }
   
   public void closeFileLogTxt()
   {
-    if (!this.jCheckBoxLogMode.isSelected()) {
+    if (!jCheckBoxLogMode.isSelected()) {
       try
       {
-        if (this.writer != null)
+        if (writer != null)
         {
-          this.writer.flush();
-          this.writer.close();
-          this.contadorLog = 0;
-          //JOptionPane.showMessageDialog(null, "Archivo guardado correctamente");
-          JOptionPane.showMessageDialog(null, "File saved succesfully","Information",JOptionPane.INFORMATION_MESSAGE);
+          writer.flush();
+          writer.close();
+          contadorLog = 0;
+          JOptionPane.showMessageDialog(null, "Archivo guardado correctamente!!!", "Información", JOptionPane.INFORMATION_MESSAGE);
+          //JOptionPane.showMessageDialog(null, "File saved succesfully","Information",JOptionPane.INFORMATION_MESSAGE);
         }
       }
       catch (IOException e)
       {
         e.printStackTrace();
-        //JOptionPane.showMessageDialog(null, "No se guardo el archivo");
-        JOptionPane.showMessageDialog(null, "File not save","Error",JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, "No se guardo el archivo", "Error", JOptionPane.ERROR_MESSAGE);
+        //JOptionPane.showMessageDialog(null, "File not save","Error",JOptionPane.ERROR_MESSAGE);
       }
     }
   }
@@ -1381,67 +1422,67 @@ public class CurrentReadingsRecords
   {
     try
     {
-      this.listReadings.clear();
+      listReadings.clear();
       readingsExport();
       Iterator it = null;
-      Set set = this.listReadings.entrySet();
+      Set set = listReadings.entrySet();
       it = set.iterator();
       while (it.hasNext())
       {
         Map.Entry entry = (Map.Entry)it.next();
         String value = entry.getValue().toString();
         String key = entry.getKey().toString();
-        this.writer.write("\r\n");
-        this.writer.write(key + value);
-        this.writer.write("\r\n");
+        writer.write("\r\n");
+        writer.write(key + value);
+        writer.write("\r\n");
       }
-      this.contadorLog += 1;
-      if (this.contadorLog == 300)
+      contadorLog += 1;
+      if (contadorLog == 300)
       {
         try
         {
-          if (this.writer != null)
+          if (writer != null)
           {
-            this.writer.flush();
-            this.writer.close();
+            writer.flush();
+            writer.close();
           }
         }
         catch (IOException e)
         {
           e.printStackTrace();
         }
-        this.contadorLog = 0;
+        contadorLog = 0;
         try
         {
-          this.fileTxt = new File(this.fileData + "/" + this.timeStampHora + ".txt");
+          fileTxt = new File(fileData + "/" + timeStampHora + ".txt");
           
-          this.writer = new BufferedWriter(new FileWriter(this.fileTxt));
+          writer = new BufferedWriter(new FileWriter(fileTxt));
         }
         catch (FileNotFoundException e)
         {
           e.printStackTrace();
-          //JOptionPane.showMessageDialog(null, "No se encontro el archivo");
-          JOptionPane.showMessageDialog(null, "File not found","Error",JOptionPane.ERROR_MESSAGE);
+          JOptionPane.showMessageDialog(null, "No se encontro el archivo", "Error", JOptionPane.ERROR_MESSAGE);
+          //JOptionPane.showMessageDialog(null, "File not found","Error",JOptionPane.ERROR_MESSAGE);
         }
         catch (IOException e)
         {
           e.printStackTrace();
-          //JOptionPane.showMessageDialog(null, "No se guardo el archivo");
-          JOptionPane.showMessageDialog(null, "File not save","Error",JOptionPane.ERROR_MESSAGE);
+          JOptionPane.showMessageDialog(null, "No se guardo el archivo", "Error", JOptionPane.ERROR_MESSAGE);
+          //JOptionPane.showMessageDialog(null, "File not save","Error",JOptionPane.ERROR_MESSAGE);
         }
       }
     }
     catch (FileNotFoundException e)
     {
       e.printStackTrace();
-      //JOptionPane.showMessageDialog(null, "No se encontro el archivo");
-      JOptionPane.showMessageDialog(null, "File not found","Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(null, "No se encontro el archivo", "Error", JOptionPane.ERROR_MESSAGE);
+      //JOptionPane.showMessageDialog(null, "File not found","Error",JOptionPane.ERROR_MESSAGE);
     }
     catch (IOException e)
     {
       e.printStackTrace();
-      //JOptionPane.showMessageDialog(null, "No se guardo el archivo");
-      JOptionPane.showMessageDialog(null, "File not save","Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(null, "No se guardo el archivo", "Error", JOptionPane.ERROR_MESSAGE);
+      //JOptionPane.showMessageDialog(null, "File not save","Error",JOptionPane.ERROR_MESSAGE);
     }
   }
   
@@ -1520,10 +1561,10 @@ public class CurrentReadingsRecords
     {
     case ROW_VOLTAGE: 
     case ROW_CURRENT: 
-      this.meterTable.setValueAt(value + " " + type.getUnits(), type.getRow(), phase.getCol());
+      meterTable.setValueAt(value + " " + type.getUnits(), type.getRow(), phase.getCol());
       break;
     default: 
-      this.meterTable.setValueAt(value + " " + type.getUnits(), type.getRow(), phase.getCol());
+      meterTable.setValueAt(value + " " + type.getUnits(), type.getRow(), phase.getCol());
     }
   }
   
@@ -1532,123 +1573,124 @@ public class CurrentReadingsRecords
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---" }, 
-                                                                                { "FW Version", 
+                                                                                { "FW Versión", 
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---" }, 
-                                                                                //{ "Energia Activa Entregada V", 
-                                                                                { "Active Energy Delivered V", 
+                                                                                { "Energía Activa Entregada V", 
+                                                                                //{ "Active Energy Delivered V", 
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---" }, 
-                                                                                //{ "Energia Reactiva Entregada V", 
-                                                                                { "Reactive Energy Delivered V",
+                                                                                { "Energía Reactiva Entregada V", 
+                                                                                //{ "Reactive Energy Delivered V",
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---" }, 
-                                                                                //{ "Energia Activa Recibida -Wh", 
-                                                                                { "Active Energy Received -Wh",
+                                                                                { "Energía Activa Recibida -Wh", 
+                                                                                //{ "Active Energy Received -Wh",
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---" }, 
-                                                                                //{ "Energia Reactiva Recibida -VArh", 
-                                                                                { "Reactive Power Received -VArh",
+                                                                                { "Energía Reactiva Recibida -VArh", 
+                                                                                //{ "Reactive Power Received -VArh",
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---" }, 
-                                                                                //{ "Hora Local", 
-                                                                                { "Local Time",
+                                                                                { "Hora Local", 
+                                                                                //{ "Local Time",
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---" }, 
-                                                                                //{ "Frecuencia de Linea Hz", 
-                                                                                { "Line Frequency Hz",
+                                                                                { "Frecuencia de Línea Hz", 
+                                                                                //{ "Line Frequency Hz",
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---" }, 
-                                                                                //{ "Voltaje V", 
-                                                                                { "Voltage V",
+                                                                                { "Voltaje V", 
+                                                                                //{ "Voltage V",
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---" }, 
-                                                                                //{ "Corriente A", 
-                                                                                { "Current A", 
+                                                                                { "Corriente A", 
+                                                                                //{ "Current A", 
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---" }, 
-                                                                                //{ "Factor de Potencia [cos (?)]", 
-                                                                                { "Power Factor [cos (?)]",
+                                                                                { "Factor de Potencia [cos (?)]", 
+                                                                                //{ "Power Factor [cos (?)]",
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---" }, 
-                                                                                //{ "Potencia Activa [P] W", 
-                                                                                { "Active Power [P] W",
+                                                                                { "Potencia Activa [P] W", 
+                                                                                //{ "Active Power [P] W",
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---" }, 
-                                                                                //{ "Potencia Reactiva [Q] VAr", 
-                                                                                { "Reactive Power [Q] VAr",
+                                                                                { "Potencia Reactiva [Q] VAr", 
+                                                                                //{ "Reactive Power [Q] VAr",
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---" }, 
-                                                                                //{ "Potencia Aparente [S] VA", 
-                                                                                { "Apparent Power [S] VA",
+                                                                                { "Potencia Aparente [S] VA", 
+                                                                                //{ "Apparent Power [S] VA",
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---" }, 
-                                                                                //{ "Demanda Rol Activa Ent W", 
-                                                                                { "Delivered Active Rol Demand W",
+                                                                                { "Demanda Rol Activa Ent W", 
+                                                                                //{ "Delivered Active Rol Demand W",
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---" }, 
-                                                                                //{ "Demanda Rol Reactiva Ent VAr", 
-                                                                                { "Delivered Reactive Rol Demand VAr",
+                                                                                { "Demanda Rol Reactiva Ent VAr", 
+                                                                                //{ "Delivered Reactive Rol Demand VAr",
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---" }, 
-                                                                                //{ "Demanda Rol Activa Recib W", 
-                                                                                { "Active Demand Rol Received W",
+                                                                                { "Demanda Rol Activa Recib W", 
+                                                                                //{ "Active Demand Rol Received W",
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---" }, 
-                                                                                //{ "Demanda Rol Reactiva Recib VAr", 
-                                                                                { "Reactive Demand Rol Received VAr",
+                                                                                { "Demanda Rol Reactiva Recib VAr", 
+                                                                                //{ "Reactive Demand Rol Received VAr",
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---" } }, 
-                                                                                new String[] { "Variable", "Phase 1", "Phase 2", "Phase 3", "Sys" })
-                                                                                //new String[] { "Campo", "Fase 1", "Fase 2", "Fase 3", "Sys" })
+                                                                                //new String[] { "Variable", "Phase 1", "Phase 2", "Phase 3", "Sys" })
+                                                                                new String[] { "Campo", "Fase 1", "Fase 2", "Fase 3", "Sys" })
   {
     Class[] types = { String.class, String.class, String.class, String.class, String.class };
     boolean[] canEdit = { false, false, false, false, false };
     
     public Class getColumnClass(int columnIndex)
     {
-      return this.types[columnIndex];
+      return types[columnIndex];
     }
     
     public boolean isCellEditable(int rowIndex, int columnIndex)
     {
-      return this.canEdit[columnIndex];
+      return canEdit[columnIndex];
     }
   };
+  
   ActionListener taskReadings = new ActionListener()
   {
     public void actionPerformed(ActionEvent e)
@@ -1656,11 +1698,11 @@ public class CurrentReadingsRecords
       CurrentReadingsRecords.datos = CurrentReadingsRecords.this.readingUnit();
       if (CurrentReadingsRecords.datos == null)
       {
-        //JOptionPane.showMessageDialog(null, "No hay respuesta del medidor, revisa numero de serie o que este conectado");
-        JOptionPane.showMessageDialog(null, "Meter not response, check serial number or connection","Error",JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, "No hay respuesta del medidor, revisa número de serie o que este conectado", "Error", JOptionPane.ERROR_MESSAGE);
+        //JOptionPane.showMessageDialog(null, "Meter not response, check serial number or connection","Error",JOptionPane.ERROR_MESSAGE);
         CurrentReadingsRecords.this.timePoll.stop();
-        //CurrentReadingsRecords.this.jButtonStartStop.setText("Iniciar Lecturas");
-        CurrentReadingsRecords.this.jButtonStartStop.setText("Start Readings");
+        CurrentReadingsRecords.this.jButtonStartStop.setText("Iniciar Lecturas");
+        //CurrentReadingsRecords.this.jButtonStartStop.setText("Start Readings");
       }
       else
       {
@@ -1679,14 +1721,14 @@ public class CurrentReadingsRecords
   
   public double[] readingUnit()
   {
-    this.read.requestReadings(PortComunication.DELAY400);
-    datos = this.read.responseReadings();
+    read.requestReadings(PortComunication.DELAY400);
+    datos = read.responseReadings();
     int retrys = 0;
     while ((datos == null) && (retrys < 2))
     {
-      this.read.requestReadings(PortComunication.DELAY400);
+      read.requestReadings(PortComunication.DELAY400);
       
-      datos = this.read.responseReadings();
+      datos = read.responseReadings();
       retrys++;
     }
     return datos;

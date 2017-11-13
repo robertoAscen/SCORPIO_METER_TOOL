@@ -55,78 +55,89 @@ public class FirmwareUpload
   public FirmwareUpload()
   {
     initComponents();
-    this.jButtonStartUploadFirmware.setEnabled(false);
+    jButtonStartUploadFirmware.setEnabled(false);
   }
   
   private void initComponents()
   {
-    this.jButtonExamineFirmware = new JButton();
-    this.jLabelFirmwareName = new JLabel();
-    this.jButtonStartUploadFirmware = new JButton();
-    this.jCheckBoxBroadcastFirmware = new JCheckBox();
-    this.jButtonDowngradeFirmware = new JButton();
-    this.jCheckBoxBroadcastDowngrade = new JCheckBox();
-    this.jProgressBarFirmware = new JProgressBar();
-    this.jLabelProgressBar = new JLabel();
-    this.jLabelLog = new JLabel();
-    this.jLabelNamePanel = new JLabel();
-    this.jScrollPane1 = new JScrollPane();
-    this.jTextAreaLog = new JTextArea();
-    this.jButtonClear = new JButton();
+    jButtonExamineFirmware = new JButton();
+    jLabelFirmwareName = new JLabel();
+    jButtonStartUploadFirmware = new JButton();
+    jCheckBoxBroadcastFirmware = new JCheckBox();
+    jButtonDowngradeFirmware = new JButton();
+    jCheckBoxBroadcastDowngrade = new JCheckBox();
+    jProgressBarFirmware = new JProgressBar();
+    jLabelProgressBar = new JLabel();
+    jLabelLog = new JLabel();
+    jLabelNamePanel = new JLabel();
+    jScrollPane1 = new JScrollPane();
+    jTextAreaLog = new JTextArea();
+    jButtonClear = new JButton();
     
     setPreferredSize(new Dimension(950, 600));
     
-    //this.jButtonExamineFirmware.setText("EXAMINAR FIRMWARE ...(HEX)");
-    this.jButtonExamineFirmware.setText("BROWSE FIRMWARE ...(HEX)");
-    this.jButtonExamineFirmware.addActionListener(new ActionListener()
+    jButtonExamineFirmware.setText("EXAMINAR FIRMWARE ...(HEX)");
+    //jButtonExamineFirmware.setText("BROWSE FIRMWARE ...(HEX)");
+    jButtonExamineFirmware.setToolTipText("Oprime el botón para seleccionar un archivo firmware .hex");
+    jButtonExamineFirmware.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         FirmwareUpload.this.jButtonExamineFirmwareActionPerformed(evt);
       }
     });
-    this.jLabelFirmwareName.setText("...");
+    //jLabelFirmwareName.setText("...");
     
-    //this.jButtonStartUploadFirmware.setText("INICIAR LA CARGA DE FIRMWARE");
-    this.jButtonStartUploadFirmware.setText("START LOAD FIRMWARE");
-    this.jButtonStartUploadFirmware.addActionListener(new ActionListener()
+    jButtonStartUploadFirmware.setText("INICIAR LA CARGA DE FIRMWARE");
+    //jButtonStartUploadFirmware.setText("START LOAD FIRMWARE");
+    jButtonStartUploadFirmware.setToolTipText("Oprime el botón para cargar el firmware seleccionado");
+    jButtonStartUploadFirmware.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         FirmwareUpload.this.jButtonStartUploadFirmwareActionPerformed(evt);
       }
     });
-    //this.jCheckBoxBroadcastFirmware.setText("Varios Medidores");
-    this.jCheckBoxBroadcastFirmware.setText("Various Meters");
     
-    this.jButtonDowngradeFirmware.setText("DOWNGRADE FIRMWARE");
-    this.jButtonDowngradeFirmware.addActionListener(new ActionListener()
+    jCheckBoxBroadcastFirmware.setText("Varios Medidores");
+    //jCheckBoxBroadcastFirmware.setText("Various Meters");
+    jCheckBoxBroadcastFirmware.setToolTipText("Selecciona está opción para cargar firmware a varios medidores");
+    
+    jButtonDowngradeFirmware.setText("DOWNGRADE FIRMWARE");
+    jButtonDowngradeFirmware.setToolTipText("Oprime el botón para regresar a una versión anterior el firmware");
+    jButtonDowngradeFirmware.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         FirmwareUpload.this.jButtonDowngradeFirmwareActionPerformed(evt);
       }
     });
-    //this.jCheckBoxBroadcastDowngrade.setText("Varios Medidores");
-    this.jCheckBoxBroadcastDowngrade.setText("Various Meters");
     
-    //this.jLabelProgressBar.setText("Estado de la carga de Firmware");
-    this.jLabelProgressBar.setText("Charge Status Firmware");
+    //jCheckBoxBroadcastDowngrade.setText("Varios Medidores");
+    //jCheckBoxBroadcastDowngrade.setText("Various Meters");
+    jCheckBoxBroadcastDowngrade.setToolTipText("Selecciona está opción para hacer Downgrade a varios medidores");
     
-    this.jLabelLog.setText("Log");
+    jProgressBarFirmware.setToolTipText("Estado de la carga del Firmware");
     
-    this.jLabelNamePanel.setFont(new Font("Tahoma", 1, 18));
-    //this.jLabelNamePanel.setText("CARGA DE FIRMWARE");
-    this.jLabelNamePanel.setText("LOAD FIRMWARE");
+    jLabelProgressBar.setText("Estado de la carga de Firmware");
+    //jLabelProgressBar.setText("Charge Status Firmware");
     
-    this.jTextAreaLog.setColumns(20);
-    this.jTextAreaLog.setLineWrap(true);
-    this.jTextAreaLog.setRows(5);
-    this.jScrollPane1.setViewportView(this.jTextAreaLog);
+    jLabelLog.setText("Log");
     
-    //this.jButtonClear.setText("LIMPIAR LOG");
-    this.jButtonClear.setText("CLEAR LOG");
-    this.jButtonClear.addActionListener(new ActionListener()
+    jLabelNamePanel.setFont(new Font("Tahoma", 1, 18));
+    jLabelNamePanel.setText("CARGA DE FIRMWARE");
+    //jLabelNamePanel.setText("LOAD FIRMWARE");
+    
+    jTextAreaLog.setColumns(20);
+    jTextAreaLog.setLineWrap(true);
+    jTextAreaLog.setRows(5);
+    jTextAreaLog.setToolTipText("Área de log");
+    jScrollPane1.setViewportView(jTextAreaLog);
+    
+    jButtonClear.setText("LIMPIAR LOG");
+    //jButtonClear.setText("CLEAR LOG");
+    jButtonClear.setToolTipText("Oprime el botón para limpiar el área del log");
+    jButtonClear.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
@@ -135,7 +146,7 @@ public class FirmwareUpload
     });
     GroupLayout layout = new GroupLayout(this);
     setLayout(layout);
-    layout.setHorizontalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup().addContainerGap(-1, 32767).addComponent(this.jLabelNamePanel).addGap(373, 373, 373)).addGroup(layout.createSequentialGroup().addGap(31, 31, 31).addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addComponent(this.jButtonClear).addGap(0, 0, 32767)).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(this.jScrollPane1).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(this.jLabelLog).addComponent(this.jLabelProgressBar)).addGap(0, 719, 32767)).addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup().addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING).addComponent(this.jButtonExamineFirmware, -1, -1, 32767).addComponent(this.jButtonStartUploadFirmware, -1, -1, 32767)).addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup().addGap(18, 18, 32767).addComponent(this.jCheckBoxBroadcastFirmware).addGap(246, 246, 246).addComponent(this.jButtonDowngradeFirmware).addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED).addComponent(this.jCheckBoxBroadcastDowngrade)).addGroup(layout.createSequentialGroup().addGap(12, 12, 12).addComponent(this.jLabelFirmwareName)))).addComponent(this.jProgressBarFirmware, -1, -1, 32767)).addGap(49, 49, 49)))));
+    layout.setHorizontalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup().addContainerGap(-1, 32767).addComponent(this.jLabelNamePanel).addGap(373, 373, 373)).addGroup(layout.createSequentialGroup().addGap(31, 31, 31).addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addComponent(this.jButtonClear).addGap(0, 0, 32767)).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(this.jScrollPane1).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(this.jLabelLog).addComponent(this.jLabelProgressBar)).addGap(0, 719, 32767)).addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup().addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING).addComponent(this.jButtonExamineFirmware, -1, -1, 32767).addComponent(this.jButtonStartUploadFirmware, -1, -1, 32767)).addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup().addGap(17, 17, 32767).addComponent(this.jCheckBoxBroadcastFirmware).addGap(246, 246, 246).addComponent(this.jButtonDowngradeFirmware).addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED).addComponent(this.jCheckBoxBroadcastDowngrade)).addGroup(layout.createSequentialGroup().addGap(12, 12, 12).addComponent(this.jLabelFirmwareName)))).addComponent(this.jProgressBarFirmware, -1, 1, 32767)).addGap(49, 49, 49)))));
     
     layout.setVerticalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGap(8, 8, 8).addComponent(this.jLabelNamePanel).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(this.jButtonExamineFirmware).addComponent(this.jLabelFirmwareName)).addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(this.jButtonStartUploadFirmware).addComponent(this.jCheckBoxBroadcastFirmware).addComponent(this.jCheckBoxBroadcastDowngrade).addComponent(this.jButtonDowngradeFirmware)).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addComponent(this.jLabelProgressBar).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addComponent(this.jProgressBarFirmware, -2, 33, -2).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addComponent(this.jLabelLog).addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED).addComponent(this.jScrollPane1, -2, 390, -2).addGap(18, 18, 18).addComponent(this.jButtonClear).addContainerGap(19, 32767)));
   }
@@ -146,21 +157,21 @@ public class FirmwareUpload
     int returnOption = fileChooser.showOpenDialog(this);
     if (returnOption == 0)
     {
-      this.fileData = fileChooser.getSelectedFile();
-      this.jLabelFirmwareName.setText(this.fileData.getName());
+      fileData = fileChooser.getSelectedFile();
+      jLabelFirmwareName.setText(fileData.getName());
     }
     else
     {
       this.fileData = null;
       this.jLabelFirmwareName.setText("...");
     }
-    Path path = Paths.get(this.fileData + "/", new String[0]);
-    this.pathh = path.toString();
+    Path path = Paths.get(fileData + "/", new String[0]);
+    pathh = path.toString();
     
     int memoryCheckSum = -1;
     try
     {
-      memoryCheckSum = Firmware3PHProcessor.getInstance().processHEXFile(this.fileData);
+      memoryCheckSum = Firmware3PHProcessor.getInstance().processHEXFile(fileData);
     }
     catch (IOException ex)
     {
@@ -168,14 +179,14 @@ public class FirmwareUpload
     }
     if (memoryCheckSum != -1)
     {
-      this.jTextAreaLog.append("HEX file processed successfully. MemoryMap CheckSum: 0x" + Integer.toHexString(memoryCheckSum) + "\n");
-      this.jButtonStartUploadFirmware.setEnabled(true);
+      jTextAreaLog.append("HEX file processed successfully. MemoryMap CheckSum: 0x" + Integer.toHexString(memoryCheckSum) + "\n");
+      jButtonStartUploadFirmware.setEnabled(true);
     }
     else
     {
-      //JOptionPane.showMessageDialog(null, "Error Revise el archivo");
-      JOptionPane.showMessageDialog(null, "Error Check the file","Error",JOptionPane.ERROR_MESSAGE);
-      this.jButtonStartUploadFirmware.setEnabled(false);
+      JOptionPane.showMessageDialog(null, "Error, Revise el archivo");
+      //JOptionPane.showMessageDialog(null, "Error Check the file","Error",JOptionPane.ERROR_MESSAGE);
+      jButtonStartUploadFirmware.setEnabled(false);
       return;
     }
   }
@@ -187,7 +198,7 @@ public class FirmwareUpload
     FlagsPasswords flagPassword = FlagsPasswords.METER_FORCE_RESET;
     String serialNumber = "";
     boolean continueReboot = true;
-    if (this.jCheckBoxBroadcastDowngrade.isSelected())
+    if (jCheckBoxBroadcastDowngrade.isSelected())
     {
       serialNumber = "0000000000000000";
       broadCast = true;
@@ -196,8 +207,8 @@ public class FirmwareUpload
     {
       if (((Meter.getSerialNumberCompl() == null ? 1 : 0) | (!port.getStatePort() ? 1 : 0)) != 0)
       {
-        //JOptionPane.showMessageDialog(null, "Error Revise el numero de serie, Puerto o conexion");
-        JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexión");
+        //JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
         return;
       }
       serialNumber = Meter.getSerialNumberCompl();
@@ -210,8 +221,8 @@ public class FirmwareUpload
     }
     else
     {
-      //JOptionPane.showMessageDialog(null, "Error Revise el numero de serie, Puerto o conexion");
-      JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexión");
+      //JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
       continueReboot = false;
     }
     try
@@ -224,11 +235,11 @@ public class FirmwareUpload
       FlagsPasswords flagPasswordDowng = FlagsPasswords.METER_FORCE_BOOTLOADER;
       boolean estado2 = modb.writeFlagsPassw(flagPasswordDowng, serialNumber);
       if (estado2 == true) {
-        //this.jTextAreaLog.append("Downgrade correctamente\n");
-        this.jTextAreaLog.append("Downgrade succesfully\n");
+        jTextAreaLog.append("Downgrade correctamente\n");
+        //jTextAreaLog.append("Downgrade succesfully\n");
       } else {
-        //this.jTextAreaLog.append("Error Revise el numero de serie, Puerto o conexion\n");
-        this.jTextAreaLog.append("Error Check serial number, Port or connection\n");
+        jTextAreaLog.append("Error, Revise el número de serie, Puerto o conexión\n");
+        //jTextAreaLog.append("Error Check serial number, Port or connection\n");
       }
     }
   }
@@ -245,8 +256,8 @@ public class FirmwareUpload
   {
     if (Meter.getSerialNumberCompl() == null)
     {
-      //JOptionPane.showMessageDialog(null, "Error Revise el numero de serie, Puerto o conexion");
-      JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexión");
+      //JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
       return;
     }
     try
@@ -254,12 +265,12 @@ public class FirmwareUpload
       if (Firmware3PHProcessor.getInstance().processHEXFile(fileData) != -1)
       {
         this.jProgressBarFirmware.setMaximum(Firmware3PHProcessor.getInstance().getTxTotal());
-        //this.jTextAreaLog.append("Un total de " + Firmware3PHProcessor.getInstance().getTxTotal() + " frames will be transmitted. \n");
-        //this.jTextAreaLog.append("Proceso inicio a las " + new Date().toString() + "\n");
-        this.jTextAreaLog.append("A total of " + Firmware3PHProcessor.getInstance().getTxTotal() + " frames will be transmitted. \n");
-        this.jTextAreaLog.append("Start the process " + new Date().toString() + "\n");
-        this.timeFWUpload.start();
-        this.jButtonStartUploadFirmware.setEnabled(false);
+        jTextAreaLog.append("Un total de " + Firmware3PHProcessor.getInstance().getTxTotal() + " frames will be transmitted. \n");
+        jTextAreaLog.append("Proceso inicio a las " + new Date().toString() + "\n");
+        //jTextAreaLog.append("A total of " + Firmware3PHProcessor.getInstance().getTxTotal() + " frames will be transmitted. \n");
+        //jTextAreaLog.append("Start the process " + new Date().toString() + "\n");
+        timeFWUpload.start();
+        jButtonStartUploadFirmware.setEnabled(false);
         
         new Thread()
         {
@@ -277,7 +288,11 @@ public class FirmwareUpload
     catch (IOException ex)
     {
       ex = ex;
-      this.timeFWUpload.stop();this.jProgressBarFirmware.setValue(0);log.error("Unexpected I/O error at swingActionSTARTFW().", ex);this.jTextAreaLog.append("An unexpected error has ocurred, please verify the system log. \n");this.jButtonStartUploadFirmware.setEnabled(true);
+      timeFWUpload.stop();
+      jProgressBarFirmware.setValue(0);
+      log.error("Unexpected I/O error at swingActionSTARTFW().", ex);
+      jTextAreaLog.append("An unexpected error has ocurred, please verify the system log. \n");
+      jButtonStartUploadFirmware.setEnabled(true);
     }
     finally {}
   }
@@ -296,8 +311,8 @@ public class FirmwareUpload
         PortComunication port = new PortComunication();
         if (!port.getStatePort())
         {
-          //JOptionPane.showMessageDialog(null, "Error Revise el numero de serie, Puerto o conexion");
-          JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
+          JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexión");
+          //JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
           return;
         }
         FirmwareUpload.this.swingActionSTARTFW(FirmwareUpload.this.fileData);

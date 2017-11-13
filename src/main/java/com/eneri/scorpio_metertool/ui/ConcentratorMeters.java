@@ -56,52 +56,52 @@ public class ConcentratorMeters
   
   private void initComponents()
   {
-    this.jLabelNameMeterConcentrator = new JLabel();
-    this.jLabelConcentratorIP = new JLabel();
-    this.jTextFieldConcentratorIP = new JTextField();
-    this.jButtonGetMeters = new JButton();
-    this.jButtoneExportListMetersToXML = new JButton();
-    this.jScrollPane1 = new JScrollPane();
-    this.jTableMetersConcentrator = new JTable();
+    jLabelNameMeterConcentrator = new JLabel();
+    jLabelConcentratorIP = new JLabel();
+    jTextFieldConcentratorIP = new JTextField();
+    jButtonGetMeters = new JButton();
+    jButtoneExportListMetersToXML = new JButton();
+    jScrollPane1 = new JScrollPane();
+    jTableMetersConcentrator = new JTable();
     
     setPreferredSize(new Dimension(950, 600));
     
-    this.jLabelNameMeterConcentrator.setFont(new Font("Ubuntu", 1, 18));
-    //this.jLabelNameMeterConcentrator.setText("MEDIDORES DEL CONCENTRADOR");
-    this.jLabelNameMeterConcentrator.setText("CONCENTRATOR METERS");
+    jLabelNameMeterConcentrator.setFont(new Font("Ubuntu", 1, 18));
+    jLabelNameMeterConcentrator.setText("MEDIDORES DEL CONCENTRADOR");
+    //jLabelNameMeterConcentrator.setText("CONCENTRATOR METERS");
     
-    //this.jLabelConcentratorIP.setText("IP del concentrador");
-    this.jLabelConcentratorIP.setText("Concentrator IP");
+    jLabelConcentratorIP.setText("IP del concentrador");
+    //jLabelConcentratorIP.setText("Concentrator IP");
     
-    this.jTextFieldConcentratorIP.setText("10.0.0.253");
-    this.jTextFieldConcentratorIP.addActionListener(new ActionListener()
+    jTextFieldConcentratorIP.setText("10.0.0.253");
+    jTextFieldConcentratorIP.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         ConcentratorMeters.this.jTextFieldConcentratorIPActionPerformed(evt);
       }
     });
-    //this.jButtonGetMeters.setText("VER MEDIDORES");
-    this.jButtonGetMeters.setText("SHOW METERS");
-    this.jButtonGetMeters.addActionListener(new ActionListener()
+    jButtonGetMeters.setText("VER MEDIDORES");
+    //jButtonGetMeters.setText("SHOW METERS");
+    jButtonGetMeters.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         ConcentratorMeters.this.jButtonGetMetersActionPerformed(evt);
       }
     });
-    //this.jButtoneExportListMetersToXML.setText("EXPORTAR LISTA A XML");
-    this.jButtoneExportListMetersToXML.setText("EXPORT LIST TO XML");
-    this.jButtoneExportListMetersToXML.addActionListener(new ActionListener()
+    jButtoneExportListMetersToXML.setText("EXPORTAR LISTA A XML");
+    //jButtoneExportListMetersToXML.setText("EXPORT LIST TO XML");
+    jButtoneExportListMetersToXML.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         ConcentratorMeters.this.jButtoneExportListMetersToXMLActionPerformed(evt);
       }
     });
-    this.jTableMetersConcentrator.setModel(new DefaultTableModel(new Object[0][], new String[0]));
+    jTableMetersConcentrator.setModel(new DefaultTableModel(new Object[0][], new String[0]));
     
-    this.jScrollPane1.setViewportView(this.jTableMetersConcentrator);
+    jScrollPane1.setViewportView(jTableMetersConcentrator);
     
     GroupLayout layout = new GroupLayout(this);
     setLayout(layout);
@@ -126,27 +126,27 @@ public class ConcentratorMeters
   public void createFrame()
   {
     Request req = new Request();
-    this.scrollpane = new JScrollPane();
+    scrollpane = new JScrollPane();
     defaultable = new DefaultTableModel((Object[][])null, getColumnas());
     
     WorkConcentrator metConXml = new WorkConcentrator();
     String request = "<appCommand type=\"request\"><command name=\"getMeters\" /></appCommand>";
     
-    boolean estate = req.requestServer(this.jTextFieldConcentratorIP.getText(), request);
+    boolean estate = req.requestServer(jTextFieldConcentratorIP.getText(), request);
     if (estate == true)
     {
       String response = req.getResponse();
-      metConXml.readMetersConcentratorXML(this.jTextFieldConcentratorIP.getText(), response);
-      this.jButtoneExportListMetersToXML.setEnabled(true);
+      metConXml.readMetersConcentratorXML(jTextFieldConcentratorIP.getText(), response);
+      jButtoneExportListMetersToXML.setEnabled(true);
     }
     else
     {
-      JOptionPane.showMessageDialog(null, "Connection Fail","Error",JOptionPane.ERROR_MESSAGE);
-      //JOptionPane.showMessageDialog(null, "Fallo de conexion");
+      //JOptionPane.showMessageDialog(null, "Connection Fail","Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(null, "Fallo de conexión");
     }
-    this.jTableMetersConcentrator.setModel(defaultable);
-    this.jTableMetersConcentrator.repaint();
-    this.scrollpane.repaint();
+    jTableMetersConcentrator.setModel(defaultable);
+    jTableMetersConcentrator.repaint();
+    scrollpane.repaint();
     setVisible(true);
   }
   
@@ -157,8 +157,8 @@ public class ConcentratorMeters
   
   public String[] getColumnas()
   {
-    String[] columna = { "NumeroSerie", "Fecha", "Tipo" };
     //String[] columna = { "NumeroSerie", "Fecha", "Tipo" };
+    String[] columna = { "NúmeroSerie", "Fecha", "Tipo" };
     return columna;
   }
 }

@@ -79,30 +79,30 @@ public class ReadWriteRegister
     initComponents();
     for (Register reg : Register.values()) {
       if (((reg == Register.RANGE_MEASUREMENT_BLOCK ? 1 : 0) | (reg == Register.RANGO_DIFERENCIAL_CARGA_PERFIL ? 1 : 0)) == 0) {
-        this.jComboBoxRegisters.addItem(reg.toString());
+        jComboBoxRegisters.addItem(reg.toString());
       }
     }
-    AutoCompleteDecorator.decorate(this.jComboBoxRegisters);
+    AutoCompleteDecorator.decorate(jComboBoxRegisters);
     
-    this.jButtonSend.setEnabled(false);
+    jButtonSend.setEnabled(false);
   }
   
   public void itemStateChanged()
   {
     for (Register reg : Register.values()) {
-      if (this.jComboBoxRegisters.getSelectedItem() == reg.name())
+      if (jComboBoxRegisters.getSelectedItem() == reg.name())
       {
-        String nameAddress = this.jComboBoxRegisters.getSelectedItem().toString();
+        String nameAddress = jComboBoxRegisters.getSelectedItem().toString();
         Register regs = Register.valueOf(nameAddress);
         int value = regs.getWordLength();
         
-        this.jTextFieldRegister.setText(Integer.toHexString(regs.getAddress()));
-        this.jLabelReg.setText("0x" + Integer.toString(value));
-        this.jLabelRegWr.setText("0x" + Integer.toString(value * 2));
+        jTextFieldRegister.setText(Integer.toHexString(regs.getAddress()));
+        jLabelReg.setText("0x" + Integer.toString(value));
+        jLabelRegWr.setText("0x" + Integer.toString(value * 2));
         if (reg.getTypeWrite().equals("R")) {
-          this.jButtonSend.setEnabled(false);
+          jButtonSend.setEnabled(false);
         } else {
-          this.jButtonSend.setEnabled(true);
+          jButtonSend.setEnabled(true);
         }
       }
     }
@@ -110,17 +110,17 @@ public class ReadWriteRegister
   
   public void readRegistersOther()
   {
-    if (this.jTextFieldSizeRegister.getText().equals(""))
+    if (jTextFieldSizeRegister.getText().equals(""))
     {
-      //JOptionPane.showMessageDialog(this, "Inserta tamaño de Registro");
-      JOptionPane.showMessageDialog(this, "Insert size Register","Information",JOptionPane.INFORMATION_MESSAGE);
+      JOptionPane.showMessageDialog(this, "Inserta tamaño de Registro", "Advertencia", JOptionPane.WARNING_MESSAGE);
+      //JOptionPane.showMessageDialog(this, "Insert size Register","Information",JOptionPane.INFORMATION_MESSAGE);
       return;
     }
-    //this.selected = "ESPECIFICO";
-    this.selected = "SPECIFIC";
+    selected = "ESPECIFICO";
+    //selected = "SPECIFIC";
     String serialNumber = Meter.getSerialNumberCompl();
-    this.actionRW = 3;
-    String regType = this.jComboBoxDataType.getSelectedItem().toString();
+    actionRW = 3;
+    String regType = jComboBoxDataType.getSelectedItem().toString();
     Register reg = Register.OTHER_REGISTER;
     for (Register regs : Register.values()) {
       if (regs.getType().equals(regType))
@@ -129,140 +129,157 @@ public class ReadWriteRegister
         break;
       }
     }
-    this.address = Integer.parseInt(this.jTextFieldRegister.getText(), 16);
-    this.count = Integer.parseInt(this.jTextFieldSizeRegister.getText());
-    readWriteRegister(serialNumber, this.address, this.count, this.actionRW, this.selected, reg);
+    address = Integer.parseInt(jTextFieldRegister.getText(), 16);
+    count = Integer.parseInt(jTextFieldSizeRegister.getText());
+    readWriteRegister(serialNumber, address, count, actionRW, selected, reg);
   }
   
   public void readRegistersCombobox()
   {
-    this.selected = this.jComboBoxRegisters.getSelectedItem().toString();
+    selected = jComboBoxRegisters.getSelectedItem().toString();
     String serialNumber = Meter.getSerialNumberCompl();
-    this.actionRW = 3;
+    actionRW = 3;
     for (Register reg : Register.values()) {
-      if (reg.toString().equals(this.selected))
+      if (reg.toString().equals(selected))
       {
-        this.address = reg.getAddress();
-        this.count = reg.getWordLength();
-        readWriteRegister(serialNumber, this.address, this.count, this.actionRW, this.selected, reg);
+        address = reg.getAddress();
+        count = reg.getWordLength();
+        readWriteRegister(serialNumber, address, count, actionRW, selected, reg);
       }
     }
   }
   
   private void initComponents()
   {
-    this.jLabelNamePanel = new JLabel();
-    this.jComboBoxRegisters = new JComboBox();
-    this.jTextFieldNewValue = new JTextField();
-    this.jButtonSend = new JButton();
-    this.jScrollPane1 = new JScrollPane();
-    this.jTextAreaLog = new JTextArea();
-    this.jLabelRegister = new JLabel();
-    this.jLabelNewRegister = new JLabel();
-    this.jButtonCleanLog = new JButton();
-    this.jButtonReadRegister = new JButton();
-    this.jLabelReg = new JLabel();
-    this.jLabelRegWr = new JLabel();
-    this.jLabelTableRegister = new JLabel();
-    this.jButton1 = new JButton();
-    this.jCheckBoxOther = new JCheckBox();
-    this.jTextFieldRegister = new JTextField();
-    this.jLabelSize = new JLabel();
-    this.jTextFieldSizeRegister = new JTextField();
-    this.jComboBoxDataType = new JComboBox();
-    this.jTextFieldConversor = new JTextField();
-    this.jButtonAscToHex = new JButton();
-    this.jButtonHexToAsc = new JButton();
+    jLabelNamePanel = new JLabel();
+    jComboBoxRegisters = new JComboBox();
+    jTextFieldNewValue = new JTextField();
+    jButtonSend = new JButton();
+    jScrollPane1 = new JScrollPane();
+    jTextAreaLog = new JTextArea();
+    jLabelRegister = new JLabel();
+    jLabelNewRegister = new JLabel();
+    jButtonCleanLog = new JButton();
+    jButtonReadRegister = new JButton();
+    jLabelReg = new JLabel();
+    jLabelRegWr = new JLabel();
+    jLabelTableRegister = new JLabel();
+    jButton1 = new JButton();
+    jCheckBoxOther = new JCheckBox();
+    jTextFieldRegister = new JTextField();
+    jLabelSize = new JLabel();
+    jTextFieldSizeRegister = new JTextField();
+    jComboBoxDataType = new JComboBox();
+    jTextFieldConversor = new JTextField();
+    jButtonAscToHex = new JButton();
+    jButtonHexToAsc = new JButton();
     
-    this.jLabelNamePanel.setFont(new Font("Tahoma", 1, 18));
-    //this.jLabelNamePanel.setText("REGISTROS");
-    this.jLabelNamePanel.setText("REGISTERS");
+    jTextFieldRegister.setToolTipText("Ingresa el número de registro");
+    jTextFieldSizeRegister.setToolTipText("Ingresa el tamaño del registro");
     
-    this.jComboBoxRegisters.setEditable(true);
-    this.jComboBoxRegisters.addActionListener(new ActionListener()
+    jLabelNamePanel.setFont(new Font("Tahoma", 1, 18));
+    jLabelNamePanel.setText("REGISTROS");
+    //jLabelNamePanel.setText("REGISTERS");
+    
+    jComboBoxRegisters.setEditable(true);
+    jComboBoxRegisters.setToolTipText("Selecciona un registro");
+    jComboBoxRegisters.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         ReadWriteRegister.this.jComboBoxRegistersActionPerformed(evt);
       }
     });
-    this.jTextFieldNewValue.addActionListener(new ActionListener()
+    
+    jTextFieldNewValue.setToolTipText("Ingresa un valor valido para escribir un registro");
+    jTextFieldNewValue.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         ReadWriteRegister.this.jTextFieldNewValueActionPerformed(evt);
       }
     });
-    //this.jButtonSend.setText("ESCRIBIR REGISTRO");
-    this.jButtonSend.setText("READ REGISTERS");
-    this.jButtonSend.addActionListener(new ActionListener()
+    
+    jButtonSend.setText("ESCRIBIR REGISTRO");
+    //jButtonSend.setText("READ REGISTERS");
+    jButtonSend.setToolTipText("Oprime el botón para escribir el registro");
+    jButtonSend.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         ReadWriteRegister.this.jButtonSendActionPerformed(evt);
       }
     });
-    this.jTextAreaLog.setColumns(20);
-    this.jTextAreaLog.setLineWrap(true);
-    this.jTextAreaLog.setRows(5);
-    this.jScrollPane1.setViewportView(this.jTextAreaLog);
     
-    //this.jLabelRegister.setText("Registro");
-    this.jLabelRegister.setText("Register");
+    jTextAreaLog.setColumns(20);
+    jTextAreaLog.setLineWrap(true);
+    jTextAreaLog.setRows(5);
+    jTextAreaLog.setToolTipText("Área para mostrar valores");
+    jScrollPane1.setViewportView(this.jTextAreaLog);
     
-    //this.jLabelNewRegister.setText("Nuevo Registro");
-    this.jLabelNewRegister.setText("New Register");
+    jLabelRegister.setText("Registro");
+    //jLabelRegister.setText("Register");
     
-    //this.jButtonCleanLog.setText("LIMPIAR LOG");
-    this.jButtonCleanLog.setText("CLEAR LOG");
-    this.jButtonCleanLog.addActionListener(new ActionListener()
+    jLabelNewRegister.setText("Nuevo Registro");
+    //jLabelNewRegister.setText("New Register");
+    
+    jButtonCleanLog.setText("LIMPIAR LOG");
+    //jButtonCleanLog.setText("CLEAR LOG");
+    jButtonCleanLog.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         ReadWriteRegister.this.jButtonCleanLogActionPerformed(evt);
       }
     });
-    //this.jButtonReadRegister.setText("LEER REGISTRO");
-    this.jButtonReadRegister.setText("READ REGISTER");
-    this.jButtonReadRegister.addActionListener(new ActionListener()
+    
+    jButtonReadRegister.setText("LEER REGISTRO");
+    jButtonReadRegister.setToolTipText("Oprime el botón para leer el registro seleccionado");
+    //jButtonReadRegister.setText("READ REGISTER");
+    jButtonReadRegister.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         ReadWriteRegister.this.jButtonReadRegisterActionPerformed(evt);
       }
     });
-    this.jLabelReg.setText("0x");
     
-    this.jLabelRegWr.setText("0x");
+    jLabelReg.setText("0x");    
+    jLabelRegWr.setText("0x");    
+    jLabelTableRegister.setText("Registro: 0x");
     
-    this.jLabelTableRegister.setText("Registro: 0x");
-    
-    this.jButton1.setText("STPMC RESET");
-    this.jButton1.addActionListener(new ActionListener()
+    jButton1.setText("STPMC RESET");
+    jButton1.setToolTipText("Oprime el botón para reiniciar el medidor");
+    jButton1.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         ReadWriteRegister.this.jButton1ActionPerformed(evt);
       }
     });
-    //this.jCheckBoxOther.setText("Reg Especifico");
-    this.jCheckBoxOther.setText("Reg Specific");
     
-    //this.jLabelSize.setText("Tamaño: \"Words\"");
-    this.jLabelSize.setText("Size: \"Words\"");
+    jCheckBoxOther.setText("Reg Específico");
+    jCheckBoxOther.setToolTipText("Registro específico");
+    //jCheckBoxOther.setText("Reg Specific");
     
-    this.jComboBoxDataType.setModel(new DefaultComboBoxModel(new String[] { "DO", "DA", "S", "L", "FW", "HEX" }));
+    jLabelSize.setText("Tamaño: \"Words\"");
+    //jLabelSize.setText("Size: \"Words\"");
     
-    this.jButtonAscToHex.setText("CONV A HEX");
-    this.jButtonAscToHex.addActionListener(new ActionListener()
+    jComboBoxDataType.setModel(new DefaultComboBoxModel(new String[] { "DO", "DA", "S", "L", "FW", "HEX" }));
+    jComboBoxDataType.setToolTipText("Selecciona tipo de dato");
+    
+    jButtonAscToHex.setText("CONV A HEX");
+    jButtonAscToHex.setToolTipText("Convertir a hexadecimal");
+    jButtonAscToHex.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         ReadWriteRegister.this.jButtonAscToHexActionPerformed(evt);
       }
     });
-    this.jButtonHexToAsc.setText("CONV A ASCII");
-    this.jButtonHexToAsc.addActionListener(new ActionListener()
+    jButtonHexToAsc.setText("CONV A ASCII");
+    jButtonHexToAsc.setToolTipText("Convertir a ASCII");
+    jButtonHexToAsc.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
@@ -271,7 +288,7 @@ public class ReadWriteRegister
     });
     GroupLayout layout = new GroupLayout(this);
     setLayout(layout);
-    layout.setHorizontalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGap(21, 21, 21).addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING, false).addGroup(layout.createSequentialGroup().addGap(10, 10, 10).addComponent(this.jButtonCleanLog).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, -1, 32767).addComponent(this.jButtonHexToAsc).addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED).addComponent(this.jButtonAscToHex).addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED).addComponent(this.jTextFieldConversor, -2, 339, -2).addGap(38, 38, 38).addComponent(this.jButton1)).addComponent(this.jScrollPane1, -2, 903, -2)).addGroup(layout.createSequentialGroup().addGap(2, 2, 2).addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING).addComponent(this.jButtonReadRegister, -2, 138, -2).addComponent(this.jComboBoxRegisters, -2, 380, -2)).addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED).addComponent(this.jLabelReg).addGap(78, 78, 78).addComponent(this.jTextFieldNewValue, -2, 383, -2).addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED).addComponent(this.jLabelRegWr)).addGroup(layout.createSequentialGroup().addGap(348, 348, 348).addComponent(this.jButtonSend, -2, 153, -2)))).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING, false).addGroup(GroupLayout.Alignment.LEADING, layout.createSequentialGroup().addGap(3, 3, 3).addComponent(this.jCheckBoxOther).addGap(18, 18, 18).addComponent(this.jLabelTableRegister).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addComponent(this.jTextFieldRegister, -2, 58, -2).addGap(18, 18, 18).addComponent(this.jLabelSize).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addComponent(this.jTextFieldSizeRegister, -2, 57, -2).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, -1, 32767).addComponent(this.jComboBoxDataType, -2, 53, -2)).addGroup(GroupLayout.Alignment.LEADING, layout.createSequentialGroup().addComponent(this.jLabelRegister).addGap(324, 324, 324).addComponent(this.jLabelNamePanel))).addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED).addComponent(this.jLabelNewRegister))))).addContainerGap(26, 32767)));
+    layout.setHorizontalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGap(21, 21, 21).addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING, false).addGroup(layout.createSequentialGroup().addGap(10, 10, 10).addComponent(this.jButtonCleanLog).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, -1, 32767).addComponent(this.jButtonHexToAsc).addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED).addComponent(this.jButtonAscToHex).addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED).addComponent(this.jTextFieldConversor, -2, 339, -2).addGap(38, 38, 38).addComponent(this.jButton1)).addComponent(this.jScrollPane1, -2, 903, -2)).addGroup(layout.createSequentialGroup().addGap(2, 2, 2).addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING).addComponent(this.jButtonReadRegister, -1, 138, -1).addComponent(this.jComboBoxRegisters, -2, 380, -2)).addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED).addComponent(this.jLabelReg).addGap(78, 78, 78).addComponent(this.jTextFieldNewValue, -2, 383, -2).addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED).addComponent(this.jLabelRegWr)).addGroup(layout.createSequentialGroup().addGap(348, 348, 348).addComponent(this.jButtonSend, -1, 153, -1)))).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING, false).addGroup(GroupLayout.Alignment.LEADING, layout.createSequentialGroup().addGap(3, 3, 3).addComponent(this.jCheckBoxOther).addGap(18, 18, 18).addComponent(this.jLabelTableRegister).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addComponent(this.jTextFieldRegister, -2, 58, -2).addGap(18, 18, 18).addComponent(this.jLabelSize).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addComponent(this.jTextFieldSizeRegister, -2, 57, -2).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, -1, 32767).addComponent(this.jComboBoxDataType, -2, 53, -2)).addGroup(GroupLayout.Alignment.LEADING, layout.createSequentialGroup().addComponent(this.jLabelRegister).addGap(324, 324, 324).addComponent(this.jLabelNamePanel))).addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED).addComponent(this.jLabelNewRegister))))).addContainerGap(26, 32767)));
     
     layout.setVerticalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addComponent(this.jLabelNamePanel).addGap(0, 11, 32767)).addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup().addGap(0, 0, 32767).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(this.jLabelRegister).addComponent(this.jLabelNewRegister)))).addGap(8, 8, 8).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(this.jLabelRegWr).addComponent(this.jTextFieldNewValue, -2, -1, -2).addComponent(this.jLabelReg).addComponent(this.jComboBoxRegisters, -2, -1, -2)).addGap(1, 1, 1).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(this.jButtonSend).addComponent(this.jButtonReadRegister)).addGap(18, 18, 18).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(this.jTextFieldRegister, -2, -1, -2).addComponent(this.jLabelTableRegister).addComponent(this.jCheckBoxOther).addComponent(this.jLabelSize).addComponent(this.jTextFieldSizeRegister, -2, -1, -2).addComponent(this.jComboBoxDataType, -2, -1, -2)).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addComponent(this.jScrollPane1, -2, 424, -2).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(this.jTextFieldConversor, -2, -1, -2).addComponent(this.jButtonHexToAsc).addComponent(this.jButtonAscToHex)).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(this.jButtonCleanLog).addComponent(this.jButton1))).addGap(23, 23, 23)));
   }
@@ -284,10 +301,12 @@ public class ReadWriteRegister
   private void jButtonReadRegisterActionPerformed(ActionEvent evt)
   {
     PortComunication port = new PortComunication();
-    if (((!port.getStatePort() ? 1 : 0) | (Meter.serialNumber == null ? 1 : 0) /*| Meter.serialNumber.equals("0000000000000000")*/) != 0) {
-      //JOptionPane.showMessageDialog(null, "Error Revise el numero de serie, Puerto o conexion");
-      JOptionPane.showMessageDialog(null, "Error Check serial number, Port or Connection","Error",JOptionPane.ERROR_MESSAGE);
-    } else if (this.jCheckBoxOther.isSelected()) {
+    //if (((!port.getStatePort() ? 1 : 0) | (Meter.serialNumber == null ? 1 : 0) /*| Meter.serialNumber.equals("0000000000000000")*/) != 0) 
+    if((port.getStatePort() == false) | (Meter.serialNumber == null) | Meter.serialNumber.equals("0000000000000000"))//Solución al error de la línea de arriba
+    {
+      JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexión", "Error", JOptionPane.ERROR_MESSAGE);
+      //JOptionPane.showMessageDialog(null, "Error Check serial number, Port or Connection","Error",JOptionPane.ERROR_MESSAGE);
+    } else if (jCheckBoxOther.isSelected()) {
       readRegistersOther();
     } else {
       readRegistersCombobox();
@@ -296,15 +315,15 @@ public class ReadWriteRegister
   
   private void jButtonCleanLogActionPerformed(ActionEvent evt)
   {
-    this.jTextAreaLog.setText("");
+    jTextAreaLog.setText("");
   }
   
   private void jButtonSendActionPerformed(ActionEvent evt)
   {
     PortComunication port = new PortComunication();
     if (((!port.getStatePort() ? 1 : 0) | (Meter.serialNumber == null ? 1 : 0)) != 0) {
-      //JOptionPane.showMessageDialog(null, "Error Revise el numero de serie, Puerto o conexion");
-      JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(null, "Error Revise el número de serie, Puerto o conexión", "Error", JOptionPane.ERROR_MESSAGE);
+      //JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
     } else if (!this.jCheckBoxOther.isSelected()) {
       writeRegistersCombobox();
     }
@@ -317,8 +336,8 @@ public class ReadWriteRegister
     PortComunication port = new PortComunication();
     if (((!port.getStatePort() ? 1 : 0) | (Meter.serialNumber == null ? 1 : 0)) != 0)
     {
-      //JOptionPane.showMessageDialog(null, "Error Revise el numero de serie, Puerto o conexion");
-      JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexión", "Error", JOptionPane.ERROR_MESSAGE);
+      //JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
     }
     else
     {
@@ -327,11 +346,11 @@ public class ReadWriteRegister
       String serialNumber = Meter.getSerialNumberCompl();
       boolean estado = modb.writeFlagsPassw(flagPassword, serialNumber);
       if (estado == true) {
-        //JOptionPane.showMessageDialog(null, "Correcto");
-        JOptionPane.showMessageDialog(null, "Good","Information",JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Correcto!!!", "Información", JOptionPane.INFORMATION_MESSAGE);
+        //JOptionPane.showMessageDialog(null, "Good","Information",JOptionPane.INFORMATION_MESSAGE);
       } else {
-        //JOptionPane.showMessageDialog(null, "Error Revise el numero de serie, Puerto o conexion");
-        JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexión", "Error", JOptionPane.ERROR_MESSAGE);
+        //JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
       }
     }
   }
@@ -363,10 +382,10 @@ public class ReadWriteRegister
     String[] arrayMAC = stringPayload.split("(?<=\\G.{2})");
     if (arrayMAC.length > 16)
     {
-      //System.out.println("Payload debe ser de 16 bytes o menos!");
-      //JOptionPane.showMessageDialog(null, "Payload debe ser de 16 bytes o menos!");
-      System.out.println("Payload must be 16 bytes or less!");
-      JOptionPane.showMessageDialog(null, "Payload must be 16 bytes or less!","Information",JOptionPane.INFORMATION_MESSAGE);
+      System.out.println("Payload debe ser de 16 bytes o menos!");
+      JOptionPane.showMessageDialog(null, "Payload debe ser de 16 bytes o menos!", "Advertencia", JOptionPane.WARNING_MESSAGE);
+      //System.out.println("Payload must be 16 bytes or less!");
+      //JOptionPane.showMessageDialog(null, "Payload must be 16 bytes or less!","Information",JOptionPane.INFORMATION_MESSAGE);
       return false;
     }
     byte[] bytePayload = new byte[arrayMAC.length];
@@ -380,28 +399,28 @@ public class ReadWriteRegister
     }
     catch (NumberFormatException ex)
     {
-      //System.out.println("Valor debe contener HEX digitos validos.");
-      //JOptionPane.showMessageDialog(null, "Valor debe contener HEX digitos validos.");
-      System.out.println("HEX value must contain valid digits.");
-      JOptionPane.showMessageDialog(null, "HEX value must contain valid digits.","Warning",JOptionPane.WARNING_MESSAGE);
+      System.out.println("Valor debe contener HEX digitos validos.");
+      JOptionPane.showMessageDialog(null, "Valor debe contener HEX digitos validos.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+      //System.out.println("HEX value must contain valid digits.");
+      //JOptionPane.showMessageDialog(null, "HEX value must contain valid digits.","Warning",JOptionPane.WARNING_MESSAGE);
       return false;
     }
     if ((reg.getWordLength() == 1) && 
       (bytePayload.length != 2))
     {
-      //System.out.println("para ESCRIBIR_REGISTROS, debe ser de 2 bytes para el valor.");
-      //JOptionPane.showMessageDialog(null, "para ESCRIBIR_REGISTROS, debe ser de 2 bytes para el valor.");
-      System.out.println("to write registers , it should be 2 bytes for the value.");
-      JOptionPane.showMessageDialog(null, "to write registers , it should be 2 bytes for the value.","Warning",JOptionPane.WARNING_MESSAGE);
+      System.out.println("para ESCRIBIR_REGISTROS, debe ser de 2 bytes para el valor.");
+      JOptionPane.showMessageDialog(null, "para ESCRIBIR_REGISTROS, debe ser de 2 bytes para el valor.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+      //System.out.println("to write registers , it should be 2 bytes for the value.");
+      //JOptionPane.showMessageDialog(null, "to write registers , it should be 2 bytes for the value.","Warning",JOptionPane.WARNING_MESSAGE);
       valid = false;
     }
     if ((reg.getWordLength() > 1) && 
       (bytePayload.length <= 2))
     {
-      //System.out.println("para ESCRIBIR_MULTIPLES_REGISTROS, este debe ser mas de 2 bytes para el valor.");
-      //JOptionPane.showMessageDialog(null, "para ESCRIBIR_MULTIPLES_REGISTROS, este debe ser mas de 2 bytes para el valor.");
-      System.out.println("To write multiple registers , this should be more than 2 bytes for the value.");
-      JOptionPane.showMessageDialog(null, "To write multiple registers , this should be more than 2 bytes for the value.","Warning",JOptionPane.WARNING_MESSAGE);
+      System.out.println("para ESCRIBIR_MULTIPLES_REGISTROS, este debe ser mas de 2 bytes para el valor.");
+      JOptionPane.showMessageDialog(null, "para ESCRIBIR_MULTIPLES_REGISTROS, este debe ser mas de 2 bytes para el valor.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+      //System.out.println("To write multiple registers , this should be more than 2 bytes for the value.");
+      //JOptionPane.showMessageDialog(null, "To write multiple registers , this should be more than 2 bytes for the value.","Warning",JOptionPane.WARNING_MESSAGE);
       valid = false;
     }
     return valid;
@@ -462,8 +481,8 @@ public class ReadWriteRegister
     byte[] response = port.getByteBuffer();
     if (response == null)
     {
-      //JOptionPane.showMessageDialog(null, "Error Revise el numero de serie, Puerto o conexion");
-      JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexión", "Error", JOptionPane.ERROR_MESSAGE);
+      //JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
     }
     else
     {

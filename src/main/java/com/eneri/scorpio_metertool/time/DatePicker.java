@@ -36,6 +36,7 @@ public class DatePicker
   
   public DatePicker(JFrame parent, String timeZone)
   {
+      cal = new GregorianCalendar();
     cal.setTimeZone(TimeZone.getTimeZone(timeZone));
     
     this.d = new JDialog();

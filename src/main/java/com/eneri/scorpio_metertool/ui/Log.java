@@ -65,28 +65,32 @@ public class Log
   
   private void initComponents()
   {
-    this.jScrollPane1 = new JScrollPane();
-    this.jTextAreaLog = new JTextArea();
-    this.jButtonClearLog = new JButton();
-    this.jButtonExportLog = new JButton();
+    jScrollPane1 = new JScrollPane();
+    jTextAreaLog = new JTextArea();
+    jButtonClearLog = new JButton();
+    jButtonExportLog = new JButton();
     
-    this.jTextAreaLog.setColumns(20);
-    this.jTextAreaLog.setLineWrap(true);
-    this.jTextAreaLog.setRows(5);
-    this.jScrollPane1.setViewportView(this.jTextAreaLog);
+    jTextAreaLog.setColumns(20);
+    jTextAreaLog.setLineWrap(true);
+    jTextAreaLog.setRows(5);
+    jTextAreaLog.setToolTipText("Área de log");
+    jScrollPane1.setViewportView(jTextAreaLog);
     
-    //this.jButtonClearLog.setText("LIMPIAR LOG");
-    this.jButtonClearLog.setText("CLEAR LOG");
-    this.jButtonClearLog.addActionListener(new ActionListener()
+    jButtonClearLog.setText("LIMPIAR LOG");
+    //jButtonClearLog.setText("CLEAR LOG");
+    jButtonClearLog.setToolTipText("Oprime el botón para limpiar el área del log");
+    jButtonClearLog.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         Log.this.jButtonClearLogActionPerformed(evt);
       }
     });
-    //this.jButtonExportLog.setText("EXPORTAR LOG");
-    this.jButtonExportLog.setText("EXPORT LOG");
-    this.jButtonExportLog.addActionListener(new ActionListener()
+    
+    jButtonExportLog.setText("EXPORTAR LOG");
+    //jButtonExportLog.setText("EXPORT LOG");
+    jButtonExportLog.setToolTipText("Oprime el botón para exportar el log");
+    jButtonExportLog.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
@@ -102,7 +106,7 @@ public class Log
   
   private void jButtonClearLogActionPerformed(ActionEvent evt)
   {
-    this.jTextAreaLog.setText("");
+    jTextAreaLog.setText("");
   }
   
   private void jButtonExportLogActionPerformed(ActionEvent evt)
@@ -112,70 +116,70 @@ public class Log
   
   public void setLog(String data)
   {
-    this.jTextAreaLog.append(data);
-    DefaultCaret caret = (DefaultCaret)this.jTextAreaLog.getCaret();
+    jTextAreaLog.append(data);
+    DefaultCaret caret = (DefaultCaret)jTextAreaLog.getCaret();
     caret.setUpdatePolicy(2);
-    this.jTextAreaLog.setCaretPosition(this.jTextAreaLog.getDocument().getLength());
+    jTextAreaLog.setCaretPosition(jTextAreaLog.getDocument().getLength());
   }
   
   public void exportarTxt()
   {
-    this.timeStampCorto = new SimpleDateFormat("dd-MM-yyyy").format(Calendar.getInstance().getTime());
-    this.timeStampComplete = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(Calendar.getInstance().getTime());
-    this.timeStampHora = new SimpleDateFormat("HH-mm-ss").format(Calendar.getInstance().getTime());
+    timeStampCorto = new SimpleDateFormat("dd-MM-yyyy").format(Calendar.getInstance().getTime());
+    timeStampComplete = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS").format(Calendar.getInstance().getTime());
+    timeStampHora = new SimpleDateFormat("HH-mm-ss").format(Calendar.getInstance().getTime());
     
     JFileChooser f = new JFileChooser();
     f.setFileSelectionMode(1);
     f.showSaveDialog(null);
-    this.fileData = f.getSelectedFile();
-    if (this.fileData == null) {
+    fileData = f.getSelectedFile();
+    if (fileData == null) {
       return;
     }
-    this.fileData = new File(f.getSelectedFile() + "/" + "LogScorpioTool" + "/" + this.timeStampCorto + "/");
-    if (this.fileData.mkdirs()) {
+    fileData = new File(f.getSelectedFile() + "/" + "LogScorpioTool" + "/" + timeStampCorto + "/");
+    if (fileData.mkdirs()) {
       System.out.println("Multiple directories are created!");
     } else {
       System.out.println("Failed to create multiple directories!");
     }
     try
     {
-      Path path = Paths.get(this.fileData + "/", new String[0]);
-      this.fileTxt = new File(this.fileData + "/" + this.timeStampHora + ".txt");
+      Path path = Paths.get(fileData + "/", new String[0]);
+      fileTxt = new File(fileData + "/" + timeStampHora + ".txt");
       if (Files.exists(path, new LinkOption[0])) {}
-      this.writer = new BufferedWriter(new FileWriter(this.fileTxt));
+      writer = new BufferedWriter(new FileWriter(fileTxt));
       
-      this.writer.write(this.jTextAreaLog.getText()); return;
+      writer.write(jTextAreaLog.getText()); return;
     }
     catch (FileNotFoundException e)
     {
       e.printStackTrace();
-      //JOptionPane.showMessageDialog(null, "No se encontro el archivo");
-      JOptionPane.showMessageDialog(null, "File not found","Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(null, "No se encontro el archivo");
+      //JOptionPane.showMessageDialog(null, "File not found","Error",JOptionPane.ERROR_MESSAGE);
       
     }
     catch (IOException e)
     {
       e.printStackTrace();
-      //JOptionPane.showMessageDialog(null, "No se guardo el archivo");
-      JOptionPane.showMessageDialog(null, "File not save","Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(null, "No se guardo el archivo");
+      //JOptionPane.showMessageDialog(null, "File not save","Error",JOptionPane.ERROR_MESSAGE);
     }
     finally
     {
       try
       {
-        if (this.writer != null)
+        if (writer != null)
         {
-          this.writer.flush();
-          this.writer.close();
-          //JOptionPane.showMessageDialog(null, "Archivo guardado correctamente");
-          JOptionPane.showMessageDialog(null, "File saved succesfully","Error",JOptionPane.ERROR_MESSAGE);
+          writer.flush();
+          writer.close();
+          JOptionPane.showMessageDialog(null, "Archivo guardado correctamente");
+          //JOptionPane.showMessageDialog(null, "File saved succesfully","Error",JOptionPane.ERROR_MESSAGE);
         }
       }
       catch (IOException e)
       {
         e.printStackTrace();
-        //JOptionPane.showMessageDialog(null, "No se guardo el archivo");
-        JOptionPane.showMessageDialog(null, "File not saved","Error",JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, "No se guardo el archivo");
+        //JOptionPane.showMessageDialog(null, "File not saved","Error",JOptionPane.ERROR_MESSAGE);
       }
     }
   }

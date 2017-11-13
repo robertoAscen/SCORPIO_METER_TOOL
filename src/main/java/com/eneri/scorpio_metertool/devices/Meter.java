@@ -19,7 +19,8 @@ public abstract class Meter
   private static byte[] frame = null;
   public static final byte READ_REGISTER = 3;
   public static final byte WRITE_REGISTER = 6;
-  public static final byte WRITE_MULTIPLE_REGISTER = 16;
+  public static final byte WRITE_MULTIPLE_REGISTER = 10;
+  //public static final byte WRITE_MULTIPLE_REGISTER = 16;
   
   public static String setSerialNumber(String SN)
   {
@@ -37,7 +38,7 @@ public abstract class Meter
     }
     else
     {
-      serialNumber = SN;
+      serialNumber = SN;//Número de serie del medidor
     }
     return serialNumber;
   }
@@ -51,7 +52,7 @@ public abstract class Meter
   {
     serialNumberBytes = sn.getBytes();
     
-    return serialNumberBytes;
+    return serialNumberBytes;//lista de número de serie en bytes
   }
   
   public abstract List<Boolean> readFlags();

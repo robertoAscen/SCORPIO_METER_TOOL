@@ -49,50 +49,51 @@ public class Login
   
   private void initComponents()
   {
-    this.jTextFieldUserName = new JTextField();
-    this.jPasswordFieldPassword = new JPasswordField();
-    this.jButtonLogin = new JButton();
-    this.jLabelStartSession = new JLabel();
-    this.jLabelUser = new JLabel();
-    this.jLabelPassword = new JLabel();
-    this.jLabelVersion = new JLabel();
+    jTextFieldUserName = new JTextField();
+    jPasswordFieldPassword = new JPasswordField();
+    jButtonLogin = new JButton();
+    jLabelStartSession = new JLabel();
+    jLabelUser = new JLabel();
+    jLabelPassword = new JLabel();
+    jLabelVersion = new JLabel();
     
     setDefaultCloseOperation(3);
     
-    this.jPasswordFieldPassword.addActionListener(new ActionListener()
+    jPasswordFieldPassword.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         Login.this.jPasswordFieldPasswordActionPerformed(evt);
       }
     });
-    this.jPasswordFieldPassword.addKeyListener(new KeyAdapter()
+    jPasswordFieldPassword.addKeyListener(new KeyAdapter()
     {
       public void keyPressed(KeyEvent evt)
       {
         Login.this.jPasswordFieldPasswordKeyPressed(evt);
       }
     });
-    this.jButtonLogin.setText("ACCEDER");
-    this.jButtonLogin.addActionListener(new ActionListener()
+    jButtonLogin.setText("ACCEDER");
+    jButtonLogin.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         Login.this.jButtonLoginActionPerformed(evt);
       }
     });
-    this.jLabelStartSession.setFont(new Font("Tahoma", 1, 24));
-    //this.jLabelStartSession.setText("Inicio de Sesion");
-    this.jLabelStartSession.setText("Inicio de Session");
+    jLabelStartSession.setFont(new Font("Tahoma", 1, 24));
+    jLabelStartSession.setText("Inicio de Sesion");
+    //jLabelStartSession.setText("Inicio de Session");
     
-    //this.jLabelUser.setText("Usuario:");
-    this.jLabelUser.setText("User:");
+    jLabelUser.setText("Usuario:");
+    //jLabelUser.setText("User:");
     
-    //this.jLabelPassword.setText("Contraseña:");
-    this.jLabelPassword.setText("Password:");
+    jLabelPassword.setText("Contraseña:");
+    //jLabelPassword.setText("Password:");
     
-    //this.jLabelVersion.setText("IK_Meter_Tool V1.0.21 24-08-2015");
-    this.jLabelVersion.setText("Scorpio_Meter_Tool V1.0.0 25-08-2016");
+    //jLabelVersion.setText("IK_Meter_Tool V1.0.21 24-08-2015");
+    //jLabelVersion.setText("Scorpio_Meter_Tool V1.0.0 25-08-2016");
+    jLabelVersion.setText("Scorpio_Meter_Tool_Alfa V1.0.1 31-10-2017");
     
     GroupLayout layout = new GroupLayout(getContentPane());
     getContentPane().setLayout(layout);
@@ -106,8 +107,8 @@ public class Login
   private void jButtonLoginActionPerformed(ActionEvent evt)
   {
     accessing();
-    this.jTextFieldUserName.setText("");
-    this.jPasswordFieldPassword.setText("");
+    jTextFieldUserName.setText("");
+    jPasswordFieldPassword.setText("");
   }
   
   private void jPasswordFieldPasswordKeyPressed(KeyEvent evt) {}
@@ -116,8 +117,8 @@ public class Login
   
   public void accessing()
   {
-    String passText = new String(this.jPasswordFieldPassword.getPassword());
-    boolean value = this.us.setUser(this.jTextFieldUserName.getText(), passText);
+    String passText = new String(jPasswordFieldPassword.getPassword());
+    boolean value = us.setUser(jTextFieldUserName.getText(), passText);
     if (value)
     {
       setVisible(false);
@@ -127,14 +128,14 @@ public class Login
     }
     else
     {
-      //JOptionPane.showMessageDialog(null, "No coinciden los datos ingresados");
-      JOptionPane.showMessageDialog(null, "Do not match the data entered","Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(null, "No coinciden los datos ingresados");
+      //JOptionPane.showMessageDialog(null, "Do not match the data entered","Error",JOptionPane.ERROR_MESSAGE);
     }
   }
   
   public void JTextFieldAndActionListener()
   {
-    this.jPasswordFieldPassword.addKeyListener(new KeyAdapter()
+    jPasswordFieldPassword.addKeyListener(new KeyAdapter()
     {
       public void keyPressed(KeyEvent evt)
       {

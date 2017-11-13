@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.eneri</groupId>
     <artifactId>Scorpio_MeterTool</artifactId>
-    <version>1.1.0</version>
+    <version>2.0.0</version>
     <packaging>jar</packaging>
      <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -54,7 +54,7 @@
                     <transformers>
                         <transformer
                             implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                            <mainClass>com.scorpio_metertool.ui.Launcher</mainClass>
+                            <mainClass>com.eneri.scorpio_metertool.ui.Launcher</mainClass>
                         </transformer>
                     </transformers>
                     <filters>
@@ -84,7 +84,7 @@
                             <configuration> 
                             <!--indicar gui (javaw) o console (java) -->
                             <headerType>gui</headerType>
-                            <outfile>${project.build.directory}/Scorpio_MeterTool.exe</outfile> 
+                            <outfile>${project.build.directory}/Scorpio_MeterTool_2.0.0.exe</outfile> 
                             <classPath>
                                 <mainClass>com.eneri.scorpio_metertool.ui.Launcher</mainClass>
                                 <!-- la ruta absoluta en la que tendremos las dependencias -->
@@ -93,7 +93,7 @@
                                 <jarLocation>%EXEDIR%/lib/</jarLocation>
                             </classPath>
                             <!-- icono del ejecutable -->
-                            <icon>src/main/resources/Image/Meter.ico</icon>
+                            <icon>src/main/resources/Image/Meter1.ico</icon>
                             <!-- impide ejecutar más de una instancia a la vez -->
                             <singleInstance>
                                 <mutexName>Scorpio_MeterTool</mutexName>
@@ -103,15 +103,15 @@
                             </jre>
                             <!-- metadatos Windows del .exe-->
                             <versionInfo>
-                                <fileVersion>1.1.0.0</fileVersion>
-                                <txtFileVersion>versión 1.1</txtFileVersion>
+                                <fileVersion>2.0.0.0</fileVersion>
+                                <txtFileVersion>versión 2.0</txtFileVersion>
                                 <fileDescription>demo de launch4j</fileDescription>
                                 <copyright>RobertoA.com</copyright>
-                                <productVersion>1.1.0.0</productVersion>
+                                <productVersion>2.0.0.0</productVersion>
                                 <txtProductVersion>demo de launch4j</txtProductVersion>
                                 <productName>demo de launch4j</productName>                             
-                                <internalName>Scorpio_MeterTool</internalName>
-                                <originalFilename>Scorpio_MeterTool.exe</originalFilename>
+                                <internalName>Scorpio_MeterTool_2.0.0</internalName>
+                                <originalFilename>Scorpio_MeterTool_2.0.0.exe</originalFilename>
                             </versionInfo> 
                             </configuration>
                         </execution>

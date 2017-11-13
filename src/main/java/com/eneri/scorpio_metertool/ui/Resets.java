@@ -93,6 +93,8 @@ public class Resets
     setPreferredSize(new Dimension(950, 600));
     
     
+    this.jComboBoxFlagPasswords.setToolTipText("Selecciona una opción para enviarla al medidor");
+    
     this.jTableAccumulateds.setModel(this.tableAcummulates);
     this.jTableAccumulateds.setColumnSelectionAllowed(true);
     this.jScrollPane1.setViewportView(this.jTableAccumulateds);
@@ -104,15 +106,16 @@ public class Resets
     this.jTableRolDemands.getColumnModel().getSelectionModel().setSelectionMode(2);
     
     this.jLabelAccumulated.setFont(new Font("Tahoma", 1, 12));
-    //this.jLabelAccumulated.setText("Acumulados");
-    this.jLabelAccumulated.setText("Cumulated");
+    this.jLabelAccumulated.setText("Acumulados");
+    //this.jLabelAccumulated.setText("Cumulated");
     
     this.jLabelRolDemands.setFont(new Font("Tahoma", 1, 12));
-    //this.jLabelRolDemands.setText("Demandas Roladas");
-    this.jLabelRolDemands.setText("Rolling Demands");
+    this.jLabelRolDemands.setText("Demandas Roladas");
+    //this.jLabelRolDemands.setText("Rolling Demands");
     
-    //this.jButtonReadAccumulated.setText("LEER");
-    this.jButtonReadAccumulated.setText("READ");
+    this.jButtonReadAccumulated.setText("LEER");
+    //this.jButtonReadAccumulated.setText("READ");
+    this.jButtonReadAccumulated.setToolTipText("Oprime el botón para obtener los acumulados");
     this.jButtonReadAccumulated.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
@@ -120,8 +123,9 @@ public class Resets
         Resets.this.jButtonReadAccumulatedActionPerformed(evt);
       }
     });
-    //this.jButtonReadRolDemands.setText("LEER");
-    this.jButtonReadRolDemands.setText("READ");
+    this.jButtonReadRolDemands.setText("LEER");
+    //this.jButtonReadRolDemands.setText("READ");
+    this.jButtonReadRolDemands.setToolTipText("Oprime el botón para obtener la demanda rolada");
     this.jButtonReadRolDemands.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
@@ -130,8 +134,9 @@ public class Resets
       }
     });
     this.jButtonResetAccumulated.setForeground(new Color(255, 0, 0));
-    //this.jButtonResetAccumulated.setText("REINICIO DE ACUMULADO");
-    this.jButtonResetAccumulated.setText("RESTART OF CUMULATIVE");
+    this.jButtonResetAccumulated.setText("REINICIO DE ACUMULADO");
+    //this.jButtonResetAccumulated.setText("RESTART OF CUMULATIVE");
+    this.jButtonResetAccumulated.setToolTipText("Oprime el botón para establecer los valores acumulados a 0");
     this.jButtonResetAccumulated.setMaximumSize(new Dimension(205, 23));
     this.jButtonResetAccumulated.setMinimumSize(new Dimension(205, 23));
     this.jButtonResetAccumulated.addActionListener(new ActionListener()
@@ -142,8 +147,9 @@ public class Resets
       }
     });
     this.jButtonResetRolDemands.setForeground(new Color(255, 0, 0));
-    //this.jButtonResetRolDemands.setText("REINICIO DE DEMANDAS ROLADAS");
-    this.jButtonResetRolDemands.setText("RESTART OF ROLLING DEMANDS");
+    this.jButtonResetRolDemands.setText("REINICIO DE DEMANDAS ROLADAS");
+    //this.jButtonResetRolDemands.setText("RESTART OF ROLLING DEMANDS");
+    this.jButtonResetRolDemands.setToolTipText("Oprime el botón para establecer los valores de la demanda rolada a  0");
     this.jButtonResetRolDemands.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
@@ -151,8 +157,9 @@ public class Resets
         Resets.this.jButtonResetRolDemandsActionPerformed(evt);
       }
     });
-    //this.jButtonReboottMeter.setText("REINICIO DE MEDIDOR");
-    this.jButtonReboottMeter.setText("RESET METER");
+    this.jButtonReboottMeter.setText("REINICIO DE MEDIDOR");
+    //this.jButtonReboottMeter.setText("RESET METER");
+    this.jButtonReboottMeter.setToolTipText("Oprime el botón para reiniciar el medidor");
     this.jButtonReboottMeter.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
@@ -160,8 +167,9 @@ public class Resets
         Resets.this.jButtonReboottMeterActionPerformed(evt);
       }
     });
-    //this.jButtonChangeSerialNumber.setText("CAMBIAR NUMERO DE IDENTIFICACION");
-    this.jButtonChangeSerialNumber.setText("IDENTIFICATION NUMBER CHANGE");
+    this.jButtonChangeSerialNumber.setText("CAMBIAR NÚMERO DE SERIE");
+    //this.jButtonChangeSerialNumber.setText("IDENTIFICATION NUMBER CHANGE");
+    this.jButtonChangeSerialNumber.setToolTipText("Oprime el botón para establecer un número de serie al medidor distinto al actual");
     this.jButtonChangeSerialNumber.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
@@ -171,8 +179,9 @@ public class Resets
     });
     this.jLabelRelayOpened.setText("___/  ___");
     
-    //this.jButtonRelayOpened.setText("ABRIR RELAY");
-    this.jButtonRelayOpened.setText("OPEN RELAY");
+    this.jButtonRelayOpened.setText("ABRIR RELAY");
+    //this.jButtonRelayOpened.setText("OPEN RELAY");
+    this.jButtonRelayOpened.setToolTipText("Oprime el botón para abrir el relay del medidor");
     this.jButtonRelayOpened.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
@@ -182,8 +191,9 @@ public class Resets
     });
     this.jLabelRelayClosed.setText("___ __ ___");
     
-    //this.jButtonRelayClosed.setText("CERRAR RELAY");
-    this.jButtonRelayClosed.setText("CLOSE RELAY");
+    this.jButtonRelayClosed.setText("CERRAR RELAY");
+    //this.jButtonRelayClosed.setText("CLOSE RELAY");
+    this.jButtonRelayClosed.setToolTipText("Oprime el botón para cerrar el relay del medidor");
     this.jButtonRelayClosed.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
@@ -192,11 +202,12 @@ public class Resets
       }
     });
     this.jLabelNamePanel.setFont(new Font("Tahoma", 1, 18));
-    //this.jLabelNamePanel.setText("REINICIOS");
-    this.jLabelNamePanel.setText("RESTARTS");
+    this.jLabelNamePanel.setText("REINICIOS");
+    //this.jLabelNamePanel.setText("RESTARTS");
     
-    //this.jButtonSendPassword.setText("ENVIAR");
-    this.jButtonSendPassword.setText("SEND");
+    this.jButtonSendPassword.setText("ENVIAR");
+    //this.jButtonSendPassword.setText("SEND");
+    this.jButtonSendPassword.setToolTipText("Oprime el botón para enviar el password");
     this.jButtonSendPassword.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
@@ -204,29 +215,30 @@ public class Resets
         Resets.this.jButtonSendPasswordActionPerformed(evt);
       }
     });
-    //this.jLabelSerialNumber.setText("Numero de Serie Actual:");
-    this.jLabelSerialNumber.setText("Current Serial Number:");
+    this.jLabelSerialNumber.setText("Número de Serie Actual:");
+    //this.jLabelSerialNumber.setText("Current Serial Number:");
     
     GroupLayout layout = new GroupLayout(this);
     setLayout(layout);
-    layout.setHorizontalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup().addContainerGap(-1, 32767).addComponent(this.jLabelNamePanel).addGap(410, 410, 410)).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING).addGroup(layout.createSequentialGroup().addContainerGap().addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING, false).addComponent(this.jLabelRolDemands).addComponent(this.jScrollPane2, -2, 903, -2).addGroup(layout.createSequentialGroup().addGap(16, 16, 16).addComponent(this.jButtonReadRolDemands, -2, 69, -2).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, -1, 32767).addComponent(this.jButtonResetRolDemands)))).addGroup(GroupLayout.Alignment.LEADING, layout.createSequentialGroup().addGap(21, 21, 21).addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addComponent(this.jComboBoxFlagPasswords, -2, 400, -2).addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED).addComponent(this.jButtonSendPassword, -2, 147, -2)).addComponent(this.jLabelAccumulated).addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING).addComponent(this.jScrollPane1, -2, 905, -2).addGroup(layout.createSequentialGroup().addComponent(this.jButtonReadAccumulated, -2, 67, -2).addGap(591, 591, 591).addComponent(this.jButtonResetAccumulated, -2, 229, -2)))).addGap(0, 0, 32767)).addGroup(layout.createSequentialGroup().addComponent(this.jButtonReboottMeter).addGap(32, 32, 32).addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addComponent(this.jLabelSerialNumber).addGap(0, 0, 32767)).addGroup(layout.createSequentialGroup().addComponent(this.jButtonChangeSerialNumber).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, -1, 32767).addComponent(this.jLabelRelayOpened).addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED).addComponent(this.jButtonRelayOpened).addGap(39, 39, 39).addComponent(this.jLabelRelayClosed).addGap(18, 18, 18).addComponent(this.jButtonRelayClosed))))))).addContainerGap(24, 32767)));
+    layout.setHorizontalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup().addContainerGap(-1, 32767).addComponent(this.jLabelNamePanel).addGap(410, 410, 410)).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING).addGroup(layout.createSequentialGroup().addContainerGap().addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING, false).addComponent(this.jLabelRolDemands).addComponent(this.jScrollPane2, -2, 903, -2).addGroup(layout.createSequentialGroup().addGap(16, 16, 16).addComponent(this.jButtonReadRolDemands, -1, 69, -1).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, -1, 32767).addComponent(this.jButtonResetRolDemands)))).addGroup(GroupLayout.Alignment.LEADING, layout.createSequentialGroup().addGap(21, 21, 21).addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addComponent(this.jComboBoxFlagPasswords, -2, 400, -2).addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED).addComponent(this.jButtonSendPassword, -2, 147, -2)).addComponent(this.jLabelAccumulated).addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING).addComponent(this.jScrollPane1, -2, 905, -2).addGroup(layout.createSequentialGroup().addComponent(this.jButtonReadAccumulated, -1, 67, -1).addGap(591, 591, 591).addComponent(this.jButtonResetAccumulated, -2, 229, -2)))).addGap(0, 0, 32767)).addGroup(layout.createSequentialGroup().addComponent(this.jButtonReboottMeter).addGap(32, 32, 32).addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addComponent(this.jLabelSerialNumber).addGap(0, 0, 32767)).addGroup(layout.createSequentialGroup().addComponent(this.jButtonChangeSerialNumber).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, -1, 32767).addComponent(this.jLabelRelayOpened).addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED).addComponent(this.jButtonRelayOpened).addGap(39, 39, 39).addComponent(this.jLabelRelayClosed).addGap(18, 18, 18).addComponent(this.jButtonRelayClosed))))))).addContainerGap(24, 32767)));
     
     layout.setVerticalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGap(7, 7, 7).addComponent(this.jLabelNamePanel).addGap(18, 18, 18).addComponent(this.jLabelAccumulated).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addComponent(this.jScrollPane1, -2, 41, -2).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(this.jButtonReadAccumulated).addComponent(this.jButtonResetAccumulated, -2, -1, -2)).addGap(98, 98, 98).addComponent(this.jLabelRolDemands).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addComponent(this.jScrollPane2, -2, 42, -2).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(this.jButtonReadRolDemands).addComponent(this.jButtonResetRolDemands)).addGap(44, 44, 44).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(this.jComboBoxFlagPasswords, -2, -1, -2).addComponent(this.jButtonSendPassword)).addGap(23, 23, 23).addComponent(this.jLabelSerialNumber).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(this.jButtonReboottMeter).addComponent(this.jButtonChangeSerialNumber).addComponent(this.jLabelRelayOpened).addComponent(this.jButtonRelayOpened).addComponent(this.jLabelRelayClosed).addComponent(this.jButtonRelayClosed)).addContainerGap(139, 32767)));
   }
   
   public void setActualSN(String SNMedidorr)
   {
-    //this.jLabelSerialNumber.setText("Numero de Serie Actual: " + SNMedidorr);
-    this.jLabelSerialNumber.setText("Current Serial Number: " + SNMedidorr);
+    this.jLabelSerialNumber.setText("Número de Serie Actual: " + SNMedidorr);
+    //this.jLabelSerialNumber.setText("Current Serial Number: " + SNMedidorr);
   }
   
   private void jButtonReadRolDemandsActionPerformed(ActionEvent evt)
   {
     PortComunication port = new PortComunication();
-    if (((!port.getStatePort() ? 1 : 0) | (Meter.serialNumber == null ? 1 : 0) /*| Meter.serialNumber.equals("0000000000000000")*/) != 0)
+    //if (((!port.getStatePort() ? 1 : 0) | (Meter.serialNumber == null ? 1 : 0) /*| Meter.serialNumber.equals("0000000000000000")*/) != 0)
+    if((port.getStatePort() == false) | (Meter.serialNumber == null) | Meter.serialNumber.equals("0000000000000000"))//Solución al error de la línea de arriba
     {
-      //JOptionPane.showMessageDialog(null, "Error Revise el numero de serie, Puerto o conexion");
-      JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexion", "Error", JOptionPane.ERROR_MESSAGE);
+      //JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
     }
     else
     {
@@ -249,21 +261,22 @@ public class Resets
     String serialNumber = Meter.getSerialNumberCompl();
     boolean estado = modb.writeFlagsPassw(flagPassword, serialNumber);
     if (estado == true) {
-      //JOptionPane.showMessageDialog(null, "Correcto");
-      JOptionPane.showMessageDialog(null, "Done!!!","Information",JOptionPane.INFORMATION_MESSAGE);
+      JOptionPane.showMessageDialog(null, "Correcto!!!", "Información", JOptionPane.INFORMATION_MESSAGE);
+      //JOptionPane.showMessageDialog(null, "Done!!!","Information",JOptionPane.INFORMATION_MESSAGE);
     } else {
-      //JOptionPane.showMessageDialog(null, "Error Revise el numero de serie, Puerto o conexion");
-      JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexión", "Error", JOptionPane.ERROR_MESSAGE);
+      //JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
     }
   }
   
   private void jButtonReadAccumulatedActionPerformed(ActionEvent evt)
   {
     PortComunication port = new PortComunication();
-    if (((!port.getStatePort() ? 1 : 0) | (Meter.serialNumber == null ? 1 : 0) /*| Meter.serialNumber.equals("0000000000000000")*/) != 0)
+    //if (((!port.getStatePort() ? 1 : 0) | (Meter.serialNumber == null ? 1 : 0) /*| Meter.serialNumber.equals("0000000000000000")*/) != 0)
+    if((port.getStatePort() == false) | (Meter.serialNumber == null) | Meter.serialNumber.equals("0000000000000000"))//Solución al error de la línea de arriba
     {
-      //JOptionPane.showMessageDialog(null, "Error Revise el numero de serie, Puerto o conexion");
-      JOptionPane.showMessageDialog(null, "Error Check number serial, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexión", "Error", JOptionPane.ERROR_MESSAGE);
+      //JOptionPane.showMessageDialog(null, "Error Check number serial, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
     }
     else
     {
@@ -281,10 +294,11 @@ public class Resets
   private void jButtonReboottMeterActionPerformed(ActionEvent evt)
   {
     PortComunication port = new PortComunication();
-    if (((!port.getStatePort() ? 1 : 0) | (Meter.serialNumber == null ? 1 : 0)) != 0)
+    //if (((!port.getStatePort() ? 1 : 0) | (Meter.serialNumber == null ? 1 : 0)) != 0)
+    if((port.getStatePort() == false) | (Meter.serialNumber == null) | Meter.serialNumber.equals("0000000000000000"))//Solución al error de la línea de arriba
     {
-      //JOptionPane.showMessageDialog(null, "Error Revise el numero de serie, Puerto o conexion");
-      JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexión", "Error", JOptionPane.ERROR_MESSAGE);
+      //JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
     }
     else
     {
@@ -293,11 +307,11 @@ public class Resets
       String serialNumber = Meter.getSerialNumberCompl();
       boolean estado = modb.writeFlagsPassw(flagPassword, serialNumber);
       if (estado == true) {
-        //JOptionPane.showMessageDialog(null, "Correcto");
-        JOptionPane.showMessageDialog(null, "Done!!!","Information",JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Correcto!!!", "Información", JOptionPane.INFORMATION_MESSAGE);
+        //JOptionPane.showMessageDialog(null, "Done!!!","Information",JOptionPane.INFORMATION_MESSAGE);
       } else {
-        //JOptionPane.showMessageDialog(null, "Error Revise el numero de serie, Puerto o conexion");
-        JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexión", "Error", JOptionPane.ERROR_MESSAGE);
+        //JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
       }
     }
   }
@@ -305,34 +319,11 @@ public class Resets
   private void jButtonRelayOpenedActionPerformed(ActionEvent evt)
   {
     PortComunication port = new PortComunication();
-    if (((!port.getStatePort() ? 1 : 0) | (Meter.serialNumber == null ? 1 : 0) /*| Meter.serialNumber.equals("0000000000000000")*/) != 0)
+    //if (((!port.getStatePort() ? 1 : 0) | (Meter.serialNumber == null ? 1 : 0) /*| Meter.serialNumber.equals("0000000000000000")*/) != 0)
+    if((port.getStatePort() == false) | (Meter.serialNumber == null) | Meter.serialNumber.equals("0000000000000000"))//Solución al error de la línea de arriba
     {
-      //JOptionPane.showMessageDialog(null, "Error Revise el numero de serie, Puerto o conexion");
-      JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
-    }
-    else
-    {
-      ModbusUtil modb = new ModbusUtil();
-      FlagsPasswords flagPassword = FlagsPasswords.METER_TURN_ON;
-      String serialNumber = Meter.getSerialNumberCompl();
-      boolean estado = modb.writeFlagsPassw(flagPassword, serialNumber);
-      if (estado == true) {
-        //JOptionPane.showMessageDialog(null, "Correcto");
-        JOptionPane.showMessageDialog(null, "Done!!!","Information",JOptionPane.INFORMATION_MESSAGE);
-      } else {
-        //JOptionPane.showMessageDialog(null, "Error Revise el numero de serie, Puerto o conexion");
-        JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
-      }
-    }
-  }
-  
-  private void jButtonRelayClosedActionPerformed(ActionEvent evt)
-  {
-    PortComunication port = new PortComunication();
-    if (((!port.getStatePort() ? 1 : 0) | (Meter.serialNumber == null ? 1 : 0) /*| Meter.serialNumber.equals("0000000000000000")*/) != 0)
-    {
-      //JOptionPane.showMessageDialog(null, "Error Revise el numero de serie, Puerto o conexion");
-      JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(null, "Error, Revise el numero de serie, Puerto o conexión", "Error", JOptionPane.ERROR_MESSAGE);
+      //JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
     }
     else
     {
@@ -341,11 +332,36 @@ public class Resets
       String serialNumber = Meter.getSerialNumberCompl();
       boolean estado = modb.writeFlagsPassw(flagPassword, serialNumber);
       if (estado == true) {
-        //JOptionPane.showMessageDialog(null, "Correcto");
-        JOptionPane.showMessageDialog(null, "Done!!!","Information",JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Correcto!!!", "Información", JOptionPane.INFORMATION_MESSAGE);
+        //JOptionPane.showMessageDialog(null, "Done!!!","Information",JOptionPane.INFORMATION_MESSAGE);
       } else {
-        //JOptionPane.showMessageDialog(null, "Error Revise el numero de serie, Puerto o conexion");
-        JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexión", "Error", JOptionPane.ERROR_MESSAGE);
+        //JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
+      }
+    }
+  }
+  
+  private void jButtonRelayClosedActionPerformed(ActionEvent evt)
+  {
+    PortComunication port = new PortComunication();
+    //if (((!port.getStatePort() ? 1 : 0) | (Meter.serialNumber == null ? 1 : 0) /*| Meter.serialNumber.equals("0000000000000000")*/) != 0)
+    if((port.getStatePort() == false) | (Meter.serialNumber == null) | Meter.serialNumber.equals("0000000000000000"))//Solución al error de la línea de arriba
+    {
+      JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexión", "Error", JOptionPane.ERROR);
+      //JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
+    }
+    else
+    {
+      ModbusUtil modb = new ModbusUtil();
+      FlagsPasswords flagPassword = FlagsPasswords.METER_TURN_ON;
+      String serialNumber = Meter.getSerialNumberCompl();
+      boolean estado = modb.writeFlagsPassw(flagPassword, serialNumber);
+      if (estado == true) {
+        JOptionPane.showMessageDialog(null, "Correcto", "Información", JOptionPane.INFORMATION_MESSAGE );
+        //JOptionPane.showMessageDialog(null, "Done!!!","Information",JOptionPane.INFORMATION_MESSAGE);
+      } else {
+        JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexión", "Error", JOptionPane.ERROR_MESSAGE);
+        //JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
       }
     }
   }
@@ -357,14 +373,14 @@ public class Resets
       public void run()
       {
         Pattern r = Pattern.compile("[^a-zA-Z0-9]");
-        //String newserialNumber = JOptionPane.showInputDialog("Inserta el numero de serie del medidor:", null);
-        String newserialNumber = JOptionPane.showInputDialog("Insert the meter serial number:", null);
+        String newserialNumber = JOptionPane.showInputDialog("Ingresa el número de serie del medidor:", null);
+        //String newserialNumber = JOptionPane.showInputDialog("Insert the meter serial number:", null);
         Matcher m = r.matcher(newserialNumber);
         boolean dato = m.find();
         if ((dato == true | newserialNumber.trim().equals("")))
         {
-          //JOptionPane.showMessageDialog(null, "Inserta el numero de serie (\"Ejemplo: NK114190011\") o valores alfanumericos");
-          JOptionPane.showMessageDialog(null, "Insert the meter serial number (\"Example: NK114190011\") or values alphanumerics","Information",JOptionPane.INFORMATION_MESSAGE);
+          JOptionPane.showMessageDialog(null, "Ingresa el número de serie (\"Ejemplo: NK114190011\") o valores alfanumericos");
+          //JOptionPane.showMessageDialog(null, "Insert the meter serial number (\"Example: NK114190011\") or values alphanumerics","Information",JOptionPane.INFORMATION_MESSAGE);
           return;
         }
         if (newserialNumber != null)
@@ -372,13 +388,13 @@ public class Resets
           PortComunication port = new PortComunication();
           if (((!port.getStatePort() ? 1 : 0) | (Meter.serialNumber == null ? 1 : 0)) != 0)
           {
-            //JOptionPane.showMessageDialog(null, "Error Revise el numero de serie, Puerto o conexion");
-            JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexión", "Error", JOptionPane.ERROR_MESSAGE);
+            //JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
           }
           else if (newserialNumber.length() > 16)
           {
-            //JOptionPane.showMessageDialog(null, "Error el nombre no puede tener mas de 16 Caracteres");
-            JOptionPane.showMessageDialog(null, "Error name can not have more than 16 characters","Error",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Error, el nombre no puede tener más de 16 Caracteres", "Error", JOptionPane.ERROR_MESSAGE);
+            //JOptionPane.showMessageDialog(null, "Error name can not have more than 16 characters","Error",JOptionPane.ERROR_MESSAGE);
           }
           else
           {
@@ -409,8 +425,8 @@ public class Resets
         }
         else
         {
-          //JOptionPane.showMessageDialog(null, "Inserta el numero de serie (\"Ejemplo: NK114190011\")");
-          JOptionPane.showMessageDialog(null, "Insert the serial number (\"Example: NK114190011\")","Information",JOptionPane.INFORMATION_MESSAGE);
+          JOptionPane.showMessageDialog(null, "Ingresa el número de serie (\"Ejemplo: NK114190011\")");
+          //JOptionPane.showMessageDialog(null, "Insert the serial number (\"Example: NK114190011\")","Information",JOptionPane.INFORMATION_MESSAGE);
         }
       }
     });
@@ -423,11 +439,11 @@ public class Resets
     String serialNumber = Meter.getSerialNumberCompl();
     boolean estado = modb.writeFlagsPassw(flagPassword, serialNumber);
     if (estado == true) {
-      //JOptionPane.showMessageDialog(null, "Correcto");
-      JOptionPane.showMessageDialog(null, "Done!!!","Information",JOptionPane.INFORMATION_MESSAGE);
+      JOptionPane.showMessageDialog(null, "Correcto!!!", "Información", JOptionPane.INFORMATION_MESSAGE );
+      //JOptionPane.showMessageDialog(null, "Done!!!","Information",JOptionPane.INFORMATION_MESSAGE);
     } else {
-      //JOptionPane.showMessageDialog(null, "Error Revise el numero de serie, Puerto o conexion");
-      JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexión", "Error", JOptionPane.ERROR_MESSAGE);
+      //JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
     }
   }
   
@@ -450,10 +466,11 @@ public class Resets
   public void setFlags(FlagsPasswords flagPassword)
   {
     PortComunication port = new PortComunication();
-    if (((!port.getStatePort() ? 1 : 0) | (Meter.serialNumber == null ? 1 : 0)) != 0)
+    //if (((!port.getStatePort() ? 1 : 0) | (Meter.serialNumber == null ? 1 : 0)) != 0)
+    if((port.getStatePort() == false) | (Meter.serialNumber == null) | Meter.serialNumber.equals("0000000000000000"))//Solución al error de la línea de arriba
     {
-      //JOptionPane.showMessageDialog(null, "Error Revise el numero de serie, Puerto o conexion");
-      JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexión", "Error", JOptionPane.ERROR_MESSAGE);
+      //JOptionPane.showMessageDialog(null, "Error, Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
     }
     else
     {
@@ -462,11 +479,11 @@ public class Resets
       String serialNumber = Meter.getSerialNumberCompl();
       boolean estado = modb.writeFlagsPassw(flagPassword, serialNumber);
       if (estado == true) {
-        //JOptionPane.showMessageDialog(null, "Correcto");
-        JOptionPane.showMessageDialog(null, "Done","Information",JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Correcto!!!", "Información", JOptionPane.INFORMATION_MESSAGE);
+        //JOptionPane.showMessageDialog(null, "Done","Information",JOptionPane.INFORMATION_MESSAGE);
       } else {
-        //JOptionPane.showMessageDialog(null, "Error Revise el numero de serie, Puerto o conexion");
-        JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexión", "Error", JOptionPane.ERROR_MESSAGE);
+        //JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
       }
     }
   }
@@ -522,8 +539,8 @@ public class Resets
     this.tableAcummulates.setValueAt(value, type.getRow(), phase.getCol());
   }
   
-  //private DefaultTableModel tableAcummulates = new DefaultTableModel(new Object[][] { { "---", "---", "---", "---" } }, new String[] { "Energia Activa Entregada", "Energia Reactiva Entregada", "Energia Activa Recibida", "Energia Reactiva Recibida" })
-  private DefaultTableModel tableAcummulates = new DefaultTableModel(new Object[][] { { "---", "---", "---", "---" } }, new String[] { "Active Energy Delivered", "Reactive Energy Delivered", "Active Energy Received", "Reactive Energy Received" })
+  private DefaultTableModel tableAcummulates = new DefaultTableModel(new Object[][] { { "---", "---", "---", "---" } }, new String[] { "Energía Activa Entregada", "Energía Reactiva Entregada", "Energía Activa Recibida", "Energía Reactiva Recibida" })
+  //private DefaultTableModel tableAcummulates = new DefaultTableModel(new Object[][] { { "---", "---", "---", "---" } }, new String[] { "Active Energy Delivered", "Reactive Energy Delivered", "Active Energy Received", "Reactive Energy Received" })
   {
     Class[] types = { String.class, String.class, String.class, String.class };
     boolean[] canEdit = { false, false, false, false };
@@ -797,8 +814,8 @@ public class Resets
     this.tableDemands.setValueAt(value, type.getRow(), phase.getCol());
   }
   
-  //private DefaultTableModel tableDemands = new DefaultTableModel(new Object[][] { { "---", "---", "---", "---", "---", "---", "---", "---" } }, new String[] { "Activa Entr.", "Tiempo", "Reactiva Entr.", "Tiempo", "Activa Recib.", "Tiempo", "Reactiva Recib.", "Tiempo" })
-  private DefaultTableModel tableDemands = new DefaultTableModel(new Object[][] { { "---", "---", "---", "---", "---", "---", "---", "---" } }, new String[] { "Active delivered", "Time", "Delivered Reactivate", "Time", "Active Received", "Time", "reactive Received", "Time" })
+  private DefaultTableModel tableDemands = new DefaultTableModel(new Object[][] { { "---", "---", "---", "---", "---", "---", "---", "---" } }, new String[] { "Activa Entr.", "Tiempo", "Reactiva Entr.", "Tiempo", "Activa Recib.", "Tiempo", "Reactiva Recib.", "Tiempo" })
+  //private DefaultTableModel tableDemands = new DefaultTableModel(new Object[][] { { "---", "---", "---", "---", "---", "---", "---", "---" } }, new String[] { "Active delivered", "Time", "Delivered Reactivate", "Time", "Active Received", "Time", "reactive Received", "Time" })
   {
     Class[] typesDem = { String.class, String.class, String.class, String.class, String.class, String.class, String.class, String.class };
     boolean[] canEditDem = { false, false, false, false, false, false, false, false };

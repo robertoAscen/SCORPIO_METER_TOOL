@@ -51,52 +51,52 @@ public class ConcentratorReadings
   public ConcentratorReadings()
   {
     initComponents();
-    this.jButtonExportReadingsXml.setEnabled(false);
+    jButtonExportReadingsXml.setEnabled(false);
   }
   
   private void initComponents()
   {
-    this.jLabelConcentratorReadingsTitle = new JLabel();
-    this.jLabelIpConcentrator = new JLabel();
-    this.jTextFieldIpConcentraror = new JTextField();
-    this.jScrollPane1 = new JScrollPane();
-    this.jTableConcentratorReadings = new JTable();
-    this.jButtonGetReadings = new JButton();
-    this.jButtonExportReadingsXml = new JButton();
+    jLabelConcentratorReadingsTitle = new JLabel();
+    jLabelIpConcentrator = new JLabel();
+    jTextFieldIpConcentraror = new JTextField();
+    jScrollPane1 = new JScrollPane();
+    jTableConcentratorReadings = new JTable();
+    jButtonGetReadings = new JButton();
+    jButtonExportReadingsXml = new JButton();
     
     setName("JPanelConcentratorReadings");
     
-    this.jLabelConcentratorReadingsTitle.setFont(new Font("Ubuntu", 1, 18));
-    //this.jLabelConcentratorReadingsTitle.setText("LECTURAS DEL CONCENTRADOR");
-    this.jLabelConcentratorReadingsTitle.setText("CONCENTRATOR METER");
+    jLabelConcentratorReadingsTitle.setFont(new Font("Ubuntu", 1, 18));
+    jLabelConcentratorReadingsTitle.setText("LECTURAS DEL CONCENTRADOR");
+    //jLabelConcentratorReadingsTitle.setText("CONCENTRATOR METER");
     
-    //this.jLabelIpConcentrator.setText("IP del concentrador:");
-    this.jLabelIpConcentrator.setText("Concentrator IP:");
+    jLabelIpConcentrator.setText("IP del concentrador:");
+    //jLabelIpConcentrator.setText("Concentrator IP:");
     
-    this.jTextFieldIpConcentraror.setText("10.0.0.254");
-    this.jTextFieldIpConcentraror.addActionListener(new ActionListener()
+    jTextFieldIpConcentraror.setText("10.0.0.254");
+    jTextFieldIpConcentraror.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         ConcentratorReadings.this.jTextFieldIpConcentrarorActionPerformed(evt);
       }
     });
-    this.jTableConcentratorReadings.setModel(new DefaultTableModel(new Object[0][], new String[0]));
+    jTableConcentratorReadings.setModel(new DefaultTableModel(new Object[0][], new String[0]));
     
-    this.jScrollPane1.setViewportView(this.jTableConcentratorReadings);
+    jScrollPane1.setViewportView(jTableConcentratorReadings);
     
-    //this.jButtonGetReadings.setText("VER LECTURAS");
-    this.jButtonGetReadings.setText("SHOW READS");
-    this.jButtonGetReadings.addActionListener(new ActionListener()
+    jButtonGetReadings.setText("VER LECTURAS");
+    //jButtonGetReadings.setText("SHOW READS");
+    jButtonGetReadings.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         ConcentratorReadings.this.jButtonGetReadingsActionPerformed(evt);
       }
     });
-    this.jButtonExportReadingsXml.setText("EXPORT READS TO XML");
-    //this.jButtonExportReadingsXml.setText("EXPORTAR LECTURAS A XML");
-    this.jButtonExportReadingsXml.addActionListener(new ActionListener()
+    //jButtonExportReadingsXml.setText("EXPORT READS TO XML");
+    jButtonExportReadingsXml.setText("EXPORTAR LECTURAS A XML");
+    jButtonExportReadingsXml.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
@@ -120,7 +120,7 @@ public class ConcentratorReadings
   private void jButtonExportReadingsXmlActionPerformed(ActionEvent evt)
   {
     WorkConcentrator metCon = new WorkConcentrator();
-    metCon.convertReadingsTableToXML(this.jTableConcentratorReadings);
+    metCon.convertReadingsTableToXML(jTableConcentratorReadings);
   }
   
   public void createFrame()
@@ -128,27 +128,27 @@ public class ConcentratorReadings
     Request req = new Request();
     JFrameMain f = (JFrameMain)SwingUtilities.getAncestorOfClass(JFrameMain.class, this);
     contentPane = f.getContentPane();
-    this.scrollpane = new JScrollPane();
+    scrollpane = new JScrollPane();
     defaultable = new DefaultTableModel((Object[][])null, getColumnas());
     
     WorkConcentrator metConXml = new WorkConcentrator();
     String request = "<appCommand type=\"request\">\n\t<command name=\"getReadings\" />\n</appCommand>";
     
-    boolean estate = req.requestServer(this.jTextFieldIpConcentraror.getText(), request);
+    boolean estate = req.requestServer(jTextFieldIpConcentraror.getText(), request);
     if (estate == true)
     {
       String response = req.getResponse();
-      metConXml.readReadingsConcentratorXML(this.jTextFieldIpConcentraror.getText(), response);
-      this.jButtonExportReadingsXml.setEnabled(true);
+      metConXml.readReadingsConcentratorXML(jTextFieldIpConcentraror.getText(), response);
+      jButtonExportReadingsXml.setEnabled(true);
     }
     else
     {
-      //JOptionPane.showMessageDialog(null, "Fallo de conexion");
-      JOptionPane.showMessageDialog(null, "Connection Fail","Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(null, "Fallo de conexión");
+      //JOptionPane.showMessageDialog(null, "Connection Fail","Error",JOptionPane.ERROR_MESSAGE);
     }
-    this.jTableConcentratorReadings.setModel(defaultable);
-    this.jTableConcentratorReadings.repaint();
-    this.scrollpane.repaint();
+    jTableConcentratorReadings.setModel(defaultable);
+    jTableConcentratorReadings.repaint();
+    scrollpane.repaint();
     setVisible(true);
   }
   
@@ -159,8 +159,8 @@ public class ConcentratorReadings
   
   public String[] getColumnas()
   {
-    String[] columna = { "NumeroSerie", "Dato", "Mensaje", "Fecha" };
-    //String[] columna = { "NumeroSerie", "Dato", "Mensaje", "Fecha" };//Para cambiar a ingles
+    //String[] columna = { "NumeroSerie", "Dato", "Mensaje", "Fecha" };
+    String[] columna = { "NúmeroSerie", "Dato", "Mensaje", "Fecha" };//Para cambiar a ingles
     return columna;
   }
 }

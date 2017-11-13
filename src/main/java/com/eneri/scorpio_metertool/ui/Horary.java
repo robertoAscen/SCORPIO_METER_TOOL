@@ -55,7 +55,7 @@ import javax.swing.LayoutStyle;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.SwingUtilities;
 import javax.swing.Timer;
-//import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
+import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 
 /**
  *
@@ -85,9 +85,12 @@ public class Horary
   {
     initComponents();
     getTimeZoneJCombobox();
-    this.jButtonCalendarStart.setEnabled(false);
-    this.jButtonCalendarEnd.setEnabled(false);
-    this.timeRTC.start();
+    jButtonCalendarStart.setEnabled(false);
+    jButtonCalendarEnd.setEnabled(false);
+    jTextFieldStartHorary.setEnabled(false);
+    jTextFieldEndHorary.setEnabled(false);
+    jButtonReadHorary.setEnabled(false);
+    timeRTC.start();
   }
   
   public void checkjTextFieldStartHorary()
@@ -107,8 +110,8 @@ public class Horary
           boolean estate = false;
           if (Horary.this.jTextFieldStartHorary.getText().toString().equals(""))
           {
-            Horary.this.jTextFieldStartHorary.setBackground(Color.red);
-            return;
+              Horary.this.jTextFieldStartHorary.setBackground(Color.red);
+              return;
           }
           if (key.equals(Horary.this.jComboBoxHoraryZone.getSelectedItem().toString()))
           {
@@ -120,10 +123,14 @@ public class Horary
               date = Horary.this.dateFormatter.parse(Horary.this.jTextFieldStartHorary.getText().toString() + " " + Horary.this.timeOfStartDST);
               Horary.this.calStart.setTime(date);
             }
-            catch (ParseException e) {}
-            if (!Horary.this.timezoneone.inDaylightTime(date)) {
+            catch (ParseException e) 
+            {}
+            if (!Horary.this.timezoneone.inDaylightTime(date)) 
+            {
               Horary.this.jTextFieldStartHorary.setBackground(Color.red);
-            } else {
+            }
+            else 
+            {
               Horary.this.jTextFieldStartHorary.setBackground(Color.green);
             }
             System.out.println("In daylight time:" + Horary.this.timezoneone.inDaylightTime(date) + date);
@@ -193,13 +200,13 @@ public class Horary
         }
       }
     }
-    //AutoCompleteDecorator.decorate(this.jComboBoxHoraryZone);
+    AutoCompleteDecorator.decorate(this.jComboBoxHoraryZone);
   }
   
   public Object stringToValue(String text)
     throws ParseException
   {
-    return this.dateFormatter.parseObject(text);
+    return dateFormatter.parseObject(text);
   }
   
   public String valueToString(Object value)
@@ -208,151 +215,168 @@ public class Horary
     if (value != null)
     {
       Calendar cal = (Calendar)value;
-      return this.dateFormatter.format(cal.getTime());
+      return dateFormatter.format(cal.getTime());
     }
     return "";
   }
   
   private void initComponents()
   {
-    this.jLabelNamePanel = new JLabel();
-    this.jComboBoxHoraryZone = new JComboBox();
-    this.jButtonReadHorary = new JButton();
-    this.jButtonSaveHorary = new JButton();
-    this.jButtonLocalSynchronization = new JButton();
-    this.jLabelStartHorary = new JLabel();
-    this.jLabelEndHorary = new JLabel();
-    this.jLabelHoraryZone = new JLabel();
-    this.jButtonCalendarStart = new JButton();
-    this.jTextFieldStartHorary = new JTextField();
-    this.jTextFieldEndHorary = new JTextField();
-    this.jButtonCalendarEnd = new JButton();
-    this.jTextFieldReadWriteUTCTime = new JTextField();
-    this.jButton1 = new JButton();
-    this.jLabelUTCTime = new JLabel();
-    this.jLabelTimeUTC = new JLabel();
+    jLabelNamePanel = new JLabel();
+    jComboBoxHoraryZone = new JComboBox();
+    jButtonReadHorary = new JButton();
+    jButtonSaveHorary = new JButton();
+    jButtonLocalSynchronization = new JButton();
+    jLabelStartHorary = new JLabel();
+    jLabelEndHorary = new JLabel();
+    jLabelHoraryZone = new JLabel();
+    jButtonCalendarStart = new JButton();
+    jTextFieldStartHorary = new JTextField();
+    jTextFieldEndHorary = new JTextField();
+    jButtonCalendarEnd = new JButton();
+    jTextFieldReadWriteUTCTime = new JTextField();
+    jButton1 = new JButton();
+    jLabelUTCTime = new JLabel();
+    jLabelTimeUTC = new JLabel();
     
     setPreferredSize(new Dimension(950, 600));
     
-    this.jLabelNamePanel.setFont(new Font("Tahoma", 1, 18));
-    //this.jLabelNamePanel.setText("HORARIOS");
-    this.jLabelNamePanel.setText("Schedules");
+    jTextFieldReadWriteUTCTime.setToolTipText("Hora global del medidor");
     
-    this.jComboBoxHoraryZone.setEditable(true);
-    this.jComboBoxHoraryZone.addItemListener(new ItemListener()
+    jLabelNamePanel.setFont(new Font("Tahoma", 1, 18));
+    jLabelNamePanel.setText("HORARIOS");
+    //jLabelNamePanel.setText("Schedules");
+    
+    jComboBoxHoraryZone.setEditable(true);
+    jComboBoxHoraryZone.setToolTipText("Selecciona una zona horaria");
+    jComboBoxHoraryZone.addItemListener(new ItemListener()
     {
       public void itemStateChanged(ItemEvent evt)
       {
         Horary.this.jComboBoxHoraryZoneItemStateChanged(evt);
       }
     });
-    this.jComboBoxHoraryZone.addActionListener(new ActionListener()
+    jComboBoxHoraryZone.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         Horary.this.jComboBoxHoraryZoneActionPerformed(evt);
       }
     });
-    //this.jButtonReadHorary.setText("LEER");
-    this.jButtonReadHorary.setText("READ");
-    this.jButtonReadHorary.addActionListener(new ActionListener()
+    /*jButtonReadHorary.setText("LEER");
+    jButtonReadHorary.setToolTipText("Oprime el botón para obtener los valores");
+    //jButtonReadHorary.setText("READ");
+    jButtonReadHorary.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         Horary.this.jButtonReadHoraryActionPerformed(evt);
       }
-    });
-    //this.jButtonSaveHorary.setText("Guardar");
-    this.jButtonSaveHorary.setText("Save");
-    this.jButtonSaveHorary.addActionListener(new ActionListener()
+    });*/
+    jButtonSaveHorary.setText("Guardar");
+    jButtonSaveHorary.setToolTipText("Oprime el botón para guardar los valores establecidos");
+    //jButtonSaveHorary.setText("Save");
+    jButtonSaveHorary.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         Horary.this.jButtonSaveHoraryActionPerformed(evt);
       }
     });
-    //this.jButtonLocalSynchronization.setText("SINCRONIZAR RELOJ GLOBAL");
-    this.jButtonLocalSynchronization.setText("SYNCHRONIZE CLOCK GLOBAL");
-    this.jButtonLocalSynchronization.addActionListener(new ActionListener()
+    jButtonLocalSynchronization.setText("SINCRONIZAR RELOJ MEDIDOR");
+    jButtonLocalSynchronization.setToolTipText("Oprime el botón para sincronizar el tiempo global en el medidor");
+    //jButtonLocalSynchronization.setText("SYNCHRONIZE CLOCK GLOBAL");
+    jButtonLocalSynchronization.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         Horary.this.jButtonLocalSynchronizationActionPerformed(evt);
       }
     });
-    //this.jLabelStartHorary.setText("INICIO DE HORARIO DE VERANO");
-    this.jLabelStartHorary.setText("SUMMER TIME STARUP");
+    jLabelStartHorary.setText("INICIO DE HORARIO DE VERANO");
+    //jLabelStartHorary.setText("SUMMER TIME STARUP");
     
-    //this.jLabelEndHorary.setText("FIN DE HORARIO DE VERANO");
-    this.jLabelEndHorary.setText("SUMMER TIME END");
+    jLabelEndHorary.setText("FIN DE HORARIO DE VERANO");
+    //jLabelEndHorary.setText("SUMMER TIME END");
     
-    //this.jLabelHoraryZone.setText("ZONA HORARIA");
-    this.jLabelHoraryZone.setText("TIME ZONE");
+    jLabelHoraryZone.setText("ZONA HORARIA");
+    //jLabelHoraryZone.setText("TIME ZONE");
     
-    //this.jButtonCalendarStart.setText("CALENDARIO");
-    this.jButtonCalendarStart.setText("CALENDAR");
-    this.jButtonCalendarStart.addActionListener(new ActionListener()
+    jButtonCalendarStart.setText("CALENDARIO");
+    jButtonCalendarStart.setToolTipText("Oprime el valor para establecer el inicio del horario de verano");
+    //jButtonCalendarStart.setText("CALENDAR");
+    jButtonCalendarStart.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         Horary.this.jButtonCalendarStartActionPerformed(evt);
       }
     });
-    this.jTextFieldStartHorary.addActionListener(new ActionListener()
+    
+    jTextFieldStartHorary.setToolTipText("Fecha de inicio de horario de verano para la zona horaria seleccionada");
+    jTextFieldStartHorary.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         Horary.this.jTextFieldStartHoraryActionPerformed(evt);
       }
     });
-    this.jTextFieldStartHorary.addKeyListener(new KeyAdapter()
+    
+    jTextFieldStartHorary.addKeyListener(new KeyAdapter()
     {
       public void keyReleased(KeyEvent evt)
       {
         Horary.this.jTextFieldStartHoraryKeyReleased(evt);
       }
     });
-    this.jTextFieldEndHorary.addActionListener(new ActionListener()
+    
+    jTextFieldEndHorary.setToolTipText("Fecha de fin de horario de verano para la zona horaria seleccionada");
+    jTextFieldEndHorary.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         Horary.this.jTextFieldEndHoraryActionPerformed(evt);
       }
     });
-    this.jTextFieldEndHorary.addKeyListener(new KeyAdapter()
+    
+    jTextFieldEndHorary.addKeyListener(new KeyAdapter()
     {
       public void keyReleased(KeyEvent evt)
       {
         Horary.this.jTextFieldEndHoraryKeyReleased(evt);
       }
     });
-    //this.jButtonCalendarEnd.setText("CALENDARIO");
-    this.jButtonCalendarEnd.setText("CALENDAR");
-    this.jButtonCalendarEnd.addActionListener(new ActionListener()
+    
+    jButtonCalendarEnd.setText("CALENDARIO");
+    //jButtonCalendarEnd.setText("CALENDAR");
+    jButtonCalendarEnd.setToolTipText("Oprime el botón para establer el fin del horario de verano");
+    jButtonCalendarEnd.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         Horary.this.jButtonCalendarEndActionPerformed(evt);
       }
     });
-    //this.jButton1.setText("LEER RELOJ GLOBAL");
-    this.jButton1.setText("READ CLOCK GLOBAL");
-    this.jButton1.addActionListener(new ActionListener()
+    jButton1.setText("LEER RELOJ MEDIDOR");
+    //jButton1.setText("READ CLOCK GLOBAL");
+    jButton1.setToolTipText("Oprime el botón para leer el reloj global del medidor");
+    jButton1.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         Horary.this.jButton1ActionPerformed(evt);
       }
     });
-    //this.jLabelUTCTime.setText("HORA GLOBAL");
-    this.jLabelUTCTime.setText("GLOBAL TIME");
     
-    //this.jLabelTimeUTC.setText("HORA GLOBAL:");
-    this.jLabelTimeUTC.setText("GLOBAL TIME:");
+    jLabelTimeUTC.setText("HORA GLOBAL:");
+    //jLabelTimeUTC.setText("GLOBAL TIME:");
+    
+    jLabelUTCTime.setText("HORA DEL MEDIDOR");
+    //jLabelUTCTime.setText("GLOBAL TIME");   
     
     GroupLayout layout = new GroupLayout(this);
     setLayout(layout);
-    layout.setHorizontalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGap(409, 409, 409).addComponent(this.jLabelNamePanel)).addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup().addGap(192, 192, 192).addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(this.jLabelEndHorary, GroupLayout.Alignment.TRAILING).addComponent(this.jLabelStartHorary, GroupLayout.Alignment.TRAILING).addComponent(this.jLabelHoraryZone, GroupLayout.Alignment.TRAILING)).addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED).addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING, false).addComponent(this.jTextFieldStartHorary).addComponent(this.jTextFieldEndHorary).addComponent(this.jComboBoxHoraryZone, -2, 215, -2))).addGroup(layout.createSequentialGroup().addComponent(this.jLabelUTCTime).addGap(18, 18, 18).addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(this.jLabelTimeUTC).addComponent(this.jTextFieldReadWriteUTCTime, -2, 215, -2)))).addGap(18, 18, 18).addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(this.jButtonCalendarStart).addComponent(this.jButtonCalendarEnd))).addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup().addComponent(this.jButton1, -2, 188, -2).addGap(30, 30, 30).addComponent(this.jButtonLocalSynchronization, -2, 215, -2).addGap(9, 9, 9)))).addGroup(layout.createSequentialGroup().addGap(363, 363, 363).addComponent(this.jButtonReadHorary, -2, 88, -2).addGap(18, 18, 18).addComponent(this.jButtonSaveHorary, -2, 88, -2).addGap(138, 138, 138)))).addContainerGap(255, 32767)));
+    layout.setHorizontalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGap(409, 409, 409).addComponent(this.jLabelNamePanel)).addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup().addGap(192, 192, 192).addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(this.jLabelEndHorary, GroupLayout.Alignment.TRAILING).addComponent(this.jLabelStartHorary, GroupLayout.Alignment.TRAILING).addComponent(this.jLabelHoraryZone, GroupLayout.Alignment.TRAILING)).addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED).addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING, false).addComponent(this.jTextFieldStartHorary).addComponent(this.jTextFieldEndHorary).addComponent(this.jComboBoxHoraryZone, -2, 215, -2))).addGroup(layout.createSequentialGroup().addComponent(this.jLabelUTCTime).addGap(18, 18, 18).addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(this.jLabelTimeUTC).addComponent(this.jTextFieldReadWriteUTCTime, -2, 215, -2)))).addGap(18, 18, 18).addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(this.jButtonCalendarStart).addComponent(this.jButtonCalendarEnd))).addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup().addComponent(this.jButton1, -2, 188, -2).addGap(30, 30, 30).addComponent(this.jButtonLocalSynchronization, -2, 215, -2).addGap(9, 9, 9)))).addGroup(layout.createSequentialGroup().addGap(363, 363, 363).addComponent(this.jButtonReadHorary, -2, 88, -2).addGap(18, 18, 18).addComponent(this.jButtonSaveHorary, -1, 88, -1).addGap(138, 138, 138)))).addContainerGap(255, 32767)));
     
     layout.setVerticalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGap(22, 22, 22).addComponent(this.jLabelNamePanel).addGap(39, 39, 39).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(this.jComboBoxHoraryZone, -2, -1, -2).addComponent(this.jLabelHoraryZone)).addGap(48, 48, 48).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(this.jTextFieldStartHorary, -2, -1, -2).addComponent(this.jLabelStartHorary).addComponent(this.jButtonCalendarStart)).addGap(52, 52, 52).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(this.jTextFieldEndHorary, -2, -1, -2).addComponent(this.jLabelEndHorary).addComponent(this.jButtonCalendarEnd)).addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(this.jButtonSaveHorary).addComponent(this.jButtonReadHorary)).addGap(115, 115, 115).addComponent(this.jLabelTimeUTC).addGap(32, 32, 32).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(this.jTextFieldReadWriteUTCTime, -2, -1, -2).addComponent(this.jLabelUTCTime)).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(this.jButtonLocalSynchronization).addComponent(this.jButton1)).addContainerGap(105, 32767)));
   }
@@ -364,11 +388,17 @@ public class Horary
       public void run()
       {
         PortComunication port = new PortComunication();
-        if (((!port.getStatePort() ? 1 : 0) | (Meter.serialNumber == null ? 1 : 0) /*| Meter.serialNumber.equals("0000000000000000")*/) != 0) {
-          //JOptionPane.showMessageDialog(null, "Error Revise el numero de serie, Puerto o conexion");
-          JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
-        } else {
-          Horary.this.swingActionSyncRTC(Horary.this.jTextFieldReadWriteUTCTime.getText());
+        //if (((!port.getStatePort() ? 1 : 0) | (Meter.serialNumber == null ? 1 : 0) /*| Meter.serialNumber.equals("0000000000000000")*/) != 0) 
+        if((port.getStatePort() == false) | (Meter.serialNumber == null) | Meter.serialNumber.equals("0000000000000000"))//Solución al error de la línea de arriba
+        {
+          JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexión", "Error", JOptionPane.ERROR_MESSAGE);
+          //JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
+        } 
+        else 
+        {
+          //Horary.this.swingActionSyncRTC(Horary.this.jTextFieldReadWriteUTCTime.getText());--
+          System.out.println(jLabelTimeUTC.getText().substring(13));
+          Horary.this.swingActionSyncRTC(Horary.this.jLabelTimeUTC.getText().substring(13));
         }
       }
     });
@@ -378,9 +408,11 @@ public class Horary
   {
     PortComunication port = new PortComunication();
     ScorpioMeter scorp = new ScorpioMeter();
-    if (((!port.getStatePort() ? 1 : 0) | (Meter.serialNumber == null ? 1 : 0) /*| Meter.serialNumber.equals("0000000000000000")*/) != 0)
+    //if (((!port.getStatePort() ? 1 : 0) | (Meter.serialNumber == null ? 1 : 0) /*| Meter.serialNumber.equals("0000000000000000")*/) != 0)
+    if((port.getStatePort() == false) | (Meter.serialNumber == null) | Meter.serialNumber.equals("0000000000000000"))//Solución al error de la línea de arriba
     {
-      JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexión", "Error", JOptionPane.ERROR_MESSAGE);
+      //JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
     }
     else
     {
@@ -416,45 +448,47 @@ public class Horary
           StringBuilder sb = new StringBuilder();
           Iterator it = null;
           switch (regStart)
-          {
-          case ZONA_HORARIA: 
-            it = null;
-            Set set = timeZoneList.entrySet();
-            it = set.iterator();
-          case INICIO_HORARIO_VERANO: 
-          case FIN_HORARIO_VERANO: 
-            while (it.hasNext())
-            {
-              Map.Entry entry = (Map.Entry)it.next();
-              int value = Integer.parseInt(entry.getValue().toString());
-              String key = entry.getKey().toString();
-              if (value == responseInt)
-              {
-                this.jComboBoxHoraryZone.getEditor().setItem(key);
-              }
-              else
-              {
-                //continue;
-                short month = (short) (responseInt >> 11 & 0xF);
-                short day = (short)(responseInt >> 5 & 0x7);
-                sb.append("DoW: ");
-                sb.append(day);
-                //sb.append(" Mes: ");
-                sb.append(" Month: ");
-                sb.append(month);
-                this.jTextFieldStartHorary.setText(sb.toString());
-                //break;
-                
-                month = (short)(responseInt >> 11 & 0xF);
-                day = (short)(responseInt >> 5 & 0x7);
-                sb.append("DoW: ");
-                sb.append(day);
-                //sb.append(" Mes: ");
-                sb.append(" Month: ");
-                sb.append(month);
-                this.jTextFieldEndHorary.setText(sb.toString());
-              }
-            }
+          { 
+              case ZONA_HORARIA: 
+                  it = null;
+                  Set set = timeZoneList.entrySet();
+                  it = set.iterator();
+              case INICIO_HORARIO_VERANO: 
+                  //break;
+              case FIN_HORARIO_VERANO:
+                  while (it.hasNext())
+                  {
+                      Map.Entry entry = (Map.Entry)it.next();
+                      int value = Integer.parseInt(entry.getValue().toString());
+                      String key = entry.getKey().toString();
+                      if (value == responseInt)
+                      {
+                          jComboBoxHoraryZone.getEditor().setItem(key);
+                      }
+                      else
+                      {
+                          //continue;
+                          short month = (short) (responseInt >> 11 & 0xF);
+                          short day = (short)(responseInt >> 5 & 0x7);
+                          sb.append("DoW: ");
+                          sb.append(day);
+                          sb.append(" Mes: ");
+                          //sb.append(" Month: ");
+                          sb.append(month);
+                          jTextFieldStartHorary.setText(sb.toString());
+                          //break;
+                          
+                          month = (short)(responseInt >> 11 & 0xF);
+                          day = (short)(responseInt >> 5 & 0x7);
+                          sb.append("DoW: ");
+                          sb.append(day);
+                          sb.append(" Mes: ");
+                          //sb.append(" Month: ");
+                          sb.append(month);
+                          jTextFieldEndHorary.setText(sb.toString());
+                      }
+                  }
+                  break;
           }
         }
         PortComunication.threadDelay(100L);
@@ -466,16 +500,16 @@ public class Horary
   {
     Conversions conv = new Conversions();
     int dataAlllll = 0;
-    String[] date = this.jTextFieldStartHorary.getText().toString().split("-");
+    String[] date = jTextFieldStartHorary.getText().toString().split("-");
     
     int datoD = Integer.parseInt(date[0]);
     int datoM = Integer.parseInt(date[1]);
     int datoY = Integer.parseInt(date[2]);
     
-    int weekNumber = this.calStart.get(4);
-    int dayOfWeek = this.calStart.get(7);
+    int weekNumber = calStart.get(4);
+    int dayOfWeek = calStart.get(7);
     
-    String[] timeStart = this.timeOfStartDST.split(":");
+    String[] timeStart = timeOfStartDST.split(":");
     
     int datoHour = Integer.parseInt(timeStart[0]);
     int datoMin = Integer.parseInt(timeStart[1]);
@@ -491,16 +525,16 @@ public class Horary
   {
     Conversions conv = new Conversions();
     int dataAlllll = 0;
-    String[] date = this.jTextFieldEndHorary.getText().toString().split("-");
+    String[] date = jTextFieldEndHorary.getText().toString().split("-");
     
     int datoD = Integer.parseInt(date[0]);
     int datoM = Integer.parseInt(date[1]);
     int datoY = Integer.parseInt(date[2]);
     
-    int weekNumber = this.calEnd.get(4);
-    int dayOfWeek = this.calEnd.get(7);
+    int weekNumber = calEnd.get(4);
+    int dayOfWeek = calEnd.get(7);
     
-    String[] timeStart = this.timeOfEndDST.split(":");
+    String[] timeStart = timeOfEndDST.split(":");
     
     int datoHour = Integer.parseInt(timeStart[0]);
     int datoMin = Integer.parseInt(timeStart[1]);
@@ -514,21 +548,29 @@ public class Horary
   private void jButtonSaveHoraryActionPerformed(ActionEvent evt)
   {
     Pattern p = Pattern.compile("\\d\\d-\\d\\d-\\d\\d\\d\\d");
-    Matcher m = p.matcher(this.jTextFieldStartHorary.getText());
-    Matcher m2 = p.matcher(this.jTextFieldEndHorary.getText());
-    if ((this.jTextFieldStartHorary.getText().isEmpty() | this.jTextFieldEndHorary.getText().isEmpty() | this.jTextFieldStartHorary.getText().length() != 10 | !m.find() | !m2.find() | this.jTextFieldEndHorary.getText().length() != 10))
+    Matcher m = p.matcher(jTextFieldStartHorary.getText());
+    Matcher m2 = p.matcher(jTextFieldEndHorary.getText());
+    if ((jTextFieldStartHorary.getText().isEmpty() | jTextFieldEndHorary.getText().isEmpty() | jTextFieldStartHorary.getText().length() != 10 | !m.find() | !m2.find() | jTextFieldEndHorary.getText().length() != 10))
     {
-      //JOptionPane.showMessageDialog(null, "Debes seleccionar ZONA HORARIA, el INICIO Y FIN de Horario de Verano ");
-      JOptionPane.showMessageDialog(null, "You most select TIME ZONE, start and end the summer time ","Information",JOptionPane.INFORMATION_MESSAGE);
+      JOptionPane.showMessageDialog(null, "Debes seleccionar ZONA HORARIA, el INICIO Y FIN de Horario de Verano", "Advertencia", JOptionPane.WARNING_MESSAGE);
+      //JOptionPane.showMessageDialog(null, "You most select TIME ZONE, start and end the summer time ","Information",JOptionPane.INFORMATION_MESSAGE);
       return;
+    }//Validar que no guarde el horario de verano si es que no esta correcto.
+    if(jTextFieldStartHorary.getBackground().equals(Color.red) | jTextFieldEndHorary.getBackground().equals(Color.red))
+    {
+        JOptionPane.showMessageDialog(null, "Debes seleccionar valores validos de inicio y fin de horario de verano", "Advertencia", JOptionPane.WARNING_MESSAGE);
     }
-    saveHoraryZone();
-    PortComunication.threadDelay(200L);
-    byte[] startDST = getStartDST();
-    saveStartEndDST(startDST, Register.INICIO_HORARIO_VERANO);
-    PortComunication.threadDelay(200L);
-    byte[] endDST = getEndDST();
-    saveStartEndDST(endDST, Register.FIN_HORARIO_VERANO);
+    else
+    {
+        System.out.println(jTextFieldStartHorary.getBackground());
+        saveHoraryZone();
+        PortComunication.threadDelay(200L);
+        byte[] startDST = getStartDST();
+        saveStartEndDST(startDST, Register.INICIO_HORARIO_VERANO);
+        PortComunication.threadDelay(200L);
+        byte[] endDST = getEndDST();
+        saveStartEndDST(endDST, Register.FIN_HORARIO_VERANO);         
+    }    
   }
   
   public void saveStartEndDST(byte[] data, Register regStart)
@@ -538,8 +580,8 @@ public class Horary
     ModbusUtil modb = new ModbusUtil();
     if (((!port.getStatePort() ? 1 : 0) | (Meter.serialNumber == null ? 1 : 0)) != 0)
     {
-      //JOptionPane.showMessageDialog(null, "Error Revise el numero de serie, Puerto o conexion");
-      JOptionPane.showMessageDialog(null, "Error Check serial numer, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexión", "Error", JOptionPane.ERROR_MESSAGE);
+      //JOptionPane.showMessageDialog(null, "Error Check serial numer, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
     }
     else
     {
@@ -557,8 +599,8 @@ public class Horary
       byte[] response = port.getByteBuffer();
       if (response == null)
       {
-        //JOptionPane.showMessageDialog(null, "Error Revise el numero de serie, Puerto o conexion");
-        JOptionPane.showMessageDialog(null, "Error Check serial numer, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Error Revise el número de serie, Puerto o conexión", "Error", JOptionPane.ERROR_MESSAGE);
+        //JOptionPane.showMessageDialog(null, "Error Check serial numer, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
       }
       else
       {
@@ -578,17 +620,17 @@ public class Horary
           System.out.println(timeStampComplete + " Received: " + a);
           //System.out.println("Guardado Exitosamente");
           System.out.println("Saved succesfully");
-          if (this.countDST == 2)
+          if (countDST == 2)
           {
-            //JOptionPane.showMessageDialog(null, "Guardado Exitosamente");
-            JOptionPane.showMessageDialog(null, "Saved succesfully","Information",JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Guardado Exitosamente!!!", "Información", JOptionPane.INFORMATION_MESSAGE);
+            //JOptionPane.showMessageDialog(null, "Saved succesfully","Information",JOptionPane.INFORMATION_MESSAGE);
             this.countDST = 0;
           }
         }
         else
         {
-          //JOptionPane.showMessageDialog(null, "Error Revise el numero de serie, Puerto o conexion");
-          JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
+          JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexión", "Error", JOptionPane.ERROR_MESSAGE);
+          //JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
         }
       }
     }
@@ -599,12 +641,12 @@ public class Horary
     PortComunication port = new PortComunication();
     if (((!port.getStatePort() ? 1 : 0) | (Meter.serialNumber == null ? 1 : 0)) != 0)
     {
-      //JOptionPane.showMessageDialog(null, "Error Revise el numero de serie, Puerto o conexion");
-      JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexión", "Error", JOptionPane.ERROR_MESSAGE);
+      //JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
     }
     else
     {
-      String tim = this.jComboBoxHoraryZone.getSelectedItem().toString();
+      String tim = jComboBoxHoraryZone.getSelectedItem().toString();
       Conversions conv = new Conversions();
       ModbusUtil modb = new ModbusUtil();
       Iterator it = null;
@@ -633,8 +675,8 @@ public class Horary
           byte[] response = port.getByteBuffer();
           if (response == null)
           {
-            //JOptionPane.showMessageDialog(null, "Error Revise el numero de serie, Puerto o conexion");
-            JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexión", "Error", JOptionPane.ERROR_MESSAGE);
+            //JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
             return;
           }
           int responseCountWords = countWords * 2;
@@ -652,8 +694,8 @@ public class Horary
           }
           else
           {
-            //JOptionPane.showMessageDialog(null, "Error Revise el numero de serie, Puerto o conexion");
-            JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexión", "Error", JOptionPane.ERROR_MESSAGE);
+            //JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
           }
         }
       }
@@ -662,20 +704,22 @@ public class Horary
   
   private void jButtonCalendarStartActionPerformed(ActionEvent evt)
   {
-    this.jTextFieldStartHorary.setText(new DatePicker(this.f, this.jComboBoxHoraryZone.getSelectedItem().toString()).setPickedDate());
-    checkjTextFieldStartHorary();
+      jTextFieldStartHorary.setEnabled(true);
+      jTextFieldStartHorary.setText(new DatePicker(f, jComboBoxHoraryZone.getSelectedItem().toString()).setPickedDate());
+      checkjTextFieldStartHorary();
   }
   
   private void jComboBoxHoraryZoneActionPerformed(ActionEvent evt)
   {
-    this.jButtonCalendarStart.setEnabled(true);
-    this.jButtonCalendarEnd.setEnabled(true);
+    jButtonCalendarStart.setEnabled(true);
+    jButtonCalendarEnd.setEnabled(true);
   }
   
   private void jButtonCalendarEndActionPerformed(ActionEvent evt)
   {
-    this.jTextFieldEndHorary.setText(new DatePicker(this.f, this.jComboBoxHoraryZone.getSelectedItem().toString()).setPickedDate());
-    checkjTextFieldEndHorary();
+      jTextFieldEndHorary.setEnabled(true);
+      jTextFieldEndHorary.setText(new DatePicker(f, jComboBoxHoraryZone.getSelectedItem().toString()).setPickedDate());
+      checkjTextFieldEndHorary();
   }
   
   private void jTextFieldStartHoraryActionPerformed(ActionEvent evt) {}
@@ -700,8 +744,8 @@ public class Horary
     ScorpioMeter scorp = new ScorpioMeter();
     if (((!port.getStatePort() ? 1 : 0) | (Meter.serialNumber == null ? 1 : 0) /*| Meter.serialNumber.equals("0000000000000000")*/) != 0)
     {
-      //JOptionPane.showMessageDialog(null, "Error Revise el numero de serie, Puerto o conexion");
-      JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexión", "Error", JOptionPane.ERROR_MESSAGE);
+      //JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
     }
     else
     {
@@ -722,7 +766,7 @@ public class Horary
           resp = ScorpioMeter.convert(response, regStart);
         }
         catch (Exception e) {}
-        this.jTextFieldReadWriteUTCTime.setText(resp);
+        jTextFieldReadWriteUTCTime.setText(resp);
       }
     }
   }
@@ -781,8 +825,8 @@ public class Horary
       f.setTimeZone(TimeZone.getTimeZone("UTC"));
       String timeutc = f.format(new Date());
       
-      //Horary.this.jLabelTimeUTC.setText("HORA GLOBAL: " + timeutc);
-      Horary.this.jLabelTimeUTC.setText("GLOBAL TIME: " + timeutc);
+      Horary.this.jLabelTimeUTC.setText("HORA GLOBAL: " + timeutc);
+      //Horary.this.jLabelTimeUTC.setText("GLOBAL TIME: " + timeutc);
     }
   };
   private Timer timeRTC = new Timer(500, this.taskRTC);

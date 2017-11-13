@@ -141,7 +141,7 @@ public class PortComunication
     catch (SerialPortException ex)
     {
       System.out.println(ex);
-      JOptionPane.showConfirmDialog(null, "Error, revise que el puerto " + portName + " no haya sido abierto anteriormente.");
+      JOptionPane.showConfirmDialog(null, "Error, revise que el puerto " + portName + " no haya sido abierto anteriormente.", "Advertencia", JOptionPane.WARNING_MESSAGE);
     }
     catch (Exception ex)
     {
@@ -229,7 +229,7 @@ public class PortComunication
     catch (Exception e)
     {
       e.printStackTrace();
-      JOptionPane.showMessageDialog(null, "Error escribiendo en el puerto ");
+      JOptionPane.showMessageDialog(null, "Error escribiendo en el puerto ", "Error", JOptionPane.ERROR_MESSAGE);
     }
   }
   

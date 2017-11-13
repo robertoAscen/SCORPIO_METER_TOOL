@@ -75,10 +75,10 @@ public class LoadProfile
   {
     initComponents();
     for (int i = 0; i < 24; i++) {
-      this.jComboBoxHours.addItem(Integer.valueOf(i));
+      jComboBoxHours.addItem(Integer.valueOf(i));
     }
     for (int i = 0; i < 60; i++) {
-      this.jComboBoxMinutes.addItem(Integer.valueOf(i));
+      jComboBoxMinutes.addItem(Integer.valueOf(i));
     }
     ArrayList list = new ArrayList();
     
@@ -89,132 +89,132 @@ public class LoadProfile
     for (int i = 0; i < list.size(); i++)
     {
       Register reg = (Register)list.get(i);
-      this.jComboBoxRegister.addItem(list.get(i));
+      jComboBoxRegister.addItem(list.get(i));
     }
-    this.jButtonExportLoadProfileToXML.setEnabled(false);
-    this.jButtonExportLoadProfileToCSV.setEnabled(false);
-    this.jButtonApliLoadProfile.setEnabled(false);
+    jButtonExportLoadProfileToXML.setEnabled(false);
+    jButtonExportLoadProfileToCSV.setEnabled(false);
+    jButtonApliLoadProfile.setEnabled(false);
   }
   
   private void initComponents()
   {
-    this.jLabelNameLoadProfile = new JLabel();
-    this.jComboBoxLoadProfileInterval = new JComboBox();
-    this.jButtonApliLoadProfile = new JButton();
-    this.jScrollPane1 = new JScrollPane();
-    this.jTableMetersLoadProfile = new JTable();
-    this.jButtonGetLoadProfile = new JButton();
-    this.jButtonExportLoadProfileToXML = new JButton();
-    this.jButtonExportLoadProfileToCSV = new JButton();
-    this.jComboBoxMonth = new JComboBox();
-    this.jComboBoxDays = new JComboBox();
-    this.jComboBoxHours = new JComboBox();
-    this.jComboBoxMinutes = new JComboBox();
-    this.jLabelMonth = new JLabel();
-    this.jLabelDays = new JLabel();
-    this.jLabelHours = new JLabel();
-    this.jLabelMinutes = new JLabel();
-    this.jLabel5 = new JLabel();
-    this.jCheckBoxFileTransfer = new JCheckBox();
-    this.jComboBoxRegister = new JComboBox();
-    this.jScrollPane2 = new JScrollPane();
-    this.jTextAreaLoadProcesor = new JTextArea();
-    this.jProgressBarLoadProfileTransfer = new JProgressBar();
-    this.jButtonClearTextBox = new JButton();
+    jLabelNameLoadProfile = new JLabel();
+    jComboBoxLoadProfileInterval = new JComboBox();
+    jButtonApliLoadProfile = new JButton();
+    jScrollPane1 = new JScrollPane();
+    jTableMetersLoadProfile = new JTable();
+    jButtonGetLoadProfile = new JButton();
+    jButtonExportLoadProfileToXML = new JButton();
+    jButtonExportLoadProfileToCSV = new JButton();
+    jComboBoxMonth = new JComboBox();
+    jComboBoxDays = new JComboBox();
+    jComboBoxHours = new JComboBox();
+    jComboBoxMinutes = new JComboBox();
+    jLabelMonth = new JLabel();
+    jLabelDays = new JLabel();
+    jLabelHours = new JLabel();
+    jLabelMinutes = new JLabel();
+    jLabel5 = new JLabel();
+    jCheckBoxFileTransfer = new JCheckBox();
+    jComboBoxRegister = new JComboBox();
+    jScrollPane2 = new JScrollPane();
+    jTextAreaLoadProcesor = new JTextArea();
+    jProgressBarLoadProfileTransfer = new JProgressBar();
+    jButtonClearTextBox = new JButton();
     
     setName("JPanelLoadProfileTitle");
     
-    this.jLabelNameLoadProfile.setFont(new Font("Ubuntu", 1, 18));
-    //this.jLabelNameLoadProfile.setText("PERFIL DE CARGA");
-    this.jLabelNameLoadProfile.setText("LOAD PROFILE");
+    jLabelNameLoadProfile.setFont(new Font("Ubuntu", 1, 18));
+    jLabelNameLoadProfile.setText("PERFIL DE CARGA");
+    //jLabelNameLoadProfile.setText("LOAD PROFILE");
     
-    this.jComboBoxLoadProfileInterval.setModel(new DefaultComboBoxModel(new String[] { "0", "1" }));
+    jComboBoxLoadProfileInterval.setModel(new DefaultComboBoxModel(new String[] { "0", "1" }));
     
-    this.jButtonApliLoadProfile.setFont(new Font("Tahoma", 1, 12));
-    //this.jButtonApliLoadProfile.setText("MOSTRAR");
-    this.jButtonApliLoadProfile.setText("SHOW");
-    this.jButtonApliLoadProfile.addActionListener(new ActionListener()
+    jButtonApliLoadProfile.setFont(new Font("Tahoma", 1, 12));
+    jButtonApliLoadProfile.setText("MOSTRAR");
+    //jButtonApliLoadProfile.setText("SHOW");
+    jButtonApliLoadProfile.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         LoadProfile.this.jButtonApliLoadProfileActionPerformed(evt);
       }
     });
-    this.jTableMetersLoadProfile.setModel(new DefaultTableModel(new Object[0][], new String[0]));
+    jTableMetersLoadProfile.setModel(new DefaultTableModel(new Object[0][], new String[0]));
     
-    this.jScrollPane1.setViewportView(this.jTableMetersLoadProfile);
+    jScrollPane1.setViewportView(jTableMetersLoadProfile);
     
-    this.jButtonGetLoadProfile.setFont(new Font("Tahoma", 1, 12));
-    //this.jButtonGetLoadProfile.setText("LEER");
-    this.jButtonGetLoadProfile.setText("READ");
-    this.jButtonGetLoadProfile.addActionListener(new ActionListener()
+    jButtonGetLoadProfile.setFont(new Font("Tahoma", 1, 12));
+    jButtonGetLoadProfile.setText("LEER");
+    //jButtonGetLoadProfile.setText("READ");
+    jButtonGetLoadProfile.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         LoadProfile.this.jButtonGetLoadProfileActionPerformed(evt);
       }
     });
-    //this.jButtonExportLoadProfileToXML.setText("EXPORTAR A XML");
-    this.jButtonExportLoadProfileToXML.setText("EXPORT TO XML");
-    this.jButtonExportLoadProfileToXML.addActionListener(new ActionListener()
+    jButtonExportLoadProfileToXML.setText("EXPORTAR A XML");
+    //jButtonExportLoadProfileToXML.setText("EXPORT TO XML");
+    jButtonExportLoadProfileToXML.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         LoadProfile.this.jButtonExportLoadProfileToXMLActionPerformed(evt);
       }
     });
-    //this.jButtonExportLoadProfileToCSV.setText("EXPORTAR A CSV");
-    this.jButtonExportLoadProfileToCSV.setText("EXPORT TO CSV");
-    this.jButtonExportLoadProfileToCSV.addActionListener(new ActionListener()
+    jButtonExportLoadProfileToCSV.setText("EXPORTAR A CSV");
+    //jButtonExportLoadProfileToCSV.setText("EXPORT TO CSV");
+    jButtonExportLoadProfileToCSV.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         LoadProfile.this.jButtonExportLoadProfileToCSVActionPerformed(evt);
       }
     });
-    //this.jComboBoxMonth.setModel(new DefaultComboBoxModel(new String[] { "Anterior", "Actual" }));
-    this.jComboBoxMonth.setModel(new DefaultComboBoxModel(new String[] { "Previous", "Current" }));
+    jComboBoxMonth.setModel(new DefaultComboBoxModel(new String[] { "Anterior", "Actual" }));
+    //jComboBoxMonth.setModel(new DefaultComboBoxModel(new String[] { "Previous", "Current" }));
     
-    this.jComboBoxDays.setEditable(true);
-    this.jComboBoxDays.setModel(new DefaultComboBoxModel(new String[] { "5", "10", "15" }));
+    jComboBoxDays.setEditable(true);
+    jComboBoxDays.setModel(new DefaultComboBoxModel(new String[] { "5", "10", "15" }));
     
-    this.jComboBoxHours.setEditable(true);
+    jComboBoxHours.setEditable(true);
     
-    this.jComboBoxMinutes.setEditable(true);
+    jComboBoxMinutes.setEditable(true);
     
-    //this.jLabelMonth.setText("MES:");
-    this.jLabelMonth.setText("MONTH:");
+    jLabelMonth.setText("MES:");
+    //jLabelMonth.setText("MONTH:");
     
-    //this.jLabelDays.setText("DIAS:");
-    this.jLabelDays.setText("DAYS:");
+    jLabelDays.setText("DIAS:");
+    //jLabelDays.setText("DAYS:");
     
-    //this.jLabelHours.setText("HORA:");
-    this.jLabelHours.setText("TIME:");
+    jLabelHours.setText("HORA:");
+    //jLabelHours.setText("TIME:");
     
-    //this.jLabelMinutes.setText("MINUTOS:");
-    this.jLabelMinutes.setText("MINUTES:");
+    jLabelMinutes.setText("MINUTOS:");
+    //jLabelMinutes.setText("MINUTES:");
     
-    //this.jLabel5.setText("Memoria:");
-    this.jLabel5.setText("Memory:");
+    jLabel5.setText("Memoria:");
+    //jLabel5.setText("Memory:");
     
-    this.jCheckBoxFileTransfer.setText("FileTransfer");
-    this.jCheckBoxFileTransfer.addActionListener(new ActionListener()
+    jCheckBoxFileTransfer.setText("FileTransfer");
+    jCheckBoxFileTransfer.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         LoadProfile.this.jCheckBoxFileTransferActionPerformed(evt);
       }
     });
-    this.jTextAreaLoadProcesor.setColumns(20);
-    this.jTextAreaLoadProcesor.setLineWrap(true);
-    this.jTextAreaLoadProcesor.setRows(5);
-    this.jScrollPane2.setViewportView(this.jTextAreaLoadProcesor);
+    jTextAreaLoadProcesor.setColumns(20);
+    jTextAreaLoadProcesor.setLineWrap(true);
+    jTextAreaLoadProcesor.setRows(5);
+    jScrollPane2.setViewportView(jTextAreaLoadProcesor);
     
-    this.jProgressBarLoadProfileTransfer.setMaximum(307);
+    jProgressBarLoadProfileTransfer.setMaximum(307);
     
-    //this.jButtonClearTextBox.setText("LIMPIAR");
-    this.jButtonClearTextBox.setText("CLEAR");
-    this.jButtonClearTextBox.addActionListener(new ActionListener()
+    jButtonClearTextBox.setText("LIMPIAR");
+    //jButtonClearTextBox.setText("CLEAR");
+    jButtonClearTextBox.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
@@ -248,45 +248,45 @@ public class LoadProfile
   
   private void jButtonGetLoadProfileActionPerformed(ActionEvent evt)
   {
-    Object reg = this.jComboBoxRegister.getSelectedItem();
-    this.timeProggressBar.stop();
+    Object reg = jComboBoxRegister.getSelectedItem();
+    timeProggressBar.stop();
     readRegister(reg);
   }
   
   private void jButtonApliLoadProfileActionPerformed(ActionEvent evt)
   {
-    this.timeProggressBar.stop();
+    timeProggressBar.stop();
     JFrameMain f = (JFrameMain)SwingUtilities.getAncestorOfClass(JFrameMain.class, this);
     contentPane = f.getContentPane();
-    this.scrollpane = new JScrollPane();
+    scrollpane = new JScrollPane();
     defaultable = new DefaultTableModel((Object[][])null, getColumnas());
     
     ProcessDataLoad procLoad = new ProcessDataLoad();
-    procLoad.processLoad(this.listLoadProfile);
+    procLoad.processLoad(listLoadProfile);
     
-    this.jTableMetersLoadProfile.setModel(defaultable);
-    this.jTableMetersLoadProfile.repaint();
-    this.scrollpane.repaint();
+    jTableMetersLoadProfile.setModel(defaultable);
+    jTableMetersLoadProfile.repaint();
+    scrollpane.repaint();
     setVisible(true);
-    this.jButtonExportLoadProfileToXML.setEnabled(true);
-    this.jButtonExportLoadProfileToCSV.setEnabled(true);
+    jButtonExportLoadProfileToXML.setEnabled(true);
+    jButtonExportLoadProfileToCSV.setEnabled(true);
   }
   
   private void jButtonExportLoadProfileToXMLActionPerformed(ActionEvent evt)
   {
     WorkConcentrator metCon = new WorkConcentrator();
-    metCon.convertLoadProfileXML(this.jTableMetersLoadProfile);
+    metCon.convertLoadProfileXML(jTableMetersLoadProfile);
   }
   
   private void jButtonExportLoadProfileToCSVActionPerformed(ActionEvent evt)
   {
     ProcessDataLoad process = new ProcessDataLoad();
-    process.exportarCSV(this.jTableMetersLoadProfile);
+    process.exportarCSV(jTableMetersLoadProfile);
   }
   
   private void jButtonClearTextBoxActionPerformed(ActionEvent evt)
   {
-    this.jTextAreaLoadProcesor.setText("");
+    jTextAreaLoadProcesor.setText("");
   }
   
   private void jCheckBoxFileTransferActionPerformed(ActionEvent evt) {}
@@ -297,46 +297,47 @@ public class LoadProfile
     Conversions conv = new Conversions();
     ModbusUtil modb = new ModbusUtil();
     Register reg = (Register)obReg;
-    if (((!port.getStatePort() ? 1 : 0) | (Meter.serialNumber == null ? 1 : 0) /*| Meter.serialNumber.equals("0000000000000000")*/) != 0)
+    //if (((!port.getStatePort() ? 1 : 0) | (Meter.serialNumber == null ? 1 : 0) /*| Meter.serialNumber.equals("0000000000000000")*/) != 0)
+    if((port.getStatePort() == false) | (Meter.serialNumber == null) | Meter.serialNumber.equals("0000000000000000"))//Solución al error de la línea de arriba
     {
-      //JOptionPane.showMessageDialog(null, "Error Revise el numero de serie, Puerto o conexion");
-      JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexión");
+      //JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
       return;
     }
     String serialNumber = Meter.getSerialNumberCompl();
     
     int countWords = 2;
     byte actionRW = 3;
-    //if (this.jComboBoxMonth.getSelectedItem().toString().equals("Actual"))
-    if (this.jComboBoxMonth.getSelectedItem().toString().equals("Current")) {
-      this.month = 0;
+    if (jComboBoxMonth.getSelectedItem().toString().equals("Actual")){
+    //if (this.jComboBoxMonth.getSelectedItem().toString().equals("Current")) {
+      month = 0;
     } else {
-      this.month = 1;
+      month = 1;
     }
-    this.rawData = Integer.parseInt(this.jComboBoxLoadProfileInterval.getSelectedItem().toString());
-    if (this.jCheckBoxFileTransfer.isSelected()) {
-      this.fileT = 1;
+    rawData = Integer.parseInt(jComboBoxLoadProfileInterval.getSelectedItem().toString());
+    if (jCheckBoxFileTransfer.isSelected()) {
+      fileT = 1;
     } else {
-      this.fileT = 0;
+      fileT = 0;
     }
-    this.days = Integer.parseInt(this.jComboBoxDays.getSelectedItem().toString());
-    this.hours = Integer.parseInt(this.jComboBoxHours.getSelectedItem().toString());
-    this.minutes = Integer.parseInt(this.jComboBoxMinutes.getSelectedItem().toString());
+    days = Integer.parseInt(jComboBoxDays.getSelectedItem().toString());
+    hours = Integer.parseInt(jComboBoxHours.getSelectedItem().toString());
+    minutes = Integer.parseInt(jComboBoxMinutes.getSelectedItem().toString());
     
-    int value = this.month << 31 | this.rawData << 30 | this.fileT << 29 | this.days << 16 | this.hours << 8 | this.minutes << 0;
+    int value = month << 31 | rawData << 30 | fileT << 29 | days << 16 | hours << 8 | minutes << 0;
     byte[] valcmd = Conversions.intToByteArray(value);
-    if ((this.jCheckBoxFileTransfer.isSelected()) && ((Register)this.jComboBoxRegister.getSelectedItem() == Register.PERFIL_DE_CARGA))
+    if ((jCheckBoxFileTransfer.isSelected()) && ((Register)jComboBoxRegister.getSelectedItem() == Register.PERFIL_DE_CARGA))
     {
-      this.listLoadProfile.clear();
+      listLoadProfile.clear();
       loadProfileFlag = true;
       
       actionRW = 16;
       byte[] frame = modb.writeMultipleRegisters(serialNumber, reg.getAddress(), countWords, valcmd, actionRW);
       port.write(frame, PortComunication.DELAY300);
       
-      this.timeProggressBar.start();
+      timeProggressBar.start();
     }
-    else if (!this.jCheckBoxFileTransfer.isSelected())
+    else if (!jCheckBoxFileTransfer.isSelected())
     {
       byte[] frame = modb.writeMultipleRegisters(serialNumber, reg.getAddress(), countWords, valcmd, actionRW);
       port.write(frame, PortComunication.DELAY300);
@@ -344,8 +345,8 @@ public class LoadProfile
       byte[] response = port.getByteBuffer();
       if (response == null)
       {
-        //JOptionPane.showMessageDialog(null, "Error Revise el numero de serie, Puerto o conexion");
-        JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexión");
+        //JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
         return;
       }
       int responseCount = countWords * 2 - 3;
@@ -366,10 +367,10 @@ public class LoadProfile
         
         System.out.println(timeStampComplete + " Received: " + a);
         Font font = new Font("Verdana", 1, 12);
-        this.jTextAreaLoadProcesor.setFont(font);
-        this.jTextAreaLoadProcesor.append(timeStampComplete + " ------> " + obReg.toString() + "\n");
-        this.jTextAreaLoadProcesor.append(timeStampComplete + " ---> [ " + a + " ]\n");
-        if ((Register)this.jComboBoxRegister.getSelectedItem() == Register.PERFIL_DE_CARGA_DIFF_FECHA)
+        jTextAreaLoadProcesor.setFont(font);
+        jTextAreaLoadProcesor.append(timeStampComplete + " ------> " + obReg.toString() + "\n");
+        jTextAreaLoadProcesor.append(timeStampComplete + " ---> [ " + a + " ]\n");
+        if ((Register)jComboBoxRegister.getSelectedItem() == Register.PERFIL_DE_CARGA_DIFF_FECHA)
         {
           long datDoul = bb.getInt() & 0xFFFF;
           datDoul *= 1000L;
@@ -377,12 +378,12 @@ public class LoadProfile
           SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
           format.setTimeZone(TimeZone.getTimeZone("GMT"));
           String datee = format.format(new Date(datDoul)).toString();
-          this.jTextAreaLoadProcesor.append(timeStampComplete + " ---> " + datee + "\n");
+          jTextAreaLoadProcesor.append(timeStampComplete + " ---> " + datee + "\n");
         }
         else
         {
           float datDou = bb.getShort() & 0xFFFF;
-          this.jTextAreaLoadProcesor.append(timeStampComplete + " ---> " + datDou + "\n");
+          jTextAreaLoadProcesor.append(timeStampComplete + " ---> " + datDou + "\n");
         }
       }
       else if (Arrays.equals(frame, response))
@@ -398,17 +399,17 @@ public class LoadProfile
         float datDou = bb.getShort() & 0xFFFF;
         
         System.out.println(timeStampComplete + " Received: " + a);
-        this.jTextAreaLoadProcesor.append(timeStampComplete + " ------> " + obReg.toString() + "\n");
-        this.jTextAreaLoadProcesor.append(timeStampComplete + " ---> [ " + a + " ]\n");
-        this.jTextAreaLoadProcesor.append(timeStampComplete + " ---> " + datDou + "\n");
+        jTextAreaLoadProcesor.append(timeStampComplete + " ------> " + obReg.toString() + "\n");
+        jTextAreaLoadProcesor.append(timeStampComplete + " ---> [ " + a + " ]\n");
+        jTextAreaLoadProcesor.append(timeStampComplete + " ---> " + datDou + "\n");
         
-        //System.out.println("Correcto");
-        System.out.println("Good");
+        System.out.println("Correcto");
+        //System.out.println("Good");
       }
       else
       {
-        //JOptionPane.showMessageDialog(null, "Error falta o exceso de comandos en respuesta");
-        JOptionPane.showMessageDialog(null, "Error lack or excess commands in response","Error",JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Error, falta o exceso de comandos en respuesta");
+        //JOptionPane.showMessageDialog(null, "Error lack or excess commands in response","Error",JOptionPane.ERROR_MESSAGE);
       }
     }
   }
@@ -499,8 +500,8 @@ public class LoadProfile
   
   public String[] getColumnas()
   {
-    //String[] columna = { "Numero", "Wh", "varh", "Fecha" };
-    String[] columna = { "Number", "Wh", "varh", "Date" };
+    String[] columna = { "Número", "Wh", "varh", "Fecha" };
+    //String[] columna = { "Number", "Wh", "varh", "Date" };
     return columna;
   }
 }

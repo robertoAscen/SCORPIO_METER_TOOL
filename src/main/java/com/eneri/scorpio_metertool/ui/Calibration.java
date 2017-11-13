@@ -103,138 +103,152 @@ public class Calibration
   
   private void initComponents()
   {
-    this.jLabelNamePanel = new JLabel();
-    this.jScrollPane1 = new JScrollPane();
-    this.jTableCalibration = new JTable();
-    this.jTextFieldCCA = new JTextField();
-    this.jTextFieldCIN = new JTextField();
-    this.jTextFieldCIR = new JTextField();
-    this.jTextFieldCIS = new JTextField();
-    this.jTextFieldCIT = new JTextField();
-    this.jTextFieldCVR = new JTextField();
-    this.jTextFieldCVS = new JTextField();
-    this.jTextFieldCVT = new JTextField();
-    this.jTextFieldCPR = new JTextField();
-    this.jTextFieldCPS = new JTextField();
-    this.jTextFieldCPT = new JTextField();
-    this.jTextFieldCCB = new JTextField();
-    this.jTextFieldCPC = new JTextField();
-    this.jLabelCCA = new JLabel();
-    this.jLabelCIN = new JLabel();
-    this.jLabelCIR = new JLabel();
-    this.jLabelCIS = new JLabel();
-    this.jLabelCIT = new JLabel();
-    this.jLabelCVR = new JLabel();
-    this.jLabelCVS = new JLabel();
-    this.jLabelCVT = new JLabel();
-    this.jLabelCPR = new JLabel();
-    this.jLabelCPS = new JLabel();
-    this.jLabelCPT = new JLabel();
-    this.jLabelCCB = new JLabel();
-    this.jLabelCPC = new JLabel();
-    this.jButtonChangeRegister = new JButton();
-    this.jButtonSTPMCreset = new JButton();
-    this.jButtonReadValues = new JButton();
-    this.jButtonExportTXT = new JButton();
-    this.jButton1 = new JButton();
+    jLabelNamePanel = new JLabel();
+    jScrollPane1 = new JScrollPane();
+    jTableCalibration = new JTable();
+    jTextFieldCCA = new JTextField();
+    jTextFieldCIN = new JTextField();
+    jTextFieldCIR = new JTextField();
+    jTextFieldCIS = new JTextField();
+    jTextFieldCIT = new JTextField();
+    jTextFieldCVR = new JTextField();
+    jTextFieldCVS = new JTextField();
+    jTextFieldCVT = new JTextField();
+    jTextFieldCPR = new JTextField();
+    jTextFieldCPS = new JTextField();
+    jTextFieldCPT = new JTextField();
+    jTextFieldCCB = new JTextField();
+    jTextFieldCPC = new JTextField();
+    jLabelCCA = new JLabel();
+    jLabelCIN = new JLabel();
+    jLabelCIR = new JLabel();
+    jLabelCIS = new JLabel();
+    jLabelCIT = new JLabel();
+    jLabelCVR = new JLabel();
+    jLabelCVS = new JLabel();
+    jLabelCVT = new JLabel();
+    jLabelCPR = new JLabel();
+    jLabelCPS = new JLabel();
+    jLabelCPT = new JLabel();
+    jLabelCCB = new JLabel();
+    jLabelCPC = new JLabel();
+    jButtonChangeRegister = new JButton();
+    jButtonSTPMCreset = new JButton();
+    jButtonReadValues = new JButton();
+    jButtonExportTXT = new JButton();
+    jButton1 = new JButton();
     
     setPreferredSize(new Dimension(950, 600));
     
-    this.jLabelNamePanel.setFont(new Font("Tahoma", 1, 18));
-    this.jLabelNamePanel.setText("CALIBRATION");
-    //this.jLabelNamePanel.setText("CALIBRACION");
+    jLabelNamePanel.setFont(new Font("Tahoma", 1, 18));
+    //jLabelNamePanel.setText("CALIBRATION");//Uso en ingles
+    jLabelNamePanel.setText("CALIBRACIÓN");//Uso en español
     
-    this.jTableCalibration.setFont(new Font("Tahoma", 0, 14));
-    this.jTableCalibration.setModel(this.defaultCalibration);
-    this.jTableCalibration.setRowHeight(24);
-    this.jScrollPane1.setViewportView(this.jTableCalibration);
+    jTableCalibration.setFont(new Font("Tahoma", 0, 14));
+    jTableCalibration.setModel(defaultCalibration);
+    jTableCalibration.setRowHeight(24);
+    jScrollPane1.setViewportView(jTableCalibration);
     
-    this.jTextFieldCIT.addActionListener(new ActionListener()
+    jTextFieldCIT.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         Calibration.this.jTextFieldCITActionPerformed(evt);
       }
     });
-    this.jTextFieldCPS.addActionListener(new ActionListener()
+    
+    jTextFieldCPS.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         Calibration.this.jTextFieldCPSActionPerformed(evt);
       }
     });
-    this.jTextFieldCPT.addActionListener(new ActionListener()
+    
+    jTextFieldCPT.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         Calibration.this.jTextFieldCPTActionPerformed(evt);
       }
     });
-    this.jLabelCCA.setText("CCA");
     
-    this.jLabelCIN.setText("CIN");
+    jLabelCCA.setText("CCA");    
+    jLabelCIN.setText("CIN");    
+    jLabelCIR.setText("CIR");    
+    jLabelCIS.setText("CIS");    
+    jLabelCIT.setText("CIT");    
+    jLabelCVR.setText("CVR");    
+    jLabelCVS.setText("CVS");    
+    jLabelCVT.setText("CVT");    
+    jLabelCPR.setText("CPR");    
+    jLabelCPS.setText("CPS");    
+    jLabelCPT.setText("CPT");    
+    jLabelCCB.setText("CCB");    
+    jLabelCPC.setText("CPC");
+
+    jTextFieldCCA.setToolTipText("Ingresa el valor a establecer en el medidor");
+    jTextFieldCCB.setToolTipText("Ingresa el valor a establecer en el medidor");
+    jTextFieldCIN.setToolTipText("Ingresa el valor a establecer en el medidor");
+    jTextFieldCIR.setToolTipText("Ingresa el valor a establecer en el medidor");
+    jTextFieldCIS.setToolTipText("Ingresa el valor a establecer en el medidor");
+    jTextFieldCIT.setToolTipText("Ingresa el valor a establecer en el medidor");
+    jTextFieldCPC.setToolTipText("Ingresa el valor a establecer en el medidor");
+    jTextFieldCPR.setToolTipText("Ingresa el valor a establecer en el medidor");
+    jTextFieldCPS.setToolTipText("Ingresa el valor a establecer en el medidor");
+    jTextFieldCPT.setToolTipText("Ingresa el valor a establecer en el medidor");
+    jTextFieldCVR.setToolTipText("Ingresa el valor a establecer en el medidor");
+    jTextFieldCVS.setToolTipText("Ingresa el valor a establecer en el medidor");
+    jTextFieldCVT.setToolTipText("Ingresa el valor a establecer en el medidor");
     
-    this.jLabelCIR.setText("CIR");
-    
-    this.jLabelCIS.setText("CIS");
-    
-    this.jLabelCIT.setText("CIT");
-    
-    this.jLabelCVR.setText("CVR");
-    
-    this.jLabelCVS.setText("CVS");
-    
-    this.jLabelCVT.setText("CVT");
-    
-    this.jLabelCPR.setText("CPR");
-    
-    this.jLabelCPS.setText("CPS");
-    
-    this.jLabelCPT.setText("CPT");
-    
-    this.jLabelCCB.setText("CCB");
-    
-    this.jLabelCPC.setText("CPC");
-    
-    this.jButtonChangeRegister.setText("SAVE REGISTERS");
-    //this.jButtonChangeRegister.setText("GUARDAR REGISTROS");
-    this.jButtonChangeRegister.addActionListener(new ActionListener()
+    //jButtonChangeRegister.setText("SAVE REGISTERS");//Uso en ingles
+    jButtonChangeRegister.setText("GUARDAR REGISTROS");//Uso en español
+    jButtonChangeRegister.setToolTipText("Oprime el botón para guardar los registros en el medidor");
+    jButtonChangeRegister.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         Calibration.this.jButtonChangeRegisterActionPerformed(evt);
       }
     });
-    this.jButtonSTPMCreset.setText("STPMC RESET");
-    this.jButtonSTPMCreset.addActionListener(new ActionListener()
+    
+    jButtonSTPMCreset.setText("STPMC RESET");
+    jButtonSTPMCreset.setToolTipText("Oprime el botón para fijar los valores antes guardados en el medidor");
+    jButtonSTPMCreset.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         Calibration.this.jButtonSTPMCresetActionPerformed(evt);
       }
     });
-    this.jButtonReadValues.setText("READ");
-    //this.jButtonReadValues.setText("LEER");
-    this.jButtonReadValues.addActionListener(new ActionListener()
+    
+    //jButtonReadValues.setText("READ");//Uso en ingles
+    jButtonReadValues.setText("LEER");//Uso en español
+    jButtonReadValues.setToolTipText("Oprime el botón para leer los registros establecidos en el medidor");
+    jButtonReadValues.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         Calibration.this.jButtonReadValuesActionPerformed(evt);
       }
     });
-    this.jButtonExportTXT.setText("EXPORT TO TXT");
-    //this.jButtonExportTXT.setText("EXPORTAR A TXT");
-    this.jButtonExportTXT.addActionListener(new ActionListener()
+    
+    //jButtonExportTXT.setText("EXPORT TO TXT");//Uso en ingles
+    jButtonExportTXT.setText("EXPORTAR A TXT");//Uso en español
+    jButtonExportTXT.setToolTipText("Oprime el botón para exportar los valores a un archivo .txt");
+    jButtonExportTXT.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         Calibration.this.jButtonExportTXTActionPerformed(evt);
       }
     });
-    this.jButton1.setForeground(new Color(255, 0, 0));
-    this.jButton1.setText("RESET VALUES");
-    //this.jButton1.setText("RESETEAR VALORES");
-    this.jButton1.addActionListener(new ActionListener()
+    
+    jButton1.setForeground(new Color(255, 0, 0));
+    //jButton1.setText("RESET VALUES");//Uso en ingles
+    jButton1.setText("RESETEAR VALORES");//Uso en español
+    jButton1.setToolTipText("Oprime el botón para establecer los valores de calibración a valores de fabrica");
+    jButton1.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
@@ -256,49 +270,77 @@ public class Calibration
   
   private void jButtonChangeRegisterActionPerformed(ActionEvent evt)
   {
-    for (int i = 0; i < 13; i++)
-    {
-      this.contenedor.put(Register.ADDR_CALIBRATION_CCA, this.jTextFieldCCA);
-      this.contenedor.put(Register.ADDR_CALIBRATION_CIN, this.jTextFieldCIN);
-      this.contenedor.put(Register.ADDR_CALIBRATION_CIR, this.jTextFieldCIR);
-      this.contenedor.put(Register.ADDR_CALIBRATION_CIS, this.jTextFieldCIS);
-      this.contenedor.put(Register.ADDR_CALIBRATION_CIT, this.jTextFieldCIT);
-      this.contenedor.put(Register.ADDR_CALIBRATION_CVR, this.jTextFieldCVR);
-      this.contenedor.put(Register.ADDR_CALIBRATION_CVS, this.jTextFieldCVS);
-      this.contenedor.put(Register.ADDR_CALIBRATION_CVT, this.jTextFieldCVT);
-      this.contenedor.put(Register.ADDR_CALIBRATION_CPR, this.jTextFieldCPR);
-      this.contenedor.put(Register.ADDR_CALIBRATION_CPS, this.jTextFieldCPS);
-      this.contenedor.put(Register.ADDR_CALIBRATION_CPT, this.jTextFieldCPT);
-      this.contenedor.put(Register.ADDR_CALIBRATION_CCB, this.jTextFieldCCB);
-      this.contenedor.put(Register.ADDR_CALIBRATION_CPC, this.jTextFieldCPC);
-    }
-    int count = 0;
-    Iterator it = null;
-    Set set = this.contenedor.entrySet();
-    it = set.iterator();
-    while (it.hasNext())
-    {
-      Map.Entry entry = (Map.Entry)it.next();
-      JTextField value = (JTextField)entry.getValue();
-      Register key = (Register)entry.getKey();
-      if (value.getText().equals("")) {
-        System.out.println("Not have written values " + key.name());
-        //System.out.println("No tiene valores escritos en " + key.name());
-      } else {
-        count += writeRegister(key, value.getText());
+      if(jTextFieldCCA.getText().equals("") && jTextFieldCCB.getText().equals("") && jTextFieldCIN.getText().equals("") &&
+              jTextFieldCIR.getText().equals("") && jTextFieldCIS.getText().equals("") && jTextFieldCIT.getText().equals("") &&
+              jTextFieldCPC.getText().equals("") && jTextFieldCPR.getText().equals("") && jTextFieldCPS.getText().equals("") &&
+              jTextFieldCPT.getText().equals("") && jTextFieldCVR.getText().equals("") && jTextFieldCVS.getText().equals("") &&
+              jTextFieldCVT.getText().equals(""))
+      {
+          JOptionPane.showMessageDialog(null, "No hay valores que ingresar", "Advertencia", JOptionPane.WARNING_MESSAGE);
       }
-    }
-    JOptionPane.showMessageDialog(null, "Save Succesful " + count + " Registers");
-    //JOptionPane.showMessageDialog(null, "Se guardaron correctamente " + count + " Registros");
+      else
+      {
+          for (int i = 0; i < 13; i++)
+          {
+              contenedor.put(Register.ADDR_CALIBRATION_CCA, jTextFieldCCA);
+              contenedor.put(Register.ADDR_CALIBRATION_CIN, jTextFieldCIN);
+              contenedor.put(Register.ADDR_CALIBRATION_CIR, jTextFieldCIR);
+              contenedor.put(Register.ADDR_CALIBRATION_CIS, jTextFieldCIS);
+              contenedor.put(Register.ADDR_CALIBRATION_CIT, jTextFieldCIT);
+              contenedor.put(Register.ADDR_CALIBRATION_CVR, jTextFieldCVR);
+              contenedor.put(Register.ADDR_CALIBRATION_CVS, jTextFieldCVS);
+              contenedor.put(Register.ADDR_CALIBRATION_CVT, jTextFieldCVT);
+              contenedor.put(Register.ADDR_CALIBRATION_CPR, jTextFieldCPR);
+              contenedor.put(Register.ADDR_CALIBRATION_CPS, jTextFieldCPS);
+              contenedor.put(Register.ADDR_CALIBRATION_CPT, jTextFieldCPT);
+              contenedor.put(Register.ADDR_CALIBRATION_CCB, jTextFieldCCB);
+              contenedor.put(Register.ADDR_CALIBRATION_CPC, jTextFieldCPC);
+          }
+          int count = 0;
+          Iterator it = null;
+          Set set = contenedor.entrySet();
+          it = set.iterator();
+          while (it.hasNext())
+          {
+              Map.Entry entry = (Map.Entry)it.next();
+              JTextField value = (JTextField)entry.getValue();
+              Register key = (Register)entry.getKey();
+              if (value.getText().equals("")) 
+              {
+                  //System.out.println("Not have written values " + key.name());//Uso en ingles
+                  System.out.println("No tiene valores escritos en " + key.name());//Uso en español
+              }
+              else
+              {
+                  count += writeRegister(key, value.getText());
+              }
+          }
+          //JOptionPane.showMessageDialog(null, "Save Succesful " + count + " Registers");//Uso en ingles
+          JOptionPane.showMessageDialog(null, "Se guardaron correctamente " + count + " Registros", "Información", JOptionPane.INFORMATION_MESSAGE);//Uso en español
+          jTextFieldCCA.setText("");
+          jTextFieldCCB.setText("");
+          jTextFieldCIN.setText("");
+          jTextFieldCIR.setText("");
+          jTextFieldCIS.setText("");
+          jTextFieldCIT.setText("");
+          jTextFieldCPC.setText("");
+          jTextFieldCPR.setText("");
+          jTextFieldCPS.setText("");
+          jTextFieldCPT.setText("");
+          jTextFieldCVR.setText("");
+          jTextFieldCVS.setText("");
+          jTextFieldCVT.setText("");
+      }
   }
   
   private void jButtonReadValuesActionPerformed(ActionEvent evt)
   {
     PortComunication port = new PortComunication();
-    if (((!port.getStatePort() ? 1 : 0) | (Meter.serialNumber == null ? 1 : 0) /*| Meter.serialNumber.equals("0000000000000000")*/) != 0)
+    //if (((!port.getStatePort() ? 1 : 0) | (Meter.serialNumber == null ? 1 : 0) /*| Meter.serialNumber.equals("0000000000000000")*/) != 0)
+    if((port.getStatePort() == false) | (Meter.serialNumber == null) | Meter.serialNumber.equals("0000000000000000"))//Solución al error de la línea de arriba
     {
-        JOptionPane.showMessageDialog(null, "Error Check the serial number, port or connection","Error",JOptionPane.ERROR_MESSAGE); 
-        //JOptionPane.showMessageDialog(null, "Error Revise el numero de serie, Puerto o conexion");
+        //JOptionPane.showMessageDialog(null, "Error Check the serial number, port or connection","Error",JOptionPane.ERROR_MESSAGE); 
+        JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexión", "Error", JOptionPane.ERROR_MESSAGE);
     }
     else
     {
@@ -315,29 +357,30 @@ public class Calibration
   
   private void jButtonExportTXTActionPerformed(ActionEvent evt)
   {
-    this.listCalibrations.clear();
+    listCalibrations.clear();
     for (ROW_TYPE roww : ROW_TYPE.values())
     {
       Object name = getRow(roww, COL_PHASE.PHASE_1);
       Object value = getRow(roww, COL_PHASE.PHASE_2);
       if (value.equals("---"))
       {
-          JOptionPane.showMessageDialog(null, "Error no hay Calibration data","Error",JOptionPane.ERROR_MESSAGE);
-        //JOptionPane.showMessageDialog(null, "Error no hay datos de Calibracion");
+          //JOptionPane.showMessageDialog(null, "Error no hay Calibration data","Error",JOptionPane.ERROR_MESSAGE);//Uso en ingles
+          JOptionPane.showMessageDialog(null, "No hay datos de Calibración", "Advertencia", JOptionPane.WARNING_MESSAGE);//Uso en español
         return;
       }
-      this.listCalibrations.put(name, value);
+      listCalibrations.put(name, value);
     }
-    exportarTxt(this.listCalibrations);
+    exportarTxt(listCalibrations);
   }
   
   private void jButtonSTPMCresetActionPerformed(ActionEvent evt)
   {
     PortComunication port = new PortComunication();
-    if (((!port.getStatePort() ? 1 : 0) | (Meter.serialNumber == null ? 1 : 0)) != 0)
+    //if (((!port.getStatePort() ? 1 : 0) | (Meter.serialNumber == null ? 1 : 0)) != 0)
+    if((port.getStatePort() == false) | (Meter.serialNumber == null) | Meter.serialNumber.equals("0000000000000000"))//Solución al error de la línea de arriba
     {
-      //JOptionPane.showMessageDialog(null, "Error Revise el numero de serie, Puerto o conexion");
-      JOptionPane.showMessageDialog(null, "Error Check the serial number, port or connection","Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexión", "Error", JOptionPane.ERROR_MESSAGE);
+      //JOptionPane.showMessageDialog(null, "Error Check the serial number, port or connection","Error",JOptionPane.ERROR_MESSAGE);
     }
     else
     {
@@ -346,57 +389,67 @@ public class Calibration
       String serialNumber = Meter.getSerialNumberCompl();
       boolean estado = modb.writeFlagsPassw(flagPassword, serialNumber);
       if (estado == true) {
-        //JOptionPane.showMessageDialog(null, "Correcto");
-        JOptionPane.showMessageDialog(null, "Good!!!","Message",JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Correcto!!!", "Información", JOptionPane.INFORMATION_MESSAGE);
+        //JOptionPane.showMessageDialog(null, "Good!!!","Message",JOptionPane.INFORMATION_MESSAGE);
       } else {
-        //JOptionPane.showMessageDialog(null, "Error Revise el numero de serie, Puerto o conexion");
-        JOptionPane.showMessageDialog(null, "Error Check the serial number, port or connection","Error",JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexión", "Error", JOptionPane.ERROR_MESSAGE);
+        //JOptionPane.showMessageDialog(null, "Error Check the serial number, port or connection","Error",JOptionPane.ERROR_MESSAGE);
       }
     }
   }
   
   private void jButton1ActionPerformed(ActionEvent evt)
   {
-    //int validation = JOptionPane.showConfirmDialog(null, "¿Estas seguro?");
-    int validation = JOptionPane.showConfirmDialog(null, "Are you sure?","Question",JOptionPane.QUESTION_MESSAGE);
-    if (validation == 0)
+      PortComunication port = new PortComunication();
+    //if (((!port.getStatePort() ? 1 : 0) | (Meter.serialNumber == null ? 1 : 0)) != 0)
+    if((port.getStatePort() == false) | (Meter.serialNumber == null) | Meter.serialNumber.equals("0000000000000000"))//Solución al error de la línea de arriba
     {
-      LinkedHashMap<Register, Integer> contenedorDefault = new LinkedHashMap();
-      for (int i = 0; i < 13; i++)
-      {
-        contenedorDefault.put(Register.ADDR_CALIBRATION_CCA, Integer.valueOf(0));
-        contenedorDefault.put(Register.ADDR_CALIBRATION_CIN, Integer.valueOf(128));
-        contenedorDefault.put(Register.ADDR_CALIBRATION_CIR, Integer.valueOf(128));
-        contenedorDefault.put(Register.ADDR_CALIBRATION_CIS, Integer.valueOf(128));
-        contenedorDefault.put(Register.ADDR_CALIBRATION_CIT, Integer.valueOf(128));
-        contenedorDefault.put(Register.ADDR_CALIBRATION_CVR, Integer.valueOf(128));
-        contenedorDefault.put(Register.ADDR_CALIBRATION_CVS, Integer.valueOf(128));
-        contenedorDefault.put(Register.ADDR_CALIBRATION_CVT, Integer.valueOf(128));
-        contenedorDefault.put(Register.ADDR_CALIBRATION_CPR, Integer.valueOf(0));
-        contenedorDefault.put(Register.ADDR_CALIBRATION_CPS, Integer.valueOf(0));
-        contenedorDefault.put(Register.ADDR_CALIBRATION_CPT, Integer.valueOf(0));
-        contenedorDefault.put(Register.ADDR_CALIBRATION_CCB, Integer.valueOf(0));
-        contenedorDefault.put(Register.ADDR_CALIBRATION_CPC, Integer.valueOf(0));
-      }
-      int count = 0;
-      Iterator it = null;
-      Set set = contenedorDefault.entrySet();
-      it = set.iterator();
-      while (it.hasNext())
-      {
-        Map.Entry entry = (Map.Entry)it.next();
-        Integer value = (Integer)entry.getValue();
-        Register key = (Register)entry.getKey();
-        count += writeRegister(key, value.toString());
-      }
-      JOptionPane.showMessageDialog(null, "Save Succesful " + count + " Registers","Message", JOptionPane.INFORMATION_MESSAGE);
-      //JOptionPane.showMessageDialog(null, "Se guardaron correctamente " + count + " Registros");
+      JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexión", "Error", JOptionPane.ERROR_MESSAGE);
+      //JOptionPane.showMessageDialog(null, "Error Check the serial number, port or connection","Error",JOptionPane.ERROR_MESSAGE);
     }
-    else if (((validation == 2 ? 1 : 0) | (validation == 1 ? 1 : 0)) != 0)
+    else
     {
-      JOptionPane.showMessageDialog(null, "Process canceled","Warning", JOptionPane.WARNING_MESSAGE);
-      //JOptionPane.showMessageDialog(null, "Cancelaste el proceso");
-    }
+        int validation = JOptionPane.showConfirmDialog(null, "¿Estás seguro?");
+        //int validation = JOptionPane.showConfirmDialog(null, "Are you sure?","Question",JOptionPane.QUESTION_MESSAGE);
+        if (validation == 0)
+        {
+            LinkedHashMap<Register, Integer> contenedorDefault = new LinkedHashMap();
+            for (int i = 0; i < 13; i++)
+            {
+                contenedorDefault.put(Register.ADDR_CALIBRATION_CCA, Integer.valueOf(0));
+                contenedorDefault.put(Register.ADDR_CALIBRATION_CIN, Integer.valueOf(128));
+                contenedorDefault.put(Register.ADDR_CALIBRATION_CIR, Integer.valueOf(128));
+                contenedorDefault.put(Register.ADDR_CALIBRATION_CIS, Integer.valueOf(128));
+                contenedorDefault.put(Register.ADDR_CALIBRATION_CIT, Integer.valueOf(128));
+                contenedorDefault.put(Register.ADDR_CALIBRATION_CVR, Integer.valueOf(128));
+                contenedorDefault.put(Register.ADDR_CALIBRATION_CVS, Integer.valueOf(128));
+                contenedorDefault.put(Register.ADDR_CALIBRATION_CVT, Integer.valueOf(128));
+                contenedorDefault.put(Register.ADDR_CALIBRATION_CPR, Integer.valueOf(0));
+                contenedorDefault.put(Register.ADDR_CALIBRATION_CPS, Integer.valueOf(0));
+                contenedorDefault.put(Register.ADDR_CALIBRATION_CPT, Integer.valueOf(0));
+                contenedorDefault.put(Register.ADDR_CALIBRATION_CCB, Integer.valueOf(0));
+                contenedorDefault.put(Register.ADDR_CALIBRATION_CPC, Integer.valueOf(0));
+            }
+            int count = 0;
+            Iterator it = null;
+            Set set = contenedorDefault.entrySet();
+            it = set.iterator();
+            while (it.hasNext())
+            {
+                Map.Entry entry = (Map.Entry)it.next();
+                Integer value = (Integer)entry.getValue();
+                Register key = (Register)entry.getKey();
+                count += writeRegister(key, value.toString());
+            }
+            //JOptionPane.showMessageDialog(null, "Save Succesful " + count + " Registers","Message", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Se guardaron correctamente " + count + " Registros", "Información", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else if (((validation == 2 ? 1 : 0) | (validation == 1 ? 1 : 0)) != 0)
+        {
+            //JOptionPane.showMessageDialog(null, "Process canceled","Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Cancelaste el proceso", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }        
+    } 
   }
   
   public int writeRegister(Register regStart, String textField)
@@ -407,10 +460,11 @@ public class Calibration
     if (tim.equals("")) {
       tim = "0";
     }
-    if (((!port.getStatePort() ? 1 : 0) | (Meter.serialNumber == null ? 1 : 0)) != 0)
+    //if (((!port.getStatePort() ? 1 : 0) | (Meter.serialNumber == null ? 1 : 0)) != 0)
+    if((port.getStatePort() == false) | (Meter.serialNumber == null) | Meter.serialNumber.equals("0000000000000000"))//Solución al error de la línea de arriba
     {
-      JOptionPane.showMessageDialog(null, "Error Check the serial number, port or connection","Error",JOptionPane.ERROR_MESSAGE);
-      //JOptionPane.showMessageDialog(null, "Error Revise el numero de serie, Puerto o conexion");
+      //JOptionPane.showMessageDialog(null, "Error Check the serial number, port or connection","Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexión", "Error", JOptionPane.ERROR_MESSAGE);
     }
     else
     {
@@ -433,8 +487,8 @@ public class Calibration
       byte[] response = port.getByteBuffer();
       if (response == null)
       {
-        JOptionPane.showMessageDialog(null, "Error Check the serial number, port or connection","Error",JOptionPane.ERROR_MESSAGE);
-        //JOptionPane.showMessageDialog(null, "Error Revise el numero de serie, Puerto o conexion");
+        //JOptionPane.showMessageDialog(null, "Error Check the serial number, port or connection","Error",JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexión", "Error", JOptionPane.ERROR_MESSAGE);
       }
       else
       {
@@ -455,8 +509,8 @@ public class Calibration
         }
         else
         {
-          JOptionPane.showMessageDialog(null, "Error Check the serial number, port or connection","Error",JOptionPane.ERROR_MESSAGE);
-          //JOptionPane.showMessageDialog(null, "Error Revise el numero de serie, Puerto o conexion");
+          //JOptionPane.showMessageDialog(null, "Error Check the serial number, port or connection","Error",JOptionPane.ERROR_MESSAGE);
+          JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexión", "Error", JOptionPane.ERROR_MESSAGE);
         }
       }
     }
@@ -516,14 +570,14 @@ public class Calibration
     catch (FileNotFoundException e)
     {
       e.printStackTrace();
-      JOptionPane.showMessageDialog(null, "File not found","Error",JOptionPane.ERROR_MESSAGE);
-      //JOptionPane.showMessageDialog(null, "No se encontro el archivo");
+      //JOptionPane.showMessageDialog(null, "File not found","Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(null, "No se encontro el archivo", "Error", JOptionPane.ERROR_MESSAGE);
     }
     catch (IOException e)
     {
       e.printStackTrace();
-      JOptionPane.showMessageDialog(null, "File not save","Error",JOptionPane.ERROR_MESSAGE);
-      //JOptionPane.showMessageDialog(null, "No se guardo el archivo");
+      //JOptionPane.showMessageDialog(null, "File not save","Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(null, "No se guardo el archivo", "Error", JOptionPane.ERROR_MESSAGE);
     }
     finally
     {
@@ -533,15 +587,15 @@ public class Calibration
         {
           writer.flush();
           writer.close();
-          JOptionPane.showMessageDialog(null, "File saved successfully","Information",JOptionPane.INFORMATION_MESSAGE);
-          //JOptionPane.showMessageDialog(null, "Archivo guardado correctamente");
+          //JOptionPane.showMessageDialog(null, "File saved successfully","Information",JOptionPane.INFORMATION_MESSAGE);
+          JOptionPane.showMessageDialog(null, "Archivo guardado correctamente!!!", "Información", JOptionPane.INFORMATION_MESSAGE);
         }
       }
       catch (IOException e)
       {
         e.printStackTrace();
-        JOptionPane.showMessageDialog(null, "File not save","Error",JOptionPane.ERROR_MESSAGE);
-        //JOptionPane.showMessageDialog(null, "No se guardo el archivo");
+        //JOptionPane.showMessageDialog(null, "File not save","Error",JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, "No se guardo el archivo", "Error", JOptionPane.ERROR_MESSAGE);
       }
     }
   }
@@ -707,14 +761,14 @@ public class Calibration
     switch (type)
     {
     case ROW_CCA: 
-      this.defaultCalibration.setValueAt(value, type.getRow(), phase.getCol());
+      defaultCalibration.setValueAt(value, type.getRow(), phase.getCol());
     }
-    this.defaultCalibration.setValueAt(value, type.getRow(), phase.getCol());
+    defaultCalibration.setValueAt(value, type.getRow(), phase.getCol());
   }
   
   private Object getRow(ROW_TYPE type, COL_PHASE phase)
   {
-    Object ob = this.defaultCalibration.getValueAt(type.getRow(), phase.getCol());
+    Object ob = defaultCalibration.getValueAt(type.getRow(), phase.getCol());
     return ob;
   }
   
@@ -731,20 +785,20 @@ public class Calibration
                                                                                         { "CPT", "---" }, 
                                                                                         { "CCB", "---" }, 
                                                                                         { "CPC", "---" } }, 
-                                                                        //new String[] { "NOMBRE", "VALOR" }
-                                                                        new String[] { "NAME", "VALUE" })
+                                                                        new String[] { "NOMBRE", "VALOR" })
+                                                                        //new String[] { "NAME", "VALUE" })
   {
     Class[] types = { String.class, String.class };
     boolean[] canEdit = { false, false };
     
     public Class getColumnClass(int columnIndex)
     {
-      return this.types[columnIndex];
+      return types[columnIndex];
     }
     
     public boolean isCellEditable(int rowIndex, int columnIndex)
     {
-      return this.canEdit[columnIndex];
+      return canEdit[columnIndex];
     }
   };
 }

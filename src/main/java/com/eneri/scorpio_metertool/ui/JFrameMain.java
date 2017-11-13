@@ -68,7 +68,7 @@ public class JFrameMain
   private JMenuBar jMenuBar1;
   private JMenu jMenuConcentrator;
   private JMenu jMenuConfiguration;
-  private JMenu jMenuHelp;
+  public JMenu jMenuHelp;
   private JMenuItem jMenuItemAdminUsers;
   private JMenuItem jMenuItemAdvancedView;
   private JMenuItem jMenuItemCalibration;
@@ -129,7 +129,7 @@ public class JFrameMain
       }
     }
     getPermitsSelected();
-    cargarAyuda();
+    //cargarAyuda();
   }
   
   public static LinkedHashMap getJPanels()
@@ -139,160 +139,162 @@ public class JFrameMain
   
   private void initComponents()
   {
-    this.jMenuBar1 = new JMenuBar();
-    this.JMenuReadings = new JMenu();
-    this.jMenuItemReadingsMeter = new JMenuItem();
-    this.jMenuItemCalibration = new JMenuItem();
-    this.jMenuItemFlags = new JMenuItem();
+    //Objetos de esta clase
+      
+    jMenuBar1 = new JMenuBar();
+    JMenuReadings = new JMenu();
+    jMenuItemReadingsMeter = new JMenuItem();
+    jMenuItemCalibration = new JMenuItem();
+    jMenuItemFlags = new JMenuItem();
     jMenuConfiguration = new JMenu();
-    this.jMenuItemAdvancedView = new JMenuItem();
-    this.jMenuItemReset = new JMenuItem();
-    this.jMenuItemSchedules = new JMenuItem();
+    jMenuItemAdvancedView = new JMenuItem();
+    jMenuItemReset = new JMenuItem();
+    jMenuItemSchedules = new JMenuItem();
     jMenuUploadFirmware = new JMenu();
-    this.jMenuItemUploadFirmware = new JMenuItem();
+    jMenuItemUploadFirmware = new JMenuItem();
     jMenuLoadProfile = new JMenu();
-    this.jMenuItemLoadProfile = new JMenuItem();
+    jMenuItemLoadProfile = new JMenuItem();
     jMenuConcentrator = new JMenu();
-    this.jMenuItemReadingsConcentrator = new JMenuItem();
-    this.jMenuItemMeterConcentrator = new JMenuItem();
+    jMenuItemReadingsConcentrator = new JMenuItem();
+    jMenuItemMeterConcentrator = new JMenuItem();
     jMenuLog = new JMenu();
-    this.jMenuItemLog = new JMenuItem();
+    jMenuItemLog = new JMenuItem();
     jMenuPort = new JMenu();
-    this.jMenuItemPorts = new JMenuItem();
+    jMenuItemPorts = new JMenuItem();
     jMenuUsers = new JMenu();
     jMenuItemAdminUsers = new JMenuItem();
     jMenuLogOut = new JMenu();
-    this.jMenuItemExit = new JMenuItem();
+    jMenuItemExit = new JMenuItem();
     jMenuHelp = new JMenu();
-    this.jMenuItemJavaHelp = new JMenuItem();
-    this.jMenuItemVersion = new JMenuItem();
-    this.iIcon = new ImageIcon("image/ImageEneri.png");
+    jMenuItemJavaHelp = new JMenuItem();
+    jMenuItemVersion = new JMenuItem();
+    iIcon = new ImageIcon("image/ImageEneri.png");
     
     setDefaultCloseOperation(3);
     
-    this.JMenuReadings.setText("Menu");//Este no cambia por que es lo mismo
-    this.JMenuReadings.addActionListener(new ActionListener()
+    JMenuReadings.setText("Menú");
+    JMenuReadings.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         JFrameMain.this.JMenuReadingsActionPerformed(evt);
       }
     });
-    this.jMenuItemReadingsMeter.setAccelerator(KeyStroke.getKeyStroke(113, 0));
-    this.jMenuItemReadingsMeter.setText("Meter Reads");
-    //this.jMenuItemReadingsMeter.setText("Lecturas de Medidor");//Este es en español
-    this.jMenuItemReadingsMeter.addActionListener(new ActionListener()
+    jMenuItemReadingsMeter.setAccelerator(KeyStroke.getKeyStroke(113, 0));
+    //jMenuItemReadingsMeter.setText("Meter Reads");//Para uso en ingles
+    jMenuItemReadingsMeter.setText("Lecturas de Medidor");//Este es en español
+    jMenuItemReadingsMeter.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         JFrameMain.this.jMenuItemReadingsMeterActionPerformed(evt);
       }
     });
-    this.JMenuReadings.add(this.jMenuItemReadingsMeter);
+    JMenuReadings.add(this.jMenuItemReadingsMeter);
     
-    this.jMenuItemCalibration.setAccelerator(KeyStroke.getKeyStroke(114, 0));
-    this.jMenuItemCalibration.setText("Calibration");
-    //this.jMenuItemCalibration.setText("Calibracion");//Este es en español
-    this.jMenuItemCalibration.addActionListener(new ActionListener()
+    jMenuItemCalibration.setAccelerator(KeyStroke.getKeyStroke(114, 0));
+    //this.jMenuItemCalibration.setText("Calibration");//Para uso en ingles
+    jMenuItemCalibration.setText("Calibración");//Este es en español
+    jMenuItemCalibration.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         JFrameMain.this.jMenuItemCalibrationActionPerformed(evt);
       }
     });
-    this.JMenuReadings.add(this.jMenuItemCalibration);
+    JMenuReadings.add(jMenuItemCalibration);
     
-    this.jMenuItemFlags.setAccelerator(KeyStroke.getKeyStroke(115, 0));
-    this.jMenuItemFlags.setText("Flags");
-    //this.jMenuItemFlags.setText("Banderas");//Este es en español
-    this.jMenuItemFlags.addActionListener(new ActionListener()
+    jMenuItemFlags.setAccelerator(KeyStroke.getKeyStroke(115, 0));
+    //jMenuItemFlags.setText("Flags");//Para uso en ingles
+    jMenuItemFlags.setText("Banderas");//Este es en español
+    jMenuItemFlags.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         JFrameMain.this.jMenuItemFlagsActionPerformed(evt);
       }
     });
-    this.JMenuReadings.add(this.jMenuItemFlags);
+    JMenuReadings.add(jMenuItemFlags);
     
-    this.jMenuBar1.add(this.JMenuReadings);
+    jMenuBar1.add(this.JMenuReadings);
     
-    jMenuConfiguration.setText("Configuration");
-    //this.jMenuConfiguration.setText("Configuracion");
+    //jMenuConfiguration.setText("Configuration");
+    jMenuConfiguration.setText("Configuración");
     
-    this.jMenuItemAdvancedView.setAccelerator(KeyStroke.getKeyStroke(117, 0));
-    this.jMenuItemAdvancedView.setText("Advanced View");
-    //this.jMenuItemAdvancedView.setText("Vista Avanzada");
-    this.jMenuItemAdvancedView.addActionListener(new ActionListener()
+    jMenuItemAdvancedView.setAccelerator(KeyStroke.getKeyStroke(117, 0));
+    //jMenuItemAdvancedView.setText("Advanced View");//Para uso en ingles
+    jMenuItemAdvancedView.setText("Vista Avanzada");//Para uso en español
+    jMenuItemAdvancedView.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         JFrameMain.this.jMenuItemAdvancedViewActionPerformed(evt);
       }
     });
-    jMenuConfiguration.add(this.jMenuItemAdvancedView);
+    jMenuConfiguration.add(jMenuItemAdvancedView);
     
-    this.jMenuItemReset.setAccelerator(KeyStroke.getKeyStroke(116, 0));
-    this.jMenuItemReset.setText("Restarts");
-    //this.jMenuItemReset.setText("Reinicios");
-    this.jMenuItemReset.addActionListener(new ActionListener()
+    jMenuItemReset.setAccelerator(KeyStroke.getKeyStroke(116, 0));
+    //jMenuItemReset.setText("Restarts");//Para uso en ingles
+    jMenuItemReset.setText("Reinicios");//Para uso en español
+    jMenuItemReset.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         JFrameMain.this.jMenuItemResetActionPerformed(evt);
       }
     });
-    jMenuConfiguration.add(this.jMenuItemReset);
+    jMenuConfiguration.add(jMenuItemReset);
     
-    this.jMenuItemSchedules.setAccelerator(KeyStroke.getKeyStroke(118, 0));
-    this.jMenuItemSchedules.setText("Timetable");
-    //this.jMenuItemSchedules.setText("Horarios");
-    this.jMenuItemSchedules.addActionListener(new ActionListener()
+    jMenuItemSchedules.setAccelerator(KeyStroke.getKeyStroke(118, 0));
+    //jMenuItemSchedules.setText("Timetable");//Uso en ingles
+    jMenuItemSchedules.setText("Horarios");//Uso en español
+    jMenuItemSchedules.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         JFrameMain.this.jMenuItemSchedulesActionPerformed(evt);
       }
     });
-    jMenuConfiguration.add(this.jMenuItemSchedules);
+    jMenuConfiguration.add(jMenuItemSchedules);
     
     jMenuBar1.add(jMenuConfiguration);
     
-    jMenuUploadFirmware.setText("Load Firm");
-    //this.jMenuUploadFirmware.setText("Carga de Firm");
+    //jMenuUploadFirmware.setText("Load Firm");//Uso en ingles
+    jMenuUploadFirmware.setText("Carga de FW");//Uso en español
     
-    this.jMenuItemUploadFirmware.setAccelerator(KeyStroke.getKeyStroke(119, 0));
-    this.jMenuItemUploadFirmware.setText("Load Firmware");
-    //this.jMenuItemUploadFirmware.setText("Cargar Firmware");
-    this.jMenuItemUploadFirmware.addActionListener(new ActionListener()
+    jMenuItemUploadFirmware.setAccelerator(KeyStroke.getKeyStroke(119, 0));
+    //jMenuItemUploadFirmware.setText("Load Firmware");//Uso en ingles
+    jMenuItemUploadFirmware.setText("Cargar Firmware");//Uso en español
+    jMenuItemUploadFirmware.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         JFrameMain.this.jMenuItemUploadFirmwareActionPerformed(evt);
       }
     });
-    jMenuUploadFirmware.add(this.jMenuItemUploadFirmware);
+    jMenuUploadFirmware.add(jMenuItemUploadFirmware);
     
-    jMenuBar1.add(this.jMenuUploadFirmware);
+    jMenuBar1.add(jMenuUploadFirmware);
     
-    jMenuLoadProfile.setText("Load Profile");
-    //this.jMenuLoadProfile.setText("Perfil de Carga");
+    //jMenuLoadProfile.setText("Load Profile");//Uso en ingles
+    jMenuLoadProfile.setText("Perfil de Carga");//Uso en español
     
-    this.jMenuItemLoadProfile.setAccelerator(KeyStroke.getKeyStroke(120, 0));
-    this.jMenuItemLoadProfile.setText("Load Profile");
-    //this.jMenuItemLoadProfile.setText("Perfil de Carga");
-    this.jMenuItemLoadProfile.addActionListener(new ActionListener()
+    jMenuItemLoadProfile.setAccelerator(KeyStroke.getKeyStroke(120, 0));
+    //jMenuItemLoadProfile.setText("Load Profile");//Uso en ingles
+    jMenuItemLoadProfile.setText("Perfil de Carga");//Uso en español
+    jMenuItemLoadProfile.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         JFrameMain.this.jMenuItemLoadProfileActionPerformed(evt);
       }
     });
-    jMenuLoadProfile.add(this.jMenuItemLoadProfile);
+    jMenuLoadProfile.add(jMenuItemLoadProfile);
     
-    jMenuBar1.add(this.jMenuLoadProfile);
+    jMenuBar1.add(jMenuLoadProfile);
     
-    jMenuConcentrator.setText("Concentrator");
-    //this.jMenuConcentrator.setText("Concentrador");
+    //jMenuConcentrator.setText("Concentrator");//Uso en ingles
+    jMenuConcentrator.setText("Concentrador");//Uso en español
     jMenuConcentrator.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
@@ -300,10 +302,10 @@ public class JFrameMain
         JFrameMain.this.jMenuConcentratorActionPerformed(evt);
       }
     });    
-    this.jMenuItemReadingsConcentrator.setAccelerator(KeyStroke.getKeyStroke(67, 3));
-    this.jMenuItemReadingsConcentrator.setText("Concentrator Reads");
-    this.jMenuItemReadingsConcentrator.setText("Lecturas de Concentrador");
-    this.jMenuItemReadingsConcentrator.addActionListener(new ActionListener()
+    jMenuItemReadingsConcentrator.setAccelerator(KeyStroke.getKeyStroke(67, 3));
+    //jMenuItemReadingsConcentrator.setText("Concentrator Reads");//Uso en ingles
+    jMenuItemReadingsConcentrator.setText("Lecturas de Concentrador");//Uso en español
+    jMenuItemReadingsConcentrator.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
@@ -313,8 +315,8 @@ public class JFrameMain
     
     jMenuConcentrator.add(jMenuItemReadingsConcentrator);    
     jMenuItemMeterConcentrator.setAccelerator(KeyStroke.getKeyStroke(88, 3));
-    jMenuItemMeterConcentrator.setText("Concentrator Meters");
-    //this.jMenuItemMeterConcentrator.setText("Medidores de Concentrador");
+    //jMenuItemMeterConcentrator.setText("Concentrator Meters");//Uso en ingles
+    jMenuItemMeterConcentrator.setText("Medidores de Concentrador");//Uso en español
     jMenuItemMeterConcentrator.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
@@ -326,45 +328,45 @@ public class JFrameMain
     
     jMenuBar1.add(jMenuConcentrator);
     
-    jMenuLog.setText("Show Log");
-    //this.jMenuLog.setText("Mostrar Log");
+    //jMenuLog.setText("Show Log");//Uso en ingles
+    jMenuLog.setText("Mostrar Log");//Uso en español
     
-    this.jMenuItemLog.setText("Actions Log Hex");
-    //this.jMenuItemLog.setText("Log de Acciones HEX");
-    this.jMenuItemLog.addActionListener(new ActionListener()
+    //jMenuItemLog.setText("Actions Log Hex");//Uso en ingles
+    jMenuItemLog.setText("Log de Acciones HEX");//Uso en español
+    jMenuItemLog.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         JFrameMain.this.jMenuItemLogActionPerformed(evt);
       }
     });
-    jMenuLog.add(this.jMenuItemLog);
+    jMenuLog.add(jMenuItemLog);
     
-    jMenuBar1.add(this.jMenuLog);
+    jMenuBar1.add(jMenuLog);
     
-    jMenuPort.setText("Port");
-    //this.jMenuPort.setText("Puerto");
+    //jMenuPort.setText("Port");//Uso en ingles
+    jMenuPort.setText("Puerto");//Uso en español
     
-    this.jMenuItemPorts.setAccelerator(KeyStroke.getKeyStroke(82, 2));
-    this.jMenuItemPorts.setText("Refresh Ports");
-    //this.jMenuItemPorts.setText("Refrescar Puertos");
-    this.jMenuItemPorts.addActionListener(new ActionListener()
+    jMenuItemPorts.setAccelerator(KeyStroke.getKeyStroke(82, 2));
+    //jMenuItemPorts.setText("Refresh Ports");//Uso en ingles
+    jMenuItemPorts.setText("Refrescar Puertos");//Uso en español
+    jMenuItemPorts.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         JFrameMain.this.jMenuItemPortsActionPerformed(evt);
       }
     });
-    jMenuPort.add(this.jMenuItemPorts);
+    jMenuPort.add(jMenuItemPorts);
     
-    jMenuBar1.add(this.jMenuPort);
+    jMenuBar1.add(jMenuPort);
     
-    jMenuUsers.setText("Users");
-    //this.jMenuUsers.setText("Usuarios");
+    //jMenuUsers.setText("Users");//Uso en ingles
+    jMenuUsers.setText("Usuarios");//Uso en español
     
     jMenuItemAdminUsers.setAccelerator(KeyStroke.getKeyStroke(122, 0));
-    jMenuItemAdminUsers.setText("Users Admin");
-    //this.jMenuItemAdminUsers.setText("Admin de Usuarios");
+    //jMenuItemAdminUsers.setText("Users Admin");//Uso en Ingles
+    jMenuItemAdminUsers.setText("Admin de Usuarios");//Uso en español
     jMenuItemAdminUsers.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
@@ -376,52 +378,53 @@ public class JFrameMain
     
     jMenuBar1.add(jMenuUsers);
     
-    jMenuLogOut.setText("Cerrar Session");
-    //this.jMenuLogOut.setText("Cerrar Sesion");
+    //jMenuLogOut.setText("Cerrar Session");//Uso en ingles
+    jMenuLogOut.setText("Cerrar Sesion");//Uso en español
     
-    this.jMenuItemExit.setAccelerator(KeyStroke.getKeyStroke(27, 0));
-    this.jMenuItemExit.setText("Exit");
-    //this.jMenuItemExit.setText("Salir");
-    this.jMenuItemExit.addActionListener(new ActionListener()
+    jMenuItemExit.setAccelerator(KeyStroke.getKeyStroke(27, 0));
+    //jMenuItemExit.setText("Exit");//Uso en ingles
+    jMenuItemExit.setText("Salir");//Uso en español
+    jMenuItemExit.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         JFrameMain.this.jMenuItemExitActionPerformed(evt);
       }
     });
-    jMenuLogOut.add(this.jMenuItemExit);
+    jMenuLogOut.add(jMenuItemExit);
     
-    jMenuBar1.add(this.jMenuLogOut);
+    jMenuBar1.add(jMenuLogOut);
     
-    jMenuHelp.setText("Help");
-    //this.jMenuHelp.setText("Ayuda");
+    //jMenuHelp.setText("Help");//Uso en ingles
+    jMenuHelp.setText("Ayuda");//Uso en español
     
-    this.jMenuItemJavaHelp.setAccelerator(KeyStroke.getKeyStroke(112, 0));
-    this.jMenuItemJavaHelp.setText("Help");
-    //this.jMenuItemJavaHelp.setText("Ayuda");
-    this.jMenuItemJavaHelp.addActionListener(new ActionListener()
+    jMenuItemJavaHelp.setAccelerator(KeyStroke.getKeyStroke(112, 0));
+    //jMenuItemJavaHelp.setText("Help");//Uso en ingles
+    jMenuItemJavaHelp.setText("Ayuda");//Uso en español
+    jMenuItemJavaHelp.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         JFrameMain.this.jMenuItemJavaHelpActionPerformed(evt);
       }
     });
-    jMenuHelp.add(this.jMenuItemJavaHelp);
     
-    this.jMenuItemVersion.setText("About");
-    //this.jMenuItemVersion.setText("Acerca de");
-    this.jMenuItemVersion.addActionListener(new ActionListener()
+    //jMenuHelp.add(jMenuItemJavaHelp);
+    
+    //jMenuItemVersion.setText("About");//Uso en ingles
+    jMenuItemVersion.setText("Acerca de");//Uso en español
+    jMenuItemVersion.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         JFrameMain.this.jMenuItemVersionActionPerformed(evt);
       }
     });
-    jMenuHelp.add(this.jMenuItemVersion);
+    jMenuHelp.add(jMenuItemVersion);
     
-    jMenuBar1.add(this.jMenuHelp);
+    jMenuBar1.add(jMenuHelp);
     
-    setJMenuBar(this.jMenuBar1);
+    setJMenuBar(jMenuBar1);
     
     GroupLayout layout = new GroupLayout(getContentPane());
     getContentPane().setLayout(layout);
@@ -481,8 +484,8 @@ public class JFrameMain
       {
         JPanel pane = (JPanel)entry.getKey();
         
-        this.currentPanel.setVisible(false);
-        this.currentPanel = pane;
+        currentPanel.setVisible(false);
+        currentPanel = pane;
         pane.setVisible(true);
       }
     }
@@ -499,8 +502,8 @@ public class JFrameMain
       {
         JPanel pane = (JPanel)entry.getKey();
         
-        this.currentPanel.setVisible(false);
-        this.currentPanel = pane;
+        currentPanel.setVisible(false);
+        currentPanel = pane;
         pane.setVisible(true);
       }
     }
@@ -517,8 +520,8 @@ public class JFrameMain
       {
         JPanel pane = (JPanel)entry.getKey();
         
-        this.currentPanel.setVisible(false);
-        this.currentPanel = pane;
+        currentPanel.setVisible(false);
+        currentPanel = pane;
         pane.setVisible(true);
       }
     }
@@ -535,8 +538,8 @@ public class JFrameMain
       {
         JPanel pane = (JPanel)entry.getKey();
         
-        this.currentPanel.setVisible(false);
-        this.currentPanel = pane;
+        currentPanel.setVisible(false);
+        currentPanel = pane;
         pane.setVisible(true);
       }
     }
@@ -553,8 +556,8 @@ public class JFrameMain
       {
         JPanel pane = (JPanel)entry.getKey();
         
-        this.currentPanel.setVisible(false);
-        this.currentPanel = pane;
+        currentPanel.setVisible(false);
+        currentPanel = pane;
         pane.setVisible(true);
       }
     }
@@ -570,8 +573,8 @@ public class JFrameMain
       if (((Integer)entry.getValue()).intValue() == 6)
       {
         JPanel pane = (JPanel)entry.getKey();
-        this.currentPanel.setVisible(false);
-        this.currentPanel = pane;
+        currentPanel.setVisible(false);
+        currentPanel = pane;
         pane.setVisible(true);
       }
     }
@@ -588,8 +591,8 @@ public class JFrameMain
       {
         JPanel pane = (JPanel)entry.getKey();
         
-        this.currentPanel.setVisible(false);
-        this.currentPanel = pane;
+        currentPanel.setVisible(false);
+        currentPanel = pane;
         pane.setVisible(true);
       }
     }
@@ -624,8 +627,8 @@ public class JFrameMain
       {
         JPanel pane = (JPanel)entry.getKey();
         
-        this.currentPanel.setVisible(false);
-        this.currentPanel = pane;
+        currentPanel.setVisible(false);
+        currentPanel = pane;
         pane.setVisible(true);
       }
     }
@@ -642,8 +645,8 @@ public class JFrameMain
       {
         JPanel pane = (JPanel)entry.getKey();
         
-        this.currentPanel.setVisible(false);
-        this.currentPanel = pane;
+        currentPanel.setVisible(false);
+        currentPanel = pane;
         pane.setVisible(true);
       }
     }
@@ -651,7 +654,7 @@ public class JFrameMain
   
   private void jMenuItemExitActionPerformed(ActionEvent evt)
   {
-    this.us.closeAll();
+    us.closeAll();
     setVisible(false);
     PortComunication port = new PortComunication();
     Readings read = new Readings();
@@ -682,7 +685,7 @@ public class JFrameMain
   
   private void jMenuItemVersionActionPerformed(ActionEvent evt)
   {
-    JOptionPane.showMessageDialog(null, "SCORPIO METER TOOL \nENERI \nwww.eneri.com.mx \nVersion 1.0.0\n24-08-2016","Information",JOptionPane.INFORMATION_MESSAGE, iIcon);
+    JOptionPane.showMessageDialog(null, "SCORPIO METER TOOL \nENERI \nwww.eneri.com.mx \nVersion 2.0.0\n13-11-2017","Información",JOptionPane.INFORMATION_MESSAGE, iIcon);
     //JOptionPane.showMessageDialog(null, "SCORPIO METER TOOL \nSMEI \nVersion 1.0.25\n09-09-2015");
   }
   
@@ -696,8 +699,8 @@ public class JFrameMain
       if (((Integer)entry.getValue()).intValue() == 11)
       {
         JPanel pane = (JPanel)entry.getKey();
-        this.currentPanel.setVisible(false);
-        this.currentPanel = pane;
+        currentPanel.setVisible(false);
+        currentPanel = pane;
         pane.setVisible(true);
       }
     }
@@ -728,27 +731,27 @@ public class JFrameMain
   {
     LinkedHashMap<Component, String> listComponents = new LinkedHashMap();
     
-    listComponents.put(this.jMenuItemCalibration, "ItemCalibration");
-    listComponents.put(this.jMenuItemFlags, "ItemFlags");
-    listComponents.put(this.jMenuConfiguration, "MenuConfiguration");
-    listComponents.put(this.jMenuItemReset, "ItemReset");
-    listComponents.put(this.jMenuItemAdvancedView, "ItemAdvancedView");
-    listComponents.put(this.jMenuItemSchedules, "ItemSchedules");
+    listComponents.put(jMenuItemCalibration, "ItemCalibration");
+    listComponents.put(jMenuItemFlags, "ItemFlags");
+    listComponents.put(jMenuConfiguration, "MenuConfiguration");
+    listComponents.put(jMenuItemReset, "ItemReset");
+    listComponents.put(jMenuItemAdvancedView, "ItemAdvancedView");
+    listComponents.put(jMenuItemSchedules, "ItemSchedules");
     listComponents.put(jMenuConcentrator, "MenuConcentrator");
     listComponents.put(jMenuItemReadingsConcentrator, "ItemReadingsConcentrator");
     listComponents.put(jMenuItemMeterConcentrator, "ItemMeterConcentrator");
-    listComponents.put(this.jMenuUploadFirmware, "MenuUploadFirmware");
-    listComponents.put(this.jMenuItemUploadFirmware, "ItemUploadFirmware");
-    listComponents.put(this.jMenuLoadProfile, "MenuLoadProfile");
-    listComponents.put(this.jMenuItemLoadProfile, "ItemLoadProfile");
-    listComponents.put(this.jMenuConcentrator, "MenuConcentrator");
-    listComponents.put(this.jMenuItemReadingsConcentrator, "ItemReadingsConcentrator");
-    listComponents.put(this.jMenuItemMeterConcentrator, "ItemMeterConcentrator");
-    listComponents.put(this.jMenuLog, "MenuLog");
-    listComponents.put(this.jMenuItemLog, "ItemLog");    
-    listComponents.put(this.jMenuUsers, "MenuUsers");
+    listComponents.put(jMenuUploadFirmware, "MenuUploadFirmware");
+    listComponents.put(jMenuItemUploadFirmware, "ItemUploadFirmware");
+    listComponents.put(jMenuLoadProfile, "MenuLoadProfile");
+    listComponents.put(jMenuItemLoadProfile, "ItemLoadProfile");
+    listComponents.put(jMenuConcentrator, "MenuConcentrator");
+    listComponents.put(jMenuItemReadingsConcentrator, "ItemReadingsConcentrator");
+    listComponents.put(jMenuItemMeterConcentrator, "ItemMeterConcentrator");
+    listComponents.put(jMenuLog, "MenuLog");
+    listComponents.put(jMenuItemLog, "ItemLog");    
+    listComponents.put(jMenuUsers, "MenuUsers");
     listComponents.put(jMenuItemAdminUsers, "ItemAdminUsers");
-    listComponents.put(this.jMenuLogOut, "MenuLogOut");
+    listComponents.put(jMenuLogOut, "MenuLogOut");
     
     return listComponents;
   }
@@ -756,12 +759,12 @@ public class JFrameMain
   public void getPermits()
   {
     Iterator it = null;
-    String group = this.us.getGroup();
+    String group = us.getGroup();
     
     Set set = getComponentFramee().entrySet();
     it = set.iterator();
     
-    ArrayList listEnum = this.us.printTableEnum();
+    ArrayList listEnum = us.printTableEnum();
     while (it.hasNext())
     {
       Map.Entry entry = (Map.Entry)it.next();
@@ -786,16 +789,17 @@ public class JFrameMain
     }
   }
   
+  //Función para mostrar las todas las opciones disponibles para esta aplicación
   public void getPermitsSelected()
   {
     Iterator itt = null;
     Set sett = getComponentFramee().entrySet();
     itt = sett.iterator();
-    /*while (itt.hasNext())//Con esto se muestran todas las ventanas disponibles
+    while (itt.hasNext())
     {
       Map.Entry entry = (Map.Entry)itt.next();
       String value = (String)entry.getValue();
-      /*if (value.equals("MenuLoadProfile")) 
+      if (value.equals("MenuLoadProfile")) 
       {
         ((Component)entry.getKey()).setVisible(false);
       }
@@ -827,6 +831,6 @@ public class JFrameMain
       {
         ((Component)entry.getKey()).setVisible(false);
       }
-    }*/
+    }
   }
 }

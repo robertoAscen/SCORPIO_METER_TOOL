@@ -60,22 +60,23 @@ public class Flags
   
   private void initComponents()
   {
-    this.jLabelNamePanel = new JLabel();
-    this.jScrollPane1 = new JScrollPane();
-    this.jTableFlags = new JTable();
-    this.jButtonReadFlags = new JButton();
+    jLabelNamePanel = new JLabel();
+    jScrollPane1 = new JScrollPane();
+    jTableFlags = new JTable();
+    jButtonReadFlags = new JButton();
     
-    this.jLabelNamePanel.setFont(new Font("Tahoma", 1, 18));
-    //this.jLabelNamePanel.setText("BANDERAS");
-    this.jLabelNamePanel.setText("FLAGS");
+    jLabelNamePanel.setFont(new Font("Tahoma", 1, 18));
+    jLabelNamePanel.setText("BANDERAS");
+    //jLabelNamePanel.setText("FLAGS");
     
-    this.jTableFlags.setModel(new DefaultTableModel(new Object[0][], new String[0]));
+    jTableFlags.setModel(new DefaultTableModel(new Object[0][], new String[0]));
     
-    this.jScrollPane1.setViewportView(this.jTableFlags);
+    jScrollPane1.setViewportView(this.jTableFlags);
     
-    //this.jButtonReadFlags.setText("LEER");
-    this.jButtonReadFlags.setText("READ");
-    this.jButtonReadFlags.addActionListener(new ActionListener()
+    jButtonReadFlags.setText("LEER");
+    //jButtonReadFlags.setText("READ");
+    jButtonReadFlags.setToolTipText("Oprime el botón para leer el estado de las bandera en el medidor");
+    jButtonReadFlags.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
@@ -98,14 +99,15 @@ public class Flags
   {
     JFrameMain f = (JFrameMain)SwingUtilities.getAncestorOfClass(JFrameMain.class, this);
     contentPane = f.getContentPane();
-    this.scrollpane = new JScrollPane();
+    scrollpane = new JScrollPane();
     defaultable = new DefaultTableModel((Object[][])null, getColumnas());
     
     PortComunication port = new PortComunication();
-    if (((!port.getStatePort() ? 1 : 0) | (Meter.serialNumber == null ? 1 : 0) /*| Meter.serialNumber.equals("0000000000000000")*/) != 0)
+    //if (((!port.getStatePort() ? 1 : 0) | (Meter.serialNumber == null ? 1 : 0) /*| Meter.serialNumber.equals("0000000000000000")*/) != 0)
+    if((port.getStatePort() == false) | (Meter.serialNumber == null) | Meter.serialNumber.equals("0000000000000000"))//Solución al error de la línea de arriba
     {
-        //JOptionPane.showMessageDialog(null, "Error Revise el numero de serie, Puerto o conexion");
-        JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexión", "Error", JOptionPane.ERROR_MESSAGE);
+        //JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
     }
     else
     {
@@ -126,8 +128,8 @@ public class Flags
   
   public String[] getColumnas()
   {
-    //String[] columna = { "BANDERA", "NOMBRE", "ESTADO" };
-    String[] columna = { "FLAGS", "NAME", "STATUS" };
+    String[] columna = { "BANDERA", "NOMBRE", "ESTADO" };
+    //String[] columna = { "FLAGS", "NAME", "STATUS" };
     return columna;
   }
   
@@ -138,41 +140,41 @@ public class Flags
     int values = Conversions.byteArrayToInt(frame);
     String activ = "";
     
-    this.contenedor.put("METER_RELAY_STATE", Integer.valueOf(0));
-    this.contenedor.put("METER_IR_MODE", Integer.valueOf(1));
-    this.contenedor.put("METER_3PH_MODE", Integer.valueOf(2));
-    this.contenedor.put("METER_HM_MODE", Integer.valueOf(3));
-    this.contenedor.put("METER_VOLTAGE_MODE", Integer.valueOf(4));
-    this.contenedor.put("BOOT_BACKDOOR_ENABLE", Integer.valueOf(5));
-    this.contenedor.put("BOOT_UPGRADE_PROCESS_ENABLE", Integer.valueOf(6));
-    this.contenedor.put("METER_ACC_RESET", Integer.valueOf(7));
-    this.contenedor.put("METER_FORCE_RESET", Integer.valueOf(8));
-    this.contenedor.put("METER_DEMAND_RESET", Integer.valueOf(9));
-    this.contenedor.put("METER_STPMC_RESET", Integer.valueOf(10));
-    this.contenedor.put("BOOT_FORCE_BOOTLOADER", Integer.valueOf(11));
-    this.contenedor.put("METER_DAYLIGHT_SAVING_TIME_ACTIVE", Integer.valueOf(12));
-    this.contenedor.put("METER_DAYLIGHT_SAVING_TIME_ENABLE", Integer.valueOf(13));
-    this.contenedor.put("METER_UART_PARITY_ENABLE", Integer.valueOf(14));
-    this.contenedor.put("METER_UART_PARITY_SELECT", Integer.valueOf(15));
-    this.contenedor.put("ROLLING_DEMAND_INTERVAL", Integer.valueOf(16));
-    this.contenedor.put("METER_LOW_LEVEL_BACKUP_BATTERY", Integer.valueOf(17));
-    this.contenedor.put("METER_VOLTAGE_RECOVERY_INPUT", Integer.valueOf(18));
-    this.contenedor.put("METER_ZERO_VOLTAGE_INPUT", Integer.valueOf(19));
-    this.contenedor.put("METER_FRAM_ERROR", Integer.valueOf(20));
-    this.contenedor.put("METER_STPMC_READ_ERROR", Integer.valueOf(21));
-    this.contenedor.put("BOOT_FLASH_ERROR", Integer.valueOf(22));
-    this.contenedor.put("METER_RTC_DESYNC_RISK", Integer.valueOf(23));
-    this.contenedor.put("METER_NO_LOAD_CONNECTED", Integer.valueOf(24));
-    this.contenedor.put("METER_RUNNING_APP_CODE", Integer.valueOf(25));
-    this.contenedor.put("METER_VALID_IIC_DATABASE", Integer.valueOf(26));
-    this.contenedor.put("METER_PHASE_SEQUENCE", Integer.valueOf(27));
-    this.contenedor.put("METER_REVERSE_CURRENT", Integer.valueOf(28));
-    this.contenedor.put("METER_LOW_RANGE", Integer.valueOf(29));
-    this.contenedor.put("METER_HIGH_RANGE", Integer.valueOf(30));
-    this.contenedor.put("METER_REACT_CAP", Integer.valueOf(31));
+    contenedor.put("METER_RELAY_STATE", Integer.valueOf(0));
+    contenedor.put("METER_IR_MODE", Integer.valueOf(1));
+    contenedor.put("METER_3PH_MODE", Integer.valueOf(2));
+    contenedor.put("METER_HM_MODE", Integer.valueOf(3));
+    contenedor.put("METER_VOLTAGE_MODE", Integer.valueOf(4));
+    contenedor.put("BOOT_BACKDOOR_ENABLE", Integer.valueOf(5));
+    contenedor.put("BOOT_UPGRADE_PROCESS_ENABLE", Integer.valueOf(6));
+    contenedor.put("METER_ACC_RESET", Integer.valueOf(7));
+    contenedor.put("METER_FORCE_RESET", Integer.valueOf(8));
+    contenedor.put("METER_DEMAND_RESET", Integer.valueOf(9));
+    contenedor.put("METER_STPMC_RESET", Integer.valueOf(10));
+    contenedor.put("BOOT_FORCE_BOOTLOADER", Integer.valueOf(11));
+    contenedor.put("METER_DAYLIGHT_SAVING_TIME_ACTIVE", Integer.valueOf(12));
+    contenedor.put("METER_DAYLIGHT_SAVING_TIME_ENABLE", Integer.valueOf(13));
+    contenedor.put("METER_UART_PARITY_ENABLE", Integer.valueOf(14));
+    contenedor.put("METER_UART_PARITY_SELECT", Integer.valueOf(15));
+    contenedor.put("ROLLING_DEMAND_INTERVAL", Integer.valueOf(16));
+    contenedor.put("METER_LOW_LEVEL_BACKUP_BATTERY", Integer.valueOf(17));
+    contenedor.put("METER_VOLTAGE_RECOVERY_INPUT", Integer.valueOf(18));
+    contenedor.put("METER_ZERO_VOLTAGE_INPUT", Integer.valueOf(19));
+    contenedor.put("METER_FRAM_ERROR", Integer.valueOf(20));
+    contenedor.put("METER_STPMC_READ_ERROR", Integer.valueOf(21));
+    contenedor.put("BOOT_FLASH_ERROR", Integer.valueOf(22));
+    contenedor.put("METER_RTC_DESYNC_RISK", Integer.valueOf(23));
+    contenedor.put("METER_NO_LOAD_CONNECTED", Integer.valueOf(24));
+    contenedor.put("METER_RUNNING_APP_CODE", Integer.valueOf(25));
+    contenedor.put("METER_VALID_IIC_DATABASE", Integer.valueOf(26));
+    contenedor.put("METER_PHASE_SEQUENCE", Integer.valueOf(27));
+    contenedor.put("METER_REVERSE_CURRENT", Integer.valueOf(28));
+    contenedor.put("METER_LOW_RANGE", Integer.valueOf(29));
+    contenedor.put("METER_HIGH_RANGE", Integer.valueOf(30));
+    contenedor.put("METER_REACT_CAP", Integer.valueOf(31));
     int count = 0;
     Iterator it = null;
-    Set set = this.contenedor.entrySet();
+    Set set = contenedor.entrySet();
     it = set.iterator();
     while (it.hasNext())
     {
@@ -180,23 +182,23 @@ public class Flags
       String value = entry.getValue().toString();
       String key = entry.getKey().toString();
       
-      int balint0 = values & 1 << ((Integer)this.contenedor.get(key)).intValue();
+      int balint0 = values & 1 << ((Integer)contenedor.get(key)).intValue();
       if (balint0 != 0)
       {
         if (key == "METER_RELAY_STATE") {
-          //activ = "CERRADO";
-          activ = "CLOSED";
+          activ = "CERRADO";
+          //activ = "CLOSED";
         } else {
-          //activ = "ACTIVADO";
-          activ = "ACTIVATED";
+          activ = "ACTIVADO";
+          //activ = "ACTIVATED";
         }
       }
       else if (key == "METER_RELAY_STATE") {
-        //activ = "ACTIVADO";
-        activ = "ON";
+        activ = "ACTIVADO";
+        //activ = "ON";
       } else {
-        //activ = "DESACTIVADO";
-        activ = "OFF";
+        activ = "DESACTIVADO";
+        //activ = "OFF";
       }
       Object[] data = { Integer.valueOf(count), key, activ };
       defaultable.addRow(data);

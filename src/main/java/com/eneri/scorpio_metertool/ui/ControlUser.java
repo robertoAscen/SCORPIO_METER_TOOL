@@ -85,82 +85,82 @@ public class ControlUser
   public ControlUser()
   {
     initComponents();
-    for (Object gp : this.usr.printTableGroup()) {
-      this.jComboBoxTypeUser.addItem(gp.toString());
+    for (Object gp : usr.printTableGroup()) {
+      jComboBoxTypeUser.addItem(gp.toString());
     }
   }
   
   private void initComponents()
   {
-    this.jLabelNameUserControl = new JLabel();
-    this.jLabelUser = new JLabel();
-    this.jTextFieldUserName = new JTextField();
-    this.jLabelPassword = new JLabel();
-    this.jPasswordFieldPassword = new JPasswordField();
-    this.jLabelTypeUser = new JLabel();
-    this.jComboBoxTypeUser = new JComboBox();
-    this.jButtonAddUser = new JButton();
-    this.jScrollPane1 = new JScrollPane();
-    this.jTableUsers = new JTable();
-    this.jButtonShowUsers = new JButton();
-    this.jButtonDeleteUsers = new JButton();
-    this.jButtonUpdatePassword = new JButton();
-    this.jButton1 = new JButton();
-    this.jButtonViewPerm = new JButton();
-    this.jButtonCreateGroups = new JButton();
+    jLabelNameUserControl = new JLabel();
+    jLabelUser = new JLabel();
+    jTextFieldUserName = new JTextField();
+    jLabelPassword = new JLabel();
+    jPasswordFieldPassword = new JPasswordField();
+    jLabelTypeUser = new JLabel();
+    jComboBoxTypeUser = new JComboBox();
+    jButtonAddUser = new JButton();
+    jScrollPane1 = new JScrollPane();
+    jTableUsers = new JTable();
+    jButtonShowUsers = new JButton();
+    jButtonDeleteUsers = new JButton();
+    jButtonUpdatePassword = new JButton();
+    jButton1 = new JButton();
+    jButtonViewPerm = new JButton();
+    jButtonCreateGroups = new JButton();
     
     setPreferredSize(new Dimension(950, 600));
     
-    this.jLabelNameUserControl.setFont(new Font("Ubuntu", 1, 18));
-    //this.jLabelNameUserControl.setText("CONTROL DE USUARIOS");
-    this.jLabelNameUserControl.setText("USER CONTROL");
-    this.jLabelNameUserControl.setName("jLabelTitleUserControl");
+    jLabelNameUserControl.setFont(new Font("Ubuntu", 1, 18));
+    jLabelNameUserControl.setText("CONTROL DE USUARIOS");
+    //jLabelNameUserControl.setText("USER CONTROL");
+    jLabelNameUserControl.setName("jLabelTitleUserControl");
     
-    this.jLabelUser.setText("User:");
-    //this.jLabelUser.setText("Usuario:");
-    this.jLabelUser.setName("jLabelUser");
+    //jLabelUser.setText("User:");
+    jLabelUser.setText("Usuario:");
+    jLabelUser.setName("jLabelUser");
     
-    this.jTextFieldUserName.setToolTipText("");
-    this.jTextFieldUserName.setName("jTextFieldUserName");
+    jTextFieldUserName.setToolTipText("");
+    jTextFieldUserName.setName("jTextFieldUserName");
     
-    this.jLabelPassword.setText("Password");
-    //this.jLabelPassword.setText("Contraseña");
-    this.jLabelPassword.setName("jLabelPassword");
+    //jLabelPassword.setText("Password");
+    jLabelPassword.setText("Contraseña");
+    //jLabelPassword.setName("jLabelPassword");
     
-    this.jPasswordFieldPassword.setName("jPasswordFieldPassword");
+    jPasswordFieldPassword.setName("jPasswordFieldPassword");
     
-    //this.jLabelTypeUser.setText("Tipo de usuario");
-    this.jLabelTypeUser.setText("Type of User");
-    this.jLabelTypeUser.setName("jLabelTypeUser");
+    jLabelTypeUser.setText("Tipo de usuario");
+    //jLabelTypeUser.setText("Type of User");
+    jLabelTypeUser.setName("jLabelTypeUser");
     
-    this.jComboBoxTypeUser.setName("jComboBoxTypeUser");
+    jComboBoxTypeUser.setName("jComboBoxTypeUser");
     
-    this.jButtonAddUser.setText("add USER");
-    //this.jButtonAddUser.setText("AGREGAR USUARIO");
-    this.jButtonAddUser.setName("jButtonAddUser");
-    this.jButtonAddUser.addActionListener(new ActionListener()
+    //jButtonAddUser.setText("add USER");
+    jButtonAddUser.setText("AGREGAR USUARIO");
+    jButtonAddUser.setName("jButtonAddUser");
+    jButtonAddUser.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         ControlUser.this.jButtonAddUserActionPerformed(evt);
       }
     });
-    this.jTableUsers.setModel(new DefaultTableModel(new Object[0][], new String[0]));
+    jTableUsers.setModel(new DefaultTableModel(new Object[0][], new String[0]));
     
-    this.jTableUsers.setName("jTableUsers");
-    this.jScrollPane1.setViewportView(this.jTableUsers);
+    jTableUsers.setName("jTableUsers");
+    jScrollPane1.setViewportView(jTableUsers);
     
-    this.jButtonShowUsers.setText("SHOW TABLE OF USERS");
-    //this.jButtonShowUsers.setText("MOSTRAR TABLA DE USUARIOS");
-    this.jButtonShowUsers.addActionListener(new ActionListener()
+    //jButtonShowUsers.setText("SHOW TABLE OF USERS");
+    jButtonShowUsers.setText("MOSTRAR TABLA DE USUARIOS");
+    jButtonShowUsers.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         ControlUser.this.jButtonShowUsersActionPerformed(evt);
       }
     });
-    this.jButtonDeleteUsers.setText("DELETE USER");
-    //this.jButtonDeleteUsers.setText("ELIMINAR USUARIO");
+    //jButtonDeleteUsers.setText("DELETE USER");
+    jButtonDeleteUsers.setText("ELIMINAR USUARIO");
     this.jButtonDeleteUsers.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
@@ -168,37 +168,37 @@ public class ControlUser
         ControlUser.this.jButtonDeleteUsersActionPerformed(evt);
       }
     });
-    this.jButtonUpdatePassword.setText("UPDATING PASSWORD");
-    //this.jButtonUpdatePassword.setText("ACTUALIZAR CONTRASEÑA");
-    this.jButtonUpdatePassword.addActionListener(new ActionListener()
+    //jButtonUpdatePassword.setText("UPDATING PASSWORD");
+    jButtonUpdatePassword.setText("ACTUALIZAR CONTRASEÑA");
+    jButtonUpdatePassword.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         ControlUser.this.jButtonUpdatePasswordActionPerformed(evt);
       }
     });
-    this.jButton1.setForeground(new Color(255, 0, 0));
-    this.jButton1.setText("RESTORE DATABASE");
-    //this.jButton1.setText("RESTAURAR BASE DE DATOS");
-    this.jButton1.addActionListener(new ActionListener()
+    jButton1.setForeground(new Color(255, 0, 0));
+    //jButton1.setText("RESTORE DATABASE");
+    jButton1.setText("RESTAURAR BASE DE DATOS");
+    jButton1.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         ControlUser.this.jButton1ActionPerformed(evt);
       }
     });
-    this.jButtonViewPerm.setText("SHOW PERMITS");
-    //this.jButtonViewPerm.setText("VER PERMISOS");
-    this.jButtonViewPerm.addActionListener(new ActionListener()
+    //jButtonViewPerm.setText("SHOW PERMITS");
+    jButtonViewPerm.setText("VER PERMISOS");
+    jButtonViewPerm.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
         ControlUser.this.jButtonViewPermActionPerformed(evt);
       }
     });
-    this.jButtonCreateGroups.setText("CREATE GROUPS");
-    //this.jButtonCreateGroups.setText("CREAR GRUPOS");
-    this.jButtonCreateGroups.addActionListener(new ActionListener()
+    //jButtonCreateGroups.setText("CREATE GROUPS");
+    jButtonCreateGroups.setText("CREAR GRUPOS");
+    jButtonCreateGroups.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent evt)
       {
@@ -215,38 +215,38 @@ public class ControlUser
   private void jButtonAddUserActionPerformed(ActionEvent evt)
   {
     User us = new User();
-    String user = this.jTextFieldUserName.getText();
-    String password = new String(this.jPasswordFieldPassword.getPassword());
-    String[] selected = this.jComboBoxTypeUser.getSelectedItem().toString().split(",");
+    String user = jTextFieldUserName.getText();
+    String password = new String(jPasswordFieldPassword.getPassword());
+    String[] selected = jComboBoxTypeUser.getSelectedItem().toString().split(",");
     String id_group = selected[0];
     
     Pattern p = Pattern.compile("([\\s])");
-    Matcher m = p.matcher(this.jTextFieldUserName.getText());
+    Matcher m = p.matcher(jTextFieldUserName.getText());
     Matcher m2 = p.matcher(password);
-    if ((this.jTextFieldUserName.getText().equals("") | password.equals("") | m.find() | m2.find() | this.jTextFieldUserName.getText().trim().length() > 10 | password.trim().length() > 10))
+    if ((jTextFieldUserName.getText().equals("") | password.equals("") | m.find() | m2.find() | jTextFieldUserName.getText().trim().length() > 10 | password.trim().length() > 10))
     {
-      JOptionPane.showMessageDialog(null, "Check the data to insert, The username and password can not have more than 10 digits, only numbers and letters and no spaces","Error",JOptionPane.ERROR_MESSAGE);
-      //JOptionPane.showMessageDialog(null, "Revisa los datos a insertar, El usuario y contraseña no pueden tener MAS DE 10 DIGITOS, SOLO NUMEROS Y LETRAS Y SIN ESPACIOS");
+      //JOptionPane.showMessageDialog(null, "Check the data to insert, The username and password can not have more than 10 digits, only numbers and letters and no spaces","Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(null, "Revisa los datos a insertar, El usuario y contraseña no pueden tener MAS DE 10 DIGITOS, SOLO NUMEROS Y LETRAS Y SIN ESPACIOS");
       return;
     }
     if (!us.searchUser(user))
     {
-      boolean value = us.createUser(this.jTextFieldUserName.getText(), password, id_group);
+      boolean value = us.createUser(jTextFieldUserName.getText(), password, id_group);
       if (value == true)
       {
-        //JOptionPane.showMessageDialog(null, "Usuario (" + this.jTextFieldUserName.getText() + ") creado correctamente");
-        JOptionPane.showMessageDialog(null, "User (" + this.jTextFieldUserName.getText() + ") create succesful","Information",JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Usuario (" + jTextFieldUserName.getText() + ") creado correctamente");
+        //JOptionPane.showMessageDialog(null, "User (" + this.jTextFieldUserName.getText() + ") create succesful","Information",JOptionPane.INFORMATION_MESSAGE);
         createFrame();
       }
     }
     else
     {
-      //JOptionPane.showMessageDialog(null, "Ya existe un usuario registrado " + this.jTextFieldUserName.getText());
-      JOptionPane.showMessageDialog(null, "a user already exists registered " + this.jTextFieldUserName.getText(),"Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(null, "Ya existe un usuario registrado " + jTextFieldUserName.getText());
+      //JOptionPane.showMessageDialog(null, "a user already exists registered " + this.jTextFieldUserName.getText(),"Error",JOptionPane.ERROR_MESSAGE);
     }
-    this.jTextFieldUserName.setText("");
-    this.jPasswordFieldPassword.setText("");
-    this.jComboBoxTypeUser.setSelectedIndex(0);
+    jTextFieldUserName.setText("");
+    jPasswordFieldPassword.setText("");
+    jComboBoxTypeUser.setSelectedIndex(0);
   }
   
   private void jButtonShowUsersActionPerformed(ActionEvent evt)
@@ -259,21 +259,21 @@ public class ControlUser
     UserManager usman = new UserManager();
     if (getSelectedRow() == 1)
     {
-      //JOptionPane.showMessageDialog(null, "No puedes eliminar (" + getSelectedRowName() + ")");
-      JOptionPane.showMessageDialog(null, "You can not delete (" + getSelectedRowName() + ")","Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(null, "No puedes eliminar (" + getSelectedRowName() + ")");
+      //JOptionPane.showMessageDialog(null, "You can not delete (" + getSelectedRowName() + ")","Error",JOptionPane.ERROR_MESSAGE);
       return;
     }
     if (getSelectedRow() == 0)
     {
-      //JOptionPane.showMessageDialog(null, "Selecciona algun usuario");
-      JOptionPane.showMessageDialog(null, "Select any user","Information",JOptionPane.INFORMATION_MESSAGE);
+      JOptionPane.showMessageDialog(null, "Selecciona algún usuario");
+      //JOptionPane.showMessageDialog(null, "Select any user","Information",JOptionPane.INFORMATION_MESSAGE);
       return;
     }
     boolean value = usman.deleteUser(getSelectedRow());
     if (value)
     {
-      //JOptionPane.showMessageDialog(null, "Usuario eliminado correctamente (" + getSelectedRowName() + ")");
-      JOptionPane.showMessageDialog(null, "User delete succesful (" + getSelectedRowName() + ")","Information",JOptionPane.INFORMATION_MESSAGE);
+      JOptionPane.showMessageDialog(null, "Usuario eliminado correctamente (" + getSelectedRowName() + ")");
+      //JOptionPane.showMessageDialog(null, "User delete succesful (" + getSelectedRowName() + ")","Information",JOptionPane.INFORMATION_MESSAGE);
       createFrame();
     }
   }
@@ -284,12 +284,12 @@ public class ControlUser
     {
       public void run()
       {
-        //String newPassword = JOptionPane.showInputDialog("Inserta contraseña de usuario:", null);
-        String newPassword = JOptionPane.showInputDialog("Enter password:", null);
+        String newPassword = JOptionPane.showInputDialog("Inserta contraseña de usuario:", null);
+        //String newPassword = JOptionPane.showInputDialog("Enter password:", null);
         if (ControlUser.this.getSelectedRow() == 0)
         {
-          //JOptionPane.showMessageDialog(null, "Selecciona algun usuario");
-          JOptionPane.showMessageDialog(null, "Select any user","Information",JOptionPane.INFORMATION_MESSAGE);
+          JOptionPane.showMessageDialog(null, "Selecciona algun usuario");
+          //JOptionPane.showMessageDialog(null, "Select any user","Information",JOptionPane.INFORMATION_MESSAGE);
           return;
         }
         if (((newPassword != null ? 1 : 0) & (!newPassword.equals("") ? 1 : 0)) != 0)
@@ -297,17 +297,17 @@ public class ControlUser
           UserManager usman = new UserManager();
           boolean value = usman.updateUserPassword(ControlUser.this.getSelectedRow(), newPassword);
           if (value) {
-            //JOptionPane.showMessageDialog(null, "Contraseña actualizada correctamente para el usuario (" + ControlUser.this.getSelectedRowName() + ")");
-            JOptionPane.showMessageDialog(null, "Password successfully updated user (" + ControlUser.this.getSelectedRowName() + ")","Information",JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Contraseña actualizada correctamente para el usuario (" + ControlUser.this.getSelectedRowName() + ")");
+            //JOptionPane.showMessageDialog(null, "Password successfully updated user (" + ControlUser.this.getSelectedRowName() + ")","Information",JOptionPane.INFORMATION_MESSAGE);
           } else {
-            //JOptionPane.showMessageDialog(null, "Error actualizando contraseña, revise la seleccion de usuario o la base de datos");
-            JOptionPane.showMessageDialog(null, "Error updating password , check the user selection or database","Error",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Error actualizando contraseña, revise la seleccion de usuario o la base de datos");
+            //JOptionPane.showMessageDialog(null, "Error updating password , check the user selection or database","Error",JOptionPane.ERROR_MESSAGE);
           }
         }
         else
         {
-          //JOptionPane.showMessageDialog(null, "Inserta contraseña de usuario");
-          JOptionPane.showMessageDialog(null, "Enter Password","Warning",JOptionPane.WARNING_MESSAGE);
+          JOptionPane.showMessageDialog(null, "Inserta contraseña de usuario");
+          //JOptionPane.showMessageDialog(null, "Enter Password","Warning",JOptionPane.WARNING_MESSAGE);
         }
       }
     });
@@ -321,12 +321,12 @@ public class ControlUser
     boolean datcreate = usss.createDataFile();
     if (datcreate)
     {
-      //JOptionPane.showMessageDialog(null, "La base de datos se restauro correctamente.");
-      JOptionPane.showMessageDialog(null, "The database is restored correctly","Information",JOptionPane.INFORMATION_MESSAGE);
+      JOptionPane.showMessageDialog(null, "La base de datos se restauro correctamente.");
+      //JOptionPane.showMessageDialog(null, "The database is restored correctly","Information",JOptionPane.INFORMATION_MESSAGE);
       createFrame();
-      this.jComboBoxTypeUser.removeAllItems();
+      jComboBoxTypeUser.removeAllItems();
       for (Object gp : this.usr.printTableGroup()) {
-        this.jComboBoxTypeUser.addItem(gp.toString());
+        jComboBoxTypeUser.addItem(gp.toString());
       }
     }
   }
@@ -334,23 +334,24 @@ public class ControlUser
   private void jButtonViewPermActionPerformed(ActionEvent evt)
   {
     UserManager usr = new UserManager();
-    //final JFrame framShowPerms = new JFrame("Permisos");
-    final JFrame framShowPerms = new JFrame("Permissions");
+    final JFrame framShowPerms = new JFrame("Permisos");
+    //final JFrame framShowPerms = new JFrame("Permissions");
     JMenuBar menuBar = new JMenuBar();
-    JMenu menu = new JMenu("Menu");
+    JMenu menu = new JMenu("Menú");
     JPanel panel1 = new JPanel();
     JCheckBox[] checkboxes = new JCheckBox[51];
     JButton but = new JButton();
-    final JTable jtable = new JTable(this.defaultablePerms);
+    final JTable jtable = new JTable(defaultablePerms);
     Container contentPanePerms = new Container();
     
     contentPanePerms = framShowPerms.getContentPane();
-    this.scrollpanePerms = new JScrollPane();
+    scrollpanePerms = new JScrollPane();
     
-    //but.setText("Guardar");
-    but.setText("Save");
+    but.setText("Guardar");
+    //but.setText("Save");
     menuBar.add(menu);
-    JMenuItem item = new JMenuItem("Exit");
+    JMenuItem item = new JMenuItem("Salir");
+    //JMenuItem item = new JMenuItem("Exit");
     item.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent e)
@@ -358,7 +359,7 @@ public class ControlUser
         framShowPerms.setVisible(false);
       }
     });
-    this.defaultablePerms = new DefaultTableModel((Object[][])null, printTableEnum())
+    defaultablePerms = new DefaultTableModel((Object[][])null, printTableEnum())
     {
       public boolean isCellEditable(int row, int column)
       {
@@ -374,7 +375,7 @@ public class ControlUser
     {
       String[] arrData = new String[usr.printTableEnum().size()];
       arrData = compval.toString().split(",");
-      this.defaultablePerms.addRow(arrData);
+      defaultablePerms.addRow(arrData);
     }
     jtable.addMouseListener(new MouseAdapter()
     {
@@ -391,7 +392,7 @@ public class ControlUser
         }
       }
     });
-    this.defaultablePerms.addTableModelListener(new TableModelListener()
+    defaultablePerms.addTableModelListener(new TableModelListener()
     {
       public void tableChanged(TableModelEvent e)
       {
@@ -400,17 +401,17 @@ public class ControlUser
         ControlUser.this.updateGroupEnum(value);
       }
     });
-    jtable.setModel(this.defaultablePerms);
+    jtable.setModel(defaultablePerms);
     jtable.setPreferredScrollableViewportSize(new Dimension(800, 350));
-    this.scrollpanePerms.add(jtable);
-    this.scrollpanePerms.setViewportView(jtable);
-    panel1.add(this.scrollpanePerms);
+    scrollpanePerms.add(jtable);
+    scrollpanePerms.setViewportView(jtable);
+    panel1.add(scrollpanePerms);
     contentPanePerms.add(panel1);
     framShowPerms.setMinimumSize(new Dimension(900, 400));
     framShowPerms.setSize(500, 500);
     framShowPerms.setBackground(Color.BLACK);
-    //framShowPerms.setTitle("Permisos");
-    framShowPerms.setTitle("Permissions");
+    framShowPerms.setTitle("Permisos");
+    //framShowPerms.setTitle("Permissions");
     framShowPerms.add(panel1);
     framShowPerms.pack();
     framShowPerms.setVisible(true);
@@ -419,26 +420,26 @@ public class ControlUser
   
   private void jButtonCreateGroupsActionPerformed(ActionEvent evt)
   {
-    //final JFrame framShow = new JFrame("Grupos");
-    final JFrame framShow = new JFrame("Groups");
+    final JFrame framShow = new JFrame("Grupos");
+    //final JFrame framShow = new JFrame("Groups");
     JMenuBar menuBar = new JMenuBar();
-    JMenu menu = new JMenu("Menu");
+    JMenu menu = new JMenu("Menú");
     JPanel panel1 = new JPanel();
     JScrollPane scrollpaneShow = new JScrollPane();
-    JTable jtable = new JTable(this.defaultableShowPerms);
+    JTable jtable = new JTable(defaultableShowPerms);
     
-    this.contentPanePerms = framShow.getContentPane();
-    this.defaultableShowPerms = new DefaultTableModel((Object[][])null, printTableGroup());
+    contentPanePerms = framShow.getContentPane();
+    defaultableShowPerms = new DefaultTableModel((Object[][])null, printTableGroup());
     
     JLabel jlabelName = new JLabel();
     JLabel jlabelDescript = new JLabel();
     JButton butAdd = new JButton();
-    //butAdd.setText("Guardar");
-    butAdd.setText("Save");
-    //jlabelName.setText("Nombre: ");
-    jlabelName.setText("Name: ");
-    //jlabelDescript.setText("Descripcion: ");
-    jlabelDescript.setText("Description: ");
+    butAdd.setText("Guardar");
+    //butAdd.setText("Save");
+    jlabelName.setText("Nombre: ");
+    //jlabelName.setText("Name: ");
+    jlabelDescript.setText("Descripción: ");
+    //jlabelDescript.setText("Description: ");
     jlabelName.setBounds(50, 500, 150, 20);
     jlabelDescript.setBounds(270, 500, 150, 20);
     this.textName.setBounds(100, 500, 150, 20);
@@ -451,8 +452,8 @@ public class ControlUser
         boolean value = ControlUser.this.usr.createGroup(ControlUser.this.textName.getText(), ControlUser.this.textDesc.getText());
         if (value)
         {
-          //JOptionPane.showMessageDialog(null, "grupo [ " + ControlUser.this.textName.getText() + " ] creado exitosamente.");
-          JOptionPane.showMessageDialog(null, "group [ " + ControlUser.this.textName.getText() + " ] create succesful.","Information",JOptionPane.INFORMATION_MESSAGE);
+          JOptionPane.showMessageDialog(null, "grupo [ " + ControlUser.this.textName.getText() + " ] creado exitosamente.");
+          //JOptionPane.showMessageDialog(null, "group [ " + ControlUser.this.textName.getText() + " ] create succesful.","Information",JOptionPane.INFORMATION_MESSAGE);
           
           ControlUser.this.defaultableShowPerms.getDataVector().removeAllElements();
           ControlUser.this.defaultableShowPerms.fireTableDataChanged();
@@ -471,15 +472,16 @@ public class ControlUser
         }
         else
         {
-          //JOptionPane.showMessageDialog(null, "Error, revisa el nombre, descripcion o base de datos.");
-          JOptionPane.showMessageDialog(null, "Error, Check the name, description or database","Error",JOptionPane.ERROR_MESSAGE);
+          JOptionPane.showMessageDialog(null, "Error, revisa el nombre, descripción o base de datos.");
+          //JOptionPane.showMessageDialog(null, "Error, Check the name, description or database","Error",JOptionPane.ERROR_MESSAGE);
           ControlUser.this.textName.setText("");
           ControlUser.this.textDesc.setText("");
         }
       }
     });
     menuBar.add(menu);
-    JMenuItem item = new JMenuItem("Exit");
+    JMenuItem item = new JMenuItem("Salir");
+    //JMenuItem item = new JMenuItem("Exit");
     item.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent e)
@@ -491,23 +493,23 @@ public class ControlUser
     {
       String[] arrData = new String[this.usr.printTableGroup().size()];
       arrData = compval.toString().split(",");
-      this.defaultableShowPerms.addRow(arrData);
+      defaultableShowPerms.addRow(arrData);
     }
-    jtable.setModel(this.defaultableShowPerms);
+    jtable.setModel(defaultableShowPerms);
     jtable.setPreferredScrollableViewportSize(new Dimension(900, 450));
     scrollpaneShow.add(jtable);
     scrollpaneShow.setViewportView(jtable);
     panel1.add(scrollpaneShow);
     framShow.add(jlabelName);
     framShow.add(jlabelDescript);
-    framShow.add(this.textDesc);
-    framShow.add(this.textName);
+    framShow.add(textDesc);
+    framShow.add(textName);
     framShow.add(butAdd);
     framShow.setMinimumSize(new Dimension(1000, 600));
     framShow.setSize(1000, 600);
     framShow.setBackground(Color.BLACK);
-    //framShow.setTitle("Permisos");
-    framShow.setTitle("Permissions");
+    framShow.setTitle("Permisos");
+    //framShow.setTitle("Permissions");
     framShow.add(panel1);
     framShow.pack();
     framShow.setVisible(true);
@@ -516,8 +518,8 @@ public class ControlUser
   
   public void createFrame()
   {
-    this.scrollpane = new JScrollPane();
-    this.defaultable = new DefaultTableModel((Object[][])null, getColumnas())
+    scrollpane = new JScrollPane();
+    defaultable = new DefaultTableModel((Object[][])null, getColumnas())
     {
       public boolean isCellEditable(int row, int column)
       {
@@ -536,7 +538,7 @@ public class ControlUser
     for (Object dataUs : dataUsers)
     {
       arrData = dataUs.toString().split(",");
-      this.defaultable.addRow(arrData);
+      defaultable.addRow(arrData);
     }
     this.jTableUsers.addMouseListener(new MouseAdapter()
     {
@@ -553,7 +555,7 @@ public class ControlUser
         }
       }
     });
-    this.defaultable.addTableModelListener(new TableModelListener()
+    defaultable.addTableModelListener(new TableModelListener()
     {
       public void tableChanged(TableModelEvent e)
       {
@@ -562,20 +564,20 @@ public class ControlUser
         ControlUser.this.updateGroup(value);
       }
     });
-    this.jTableUsers.setModel(this.defaultable);
-    this.jTableUsers.repaint();
-    this.scrollpane.repaint();
+    jTableUsers.setModel(defaultable);
+    jTableUsers.repaint();
+    scrollpane.repaint();
     setVisible(true);
   }
   
   public void setSelectedRow(int value)
   {
-    this.valueRow = value;
+    valueRow = value;
   }
   
   public int getSelectedRow()
   {
-    return this.valueRow;
+    return valueRow;
   }
   
   public void setSelectedRowName(String name)
@@ -585,7 +587,7 @@ public class ControlUser
   
   public String getSelectedRowName()
   {
-    return this.valueRowName;
+    return valueRowName;
   }
   
   public void updateGroup(String valueRow)
@@ -593,8 +595,8 @@ public class ControlUser
     UserManager usman = new UserManager();
     if (getSelectedRow() == 1)
     {
-      //JOptionPane.showMessageDialog(null, "No puedes cambiar de Grupo para el usuario (" + getSelectedRowName() + ")");
-      JOptionPane.showMessageDialog(null, "You can not change User Group (" + getSelectedRowName() + ")","Error",JOptionPane.WARNING_MESSAGE);
+      JOptionPane.showMessageDialog(null, "No puedes cambiar de Grupo para el usuario (" + getSelectedRowName() + ")");
+      //JOptionPane.showMessageDialog(null, "You can not change User Group (" + getSelectedRowName() + ")","Error",JOptionPane.WARNING_MESSAGE);
       return;
     }
     if (!valueRow.equals(""))
@@ -605,8 +607,8 @@ public class ControlUser
       {
         if (!arrGroups.contains(valueRow))
         {
-          //JOptionPane.showMessageDialog(null, "Error no existe el grupo " + valueRow);
-          JOptionPane.showMessageDialog(null, "Error no group " + valueRow,"Error",JOptionPane.ERROR_MESSAGE);
+          JOptionPane.showMessageDialog(null, "Error, No existe el grupo " + valueRow);
+          //JOptionPane.showMessageDialog(null, "Error no group " + valueRow,"Error",JOptionPane.ERROR_MESSAGE);
           return;
         }
       }
@@ -616,16 +618,16 @@ public class ControlUser
       }
       boolean value = usman.updateUserGroupLevel(getSelectedRow(), valueRow);
       if (value) {
-        //JOptionPane.showMessageDialog(null, "Grupo actualizado correctamente para el usuario (" + getSelectedRowName() + ")");
-        JOptionPane.showMessageDialog(null, "Group updated successfully for user (" + getSelectedRowName() + ")","Information",JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Grupo actualizado correctamente para el usuario (" + getSelectedRowName() + ")");
+        //JOptionPane.showMessageDialog(null, "Group updated successfully for user (" + getSelectedRowName() + ")","Information",JOptionPane.INFORMATION_MESSAGE);
       } else {
         JOptionPane.showMessageDialog(null, "Error updating Group , review the selection of user or database","Error",JOptionPane.ERROR_MESSAGE);
       }
     }
     else
     {
-      //JOptionPane.showMessageDialog(null, "Error no dejes en blanco el grupo y solo puedes escribir numeros");
-      JOptionPane.showMessageDialog(null, "Error not leave blank the group and can only write numbers","Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(null, "Error no dejes en blanco el grupo y solo puedes escribir números");
+      //JOptionPane.showMessageDialog(null, "Error not leave blank the group and can only write numbers","Error",JOptionPane.ERROR_MESSAGE);
     }
   }
   
@@ -655,14 +657,14 @@ public class ControlUser
     boolean continu = false;
     if (!(valueRowPer.matches("(1)+.*(-\\d)") | valueRowPer.matches("(1)+.*(-\\d\\d)") | valueRowPer.matches("(1)")))
     {
-      //JOptionPane.showMessageDialog(null, "Error esta mal escrito [ " + valueRowPer + " ]  No puedes borrar [ 1 ]   Ejemplo: 1-2-3-4 o siemplemente [ 1 ] ");
-      JOptionPane.showMessageDialog(null, "Error, this misspelled [ " + valueRowPer + " ]  you can not delete [ 1 ]   Example: 1-2-3-4 o siemplemente [ 1 ] ","Error",JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(null, "Error, esta mal escrito [ " + valueRowPer + " ]  No puedes borrar [ 1 ]   Ejemplo: 1-2-3-4 o siemplemente [ 1 ] ");
+      //JOptionPane.showMessageDialog(null, "Error, this misspelled [ " + valueRowPer + " ]  you can not delete [ 1 ]   Example: 1-2-3-4 o siemplemente [ 1 ] ","Error",JOptionPane.ERROR_MESSAGE);
       return;
     }
     if (!valueRowPer.equals(""))
     {
       ArrayList arrGroups = new ArrayList();
-      arrGroups = this.usr.getGroupLevels();
+      arrGroups = usr.getGroupLevels();
       String[] valPerms = new String[0];
       try
       {
@@ -670,8 +672,8 @@ public class ControlUser
         for (String valPerm : valPerms) {
           if (!arrGroups.contains(valPerm))
           {
-            //JOptionPane.showMessageDialog(null, "Error no existe el grupo " + valPerm);
-            JOptionPane.showMessageDialog(null, "Error no group " + valPerm,"Error",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Error, No existe el grupo " + valPerm);
+            //JOptionPane.showMessageDialog(null, "Error no group " + valPerm,"Error",JOptionPane.ERROR_MESSAGE);
             return;
           }
         }
@@ -682,11 +684,11 @@ public class ControlUser
       }
       boolean value = usman.updateEnumLevel(getSelectedRowPerms(), valueRowPer);
       if (value) {
-        //JOptionPane.showMessageDialog(null, "Grupo actualizado correctamente para  (" + getSelectedRowNamePerms() + ")");
-        JOptionPane.showMessageDialog(null, "Group updated successfully for (" + getSelectedRowNamePerms() + ")","Information",JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Grupo actualizado correctamente para  (" + getSelectedRowNamePerms() + ")");
+        //JOptionPane.showMessageDialog(null, "Group updated successfully for (" + getSelectedRowNamePerms() + ")","Information",JOptionPane.INFORMATION_MESSAGE);
       } else {
-        //JOptionPane.showMessageDialog(null, "Error actualizando Grupo , revise la seleccion de usuario o la base de datos");
-        JOptionPane.showMessageDialog(null, "Error updating Group , review the selection of user or database","Error",JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Error actualizando Grupo , revise la seleccion de usuario o la base de datos");
+        //JOptionPane.showMessageDialog(null, "Error updating Group , review the selection of user or database","Error",JOptionPane.ERROR_MESSAGE);
       }
     }
     else
