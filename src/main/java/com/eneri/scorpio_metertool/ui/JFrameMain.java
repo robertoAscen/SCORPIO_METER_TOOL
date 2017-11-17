@@ -685,7 +685,7 @@ public class JFrameMain
   
   private void jMenuItemVersionActionPerformed(ActionEvent evt)
   {
-    JOptionPane.showMessageDialog(null, "SCORPIO METER TOOL \nENERI \nwww.eneri.com.mx \nVersion 2.0.0\n13-11-2017","Información",JOptionPane.INFORMATION_MESSAGE, iIcon);
+    JOptionPane.showMessageDialog(null, "SCORPIO METER TOOL \nENERI \nwww.eneri.com.mx \nVersion 2.0.1\n17-11-2017","Información",JOptionPane.INFORMATION_MESSAGE, iIcon);
     //JOptionPane.showMessageDialog(null, "SCORPIO METER TOOL \nSMEI \nVersion 1.0.25\n09-09-2015");
   }
   

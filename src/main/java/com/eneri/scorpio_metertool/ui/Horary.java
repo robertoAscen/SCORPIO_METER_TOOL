@@ -387,19 +387,18 @@ public class Horary
     {
       public void run()
       {
-        PortComunication port = new PortComunication();
-        //if (((!port.getStatePort() ? 1 : 0) | (Meter.serialNumber == null ? 1 : 0) /*| Meter.serialNumber.equals("0000000000000000")*/) != 0) 
-        if((port.getStatePort() == false) | (Meter.serialNumber == null) | Meter.serialNumber.equals("0000000000000000"))//Solución al error de la línea de arriba
-        {
-          JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexión", "Error", JOptionPane.ERROR_MESSAGE);
-          //JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
-        } 
-        else 
-        {
-          //Horary.this.swingActionSyncRTC(Horary.this.jTextFieldReadWriteUTCTime.getText());--
-          System.out.println(jLabelTimeUTC.getText().substring(13));
-          Horary.this.swingActionSyncRTC(Horary.this.jLabelTimeUTC.getText().substring(13));
-        }
+          PortComunication port = new PortComunication();
+          if((port.getStatePort() == false) | (Meter.serialNumber == null) | Meter.serialNumber.equals("0000000000000000"))//Solución al error de la línea de arriba
+          {
+              JOptionPane.showMessageDialog(null, "Error, Revise el número de serie, Puerto o conexión", "Error", JOptionPane.ERROR_MESSAGE);
+              //JOptionPane.showMessageDialog(null, "Error Check serial number, Port or connection","Error",JOptionPane.ERROR_MESSAGE);
+          }
+          else 
+          {
+              //Horary.this.swingActionSyncRTC(Horary.this.jTextFieldReadWriteUTCTime.getText());
+              System.out.println(jLabelTimeUTC.getText().substring(13));
+              Horary.this.swingActionSyncRTC(Horary.this.jLabelTimeUTC.getText().substring(13));
+          }
       }
     });
   }

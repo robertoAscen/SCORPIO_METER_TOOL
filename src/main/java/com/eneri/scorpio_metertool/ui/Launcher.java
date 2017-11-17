@@ -25,7 +25,7 @@ public class Launcher
       public void run()
       {
         Launcher.getMainFrame().setVisible(true);
-        Launcher.getMainFrame().setTitle("www.eneri.com.mx Ver 2.0.0");
+        Launcher.getMainFrame().setTitle("www.eneri.com.mx Ver 2.0.1");
         Launcher.getMainFrame().setLocationRelativeTo(null);
       }
 
