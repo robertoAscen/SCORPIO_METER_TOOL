@@ -1578,13 +1578,13 @@ public class CurrentReadingsRecords
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---" }, 
-                                                                                { "Energía Activa Entregada V", 
+                                                                                { "Energía Activa Entregada Wh", 
                                                                                 //{ "Active Energy Delivered V", 
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---" }, 
-                                                                                { "Energía Reactiva Entregada V", 
+                                                                                { "Energía Reactiva Entregada varh", 
                                                                                 //{ "Reactive Energy Delivered V",
                                                                                   "---", 
                                                                                   "---", 
@@ -1596,7 +1596,7 @@ public class CurrentReadingsRecords
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---" }, 
-                                                                                { "Energía Reactiva Recibida -VArh", 
+                                                                                { "Energía Reactiva Recibida -varh", 
                                                                                 //{ "Reactive Power Received -VArh",
                                                                                   "---", 
                                                                                   "---", 
@@ -1638,7 +1638,7 @@ public class CurrentReadingsRecords
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---" }, 
-                                                                                { "Potencia Reactiva [Q] VAr", 
+                                                                                { "Potencia Reactiva [Q] var", 
                                                                                 //{ "Reactive Power [Q] VAr",
                                                                                   "---", 
                                                                                   "---", 
@@ -1656,7 +1656,7 @@ public class CurrentReadingsRecords
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---" }, 
-                                                                                { "Demanda Rol Reactiva Ent VAr", 
+                                                                                { "Demanda Rol Reactiva Ent var", 
                                                                                 //{ "Delivered Reactive Rol Demand VAr",
                                                                                   "---", 
                                                                                   "---", 
@@ -1668,7 +1668,7 @@ public class CurrentReadingsRecords
                                                                                   "---", 
                                                                                   "---", 
                                                                                   "---" }, 
-                                                                                { "Demanda Rol Reactiva Recib VAr", 
+                                                                                { "Demanda Rol Reactiva Recib var", 
                                                                                 //{ "Reactive Demand Rol Received VAr",
                                                                                   "---", 
                                                                                   "---", 
@@ -1724,7 +1724,7 @@ public class CurrentReadingsRecords
     read.requestReadings(PortComunication.DELAY400);
     datos = read.responseReadings();
     int retrys = 0;
-    while ((datos == null) && (retrys < 2))
+    while ((datos == null) && (retrys < 10))
     {
       read.requestReadings(PortComunication.DELAY400);
       

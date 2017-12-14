@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.eneri</groupId>
     <artifactId>Scorpio_MeterTool</artifactId>
-    <version>2.0.1</version>
+    <version>2.0.2</version>
     <packaging>jar</packaging>
      <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -84,7 +84,7 @@
                             <configuration> 
                             <!--indicar gui (javaw) o console (java) -->
                             <headerType>gui</headerType>
-                            <outfile>${project.build.directory}/Scorpio_MeterTool_2.0.1.exe</outfile> 
+                            <outfile>${project.build.directory}/Scorpio_MeterTool_2.0.2.exe</outfile> 
                             <classPath>
                                 <mainClass>com.eneri.scorpio_metertool.ui.Launcher</mainClass>
                                 <!-- la ruta absoluta en la que tendremos las dependencias -->
@@ -103,15 +103,15 @@
                             </jre>
                             <!-- metadatos Windows del .exe-->
                             <versionInfo>
-                                <fileVersion>2.0.1.0</fileVersion>
+                                <fileVersion>2.0.2.0</fileVersion>
                                 <txtFileVersion>versión 2.0</txtFileVersion>
                                 <fileDescription>demo de launch4j</fileDescription>
                                 <copyright>RobertoA.com</copyright>
-                                <productVersion>2.0.1.0</productVersion>
+                                <productVersion>2.0.2.0</productVersion>
                                 <txtProductVersion>demo de launch4j</txtProductVersion>
                                 <productName>demo de launch4j</productName>                             
-                                <internalName>Scorpio_MeterTool_2.0.1</internalName>
-                                <originalFilename>Scorpio_MeterTool_2.0.1.exe</originalFilename>
+                                <internalName>Scorpio_MeterTool_2.0.2</internalName>
+                                <originalFilename>Scorpio_MeterTool_2.0.2.exe</originalFilename>
                             </versionInfo> 
                             </configuration>
                         </execution>
